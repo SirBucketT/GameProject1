@@ -3,5 +3,6 @@ This is the documentation of GameProject1 developed by our team, at Forsbergs Sc
 This document is focused on describing what parts of the game development that the members of our team is in charge of for our game.
 You can find the link to our contributions here: 
 
-[Team](team.md)
-[Assignment](assignment.md)
+* [Team](team.md)
+* [Teacher](<link to teachers profile>)
+* [Assignment](assignment.md)
