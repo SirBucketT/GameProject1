@@ -6,7 +6,8 @@
 
 ***Below you can find documentation of implemented content as well as our profiles, contributions and other referrals linked and listed here:***
 
-* **Teacher**[Github](https://www.linkedin.com/in/tingzhb/)[LinkedIn](https://github.com/tingzhb)
+* **Teacher**
+    [Github](https://www.linkedin.com/in/tingzhb/)[LinkedIn](https://github.com/tingzhb)
 * **Students**
     * **Joshua**
     * **Theodor**
