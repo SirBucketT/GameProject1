@@ -9,12 +9,13 @@ namespace Enemy
         [SerializeField] private Slider healthbarSliderBack;
         [SerializeField] private float maxHealth = 100f;
         [SerializeField] private float health;
-        private float lerpSpeed = 0.05f;
+        private float _lerpSpeed = 0.05f;
     
-        bool isDead = false;
+        private bool _isDead;
     
         void Start()
         {
+            _isDead = false;
             health = maxHealth;
         }
 
@@ -26,32 +27,28 @@ namespace Enemy
             }
 
             if (Input.GetKeyUp(KeyCode.Space)) {
-                takeDamage(10);
+                TakeDamage(10);
             }
 
             if (healthbarSlider.value != healthbarSliderBack.value) {
-                healthbarSliderBack.value = Mathf.Lerp(healthbarSliderBack.value, health, lerpSpeed); 
+                healthbarSliderBack.value = Mathf.Lerp(healthbarSliderBack.value, health, _lerpSpeed); 
             }
 
         
-            if (health <= 0 && !isDead)
-            {
-                killEnemy();
+            if (health <= 0 && !_isDead) {
+                KillEnemy();
             }
         }
 
-        void takeDamage(float damage)
-        {
+        void TakeDamage(float damage) {
             health -= damage;
         }
 
     
         //method that will destroy the gameObject (enemy) that this script is attached to
-        void killEnemy()
-        {
-            isDead = true; //to avoid multiple calls each frame we're implementing a bool of isDead set to true to prevent recursive call over and over again
+        void KillEnemy() {
+            _isDead = true; //to avoid multiple calls each frame we're implementing a bool of isDead set to true to prevent recursive call over and over again
             Destroy(gameObject);
         }
-    
     }
 }
