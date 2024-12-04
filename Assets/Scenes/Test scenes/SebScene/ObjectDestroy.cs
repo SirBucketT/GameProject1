@@ -1,16 +1,13 @@
+using System;
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class ObjectDestroy : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void OnCollisionEnter(Collision other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.gameObject.tag == "Player")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
