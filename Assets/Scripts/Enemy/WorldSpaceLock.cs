@@ -1,11 +1,14 @@
 using UnityEngine;
 
-public class WorldSpaceLock : MonoBehaviour
+namespace Enemy
 {
-    public Transform cam;
-
-    void LateUpdate()
+    public class WorldSpaceLock : MonoBehaviour
     {
-        transform.LookAt(transform.position + cam.forward);
+        public Transform cam;
+
+        void LateUpdate()
+        {
+            transform.LookAt(transform.position + cam.forward);
+        }
     }
 }
