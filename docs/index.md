@@ -4,3 +4,4 @@ This document is focused on describing what parts of the game development that t
 You can find the link to our contributions here: 
 
 [Team](team.md)
+[Assignment](assignment.md)
