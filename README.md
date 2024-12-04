@@ -21,7 +21,10 @@ Enemy Can Pursue Player.
 
 Enemy Can Defeat Player
 
+----------------------------------------------------------------------------------------------------------
+
 For higher grades:
+
 Player Can Gain Experience.
 
 Player Can Encounter Different Enemy Types.
