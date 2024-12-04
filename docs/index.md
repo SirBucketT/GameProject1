@@ -7,12 +7,15 @@
 ***Below you can find documentation of implemented content as well as our profiles, contributions and other referrals linked and listed here:***
 
 * **Teacher**
-    [Github](https://www.linkedin.com/in/tingzhb/)[LinkedIn](https://github.com/tingzhb)
+    * [Github](https://www.linkedin.com/in/tingzhb/)
+    * [LinkedIn](https://github.com/tingzhb)
 * **Students**
     * **Joshua**
     * **Theodor**
     * **Fahad** 
-    * **Sixten** [Github](https://www.github.com/)[LinkedIn](https://www.linkedin.com/in/sibjor/)
+    * **Sixten** 
+        * [Github](https://www.github.com/)
+        * [LinkedIn](https://www.linkedin.com/in/sibjor/)
     * **Carl**
     * **Sebastian**
     * **Fahad**
