@@ -1,37 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
+using TMPro;
+using UI.Player;
 
 public class EXPManager : MonoBehaviour
 {
+    private static LevelManagerScriptableObject _levelData;
+    
     [SerializeField] private Slider playerExpBar;
     [SerializeField] private Slider playerExpBarBack;
-    [SerializeField] private float maxHealth = 100;
-    [SerializeField] private float minHealth = 100;
-    public float exp;
+    private float maxHealth = _levelData.maxExp;
+    private float minHealth = _levelData.minExp;
+    
+    private float _exp;
     private readonly float _lerpSpeed = 0.05f;
+    
+    [SerializeField] private TMP_Text levelUiDsiplay;
 
-    public int playerLevel = 100;
-
-    private bool _isPlayerExpFull;
+    private bool isPlayerExpFull;
 
     void Start()
     {
-        exp = minHealth;
-        _isPlayerExpFull = false;
-        
+        _exp = _levelData.exp;
+        isPlayerExpFull = false;
         //temporary test code, will implement a scriptable object to store current level later.
-        playerLevel = 1; //SO_levelManager.CurrentLevel();
     }
 
     void Update()
     {
+        levelUiDsiplay.text = _levelData.playerLevel.ToString();
         //slider code, do not touch
-        if (playerExpBar.value != exp)
+        if (playerExpBar.value != _exp)
         {
-            playerExpBar.value = exp;
+            playerExpBar.value = _exp;
         }
 
         if (Input.GetKeyUp(KeyCode.S))
@@ -41,36 +42,34 @@ public class EXPManager : MonoBehaviour
 
         if (playerExpBar.value != playerExpBarBack.value)
         {
-            playerExpBarBack.value = Mathf.Lerp(playerExpBarBack.value, exp, _lerpSpeed);
+            playerExpBarBack.value = Mathf.Lerp(playerExpBarBack.value, _exp, _lerpSpeed);
         }
 
-        if (exp >= maxHealth && !_isPlayerExpFull)
+        if (_exp >= maxHealth)
         {
-            //will implement GainExperiancePoints here later. The below code is temporary.
-            _isPlayerExpFull = true;
-            playerLevel += 1;
+            isPlayerExpFull = true;
+            _levelData.playerLevel += 1; 
+            _levelData.maxExp *= 2;
             maxHealth *= 2;
-            exp = minHealth;
-            Debug.Log($"Max EXP reached, leveling up to: {playerLevel}");
-            _isPlayerExpFull = false;
+            minHealth = 0;
+            Debug.Log($"Max EXP reached, leveling up to: {_levelData.playerLevel}");
         }
     }
-
+    
     // ReSharper disable Unity.PerformanceAnalysis
     void GainExperiancePoints(float expGain)
     {
-        exp += expGain;
-        Debug.Log("S pressed, you gained 10 EXP");
-        Debug.Log($"Player EXP: {exp}");
-
-        if (exp >= maxHealth)
-        {
-            _isPlayerExpFull = true;
-            //playerLevel += 1; 
-            //maxHealth *= 2;
-            exp = minHealth;
-            Debug.Log($"Max EXP reached, leveling up to: {playerLevel}");
-            _isPlayerExpFull = false;
-        }
+        _exp += expGain;
+        _exp = _levelData.exp;
+        Debug.Log($"S pressed, you gained {expGain} EXP");
+        Debug.Log($"Player EXP: {_levelData.minExp}");
+        
+        //if (_levelData.minExp >= _levelData.maxExp && _levelData.playerLevel < _levelData.maxPlayerLevel)
+        //{
+            //_levelData.playerLevel += 1; 
+            //_levelData.maxExp *= 2;
+            //_levelData.minExp *= 2;
+            //Debug.Log($"Max EXP reached, leveling up to: {_levelData.playerLevel}");
+        //}
     }
 }
