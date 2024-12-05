@@ -47,7 +47,6 @@ public class EXPManager : MonoBehaviour
         if (exp >= maxHealth && !_isPlayerExpFull)
         {
             _isPlayerExpFull = true;
-            //     TODO implement feature that loads MP empty UI elements
         }
     }
 
@@ -63,6 +62,8 @@ public class EXPManager : MonoBehaviour
             playerLevel += 1;
             maxHealth *= 2;
             exp = minHealth;
+            Debug.Log($"Max EXP reached, leveling up to: {playerLevel}");
+            _isPlayerExpFull = false;
         }
 
     }
