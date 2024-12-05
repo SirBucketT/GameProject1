@@ -23,6 +23,12 @@ public class MenuScript : MonoBehaviour
             PauseGame();
         }
     }
+    private void PauseGame()
+    {
+        pauseMenuUI.SetActive(!pauseMenuUI.activeSelf);
+        Time.timeScale = pauseMenuUI.activeSelf ? 0 : 1;
+        gameUI.SetActive(!pauseMenuUI.activeSelf);
+    }
 
     public void ResumeGame()
     {
@@ -31,12 +37,6 @@ public class MenuScript : MonoBehaviour
         gameUI.SetActive(true);
     }
     
-    private void PauseGame()
-    {
-        pauseMenuUI.SetActive(!pauseMenuUI.activeSelf);
-        Time.timeScale = pauseMenuUI.activeSelf ? 0 : 1;
-        gameUI.SetActive(!pauseMenuUI.activeSelf);
-    }
     
     // public void startGameButton()
     // {
