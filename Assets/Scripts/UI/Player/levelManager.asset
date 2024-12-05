@@ -16,3 +16,4 @@ MonoBehaviour:
   maxPlayerLevel: 10
   minExp: 0
   maxExp: 100
+  exp: 0

@@ -25,7 +25,6 @@ public class EXPManager : MonoBehaviour
         maxHealth = _levelData.maxExp;
         minHealth = _levelData.minExp;
         isPlayerExpFull = false;
-        //temporary test code, will implement a scriptable object to store current level later.
     }
 
     void Update()
@@ -46,16 +45,6 @@ public class EXPManager : MonoBehaviour
         {
             playerExpBarBack.value = Mathf.Lerp(playerExpBarBack.value, _exp, _lerpSpeed);
         }
-
-        if (_exp >= maxHealth)
-        {
-            isPlayerExpFull = true;
-            _levelData.playerLevel += 1; 
-            _levelData.maxExp *= 2;
-            maxHealth *= 2;
-            minHealth = 0;
-            Debug.Log($"Max EXP reached, leveling up to: {_levelData.playerLevel}");
-        }
     }
     
     // ReSharper disable Unity.PerformanceAnalysis
@@ -66,12 +55,15 @@ public class EXPManager : MonoBehaviour
         Debug.Log($"S pressed, you gained {expGain} EXP");
         Debug.Log($"Player EXP: {_levelData.minExp}");
         
-        //if (_levelData.minExp >= _levelData.maxExp && _levelData.playerLevel < _levelData.maxPlayerLevel)
-        //{
-            //_levelData.playerLevel += 1; 
-            //_levelData.maxExp *= 2;
-            //_levelData.minExp *= 2;
-            //Debug.Log($"Max EXP reached, leveling up to: {_levelData.playerLevel}");
-        //}
+        if (_exp >= maxHealth)
+        {
+            isPlayerExpFull = true;
+            _levelData.playerLevel += 1; 
+            _levelData.maxExp *= 2;
+            maxHealth *= 2;
+            minHealth = 0;
+            Debug.Log($"Max EXP reached, leveling up to: {_levelData.playerLevel}");
+            isPlayerExpFull = false;
+        }
     }
 }
