@@ -2,14 +2,22 @@ using UnityEngine;
 
 public class DisabableObject : MonoBehaviour
 {
-    [SerializeField] private bool _isObjectDisabled;
+    [SerializeField] private bool _isObjectDisablable;
+    [SerializeField] private bool _isObjectDisabledOnKeyPress;
 
     public void OnCollisionEnter(Collision other)
     {
         if (!other.gameObject.CompareTag("Player")) return;
 
-        if (_isObjectDisabled)
+        if (_isObjectDisablable)
         {
+            DeactivateObject();
+        }
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.D) && _isObjectDisabledOnKeyPress)
+        { 
             DeactivateObject();
         }
     }
