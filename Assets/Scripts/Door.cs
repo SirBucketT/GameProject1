@@ -6,6 +6,8 @@ public class Door : MonoBehaviour, IInteractable
     
     public void Interact()
     {
+        if (!doorController.PlayerIsWithinRange)
+            return;
         if (doorController.IsOpen)
         {
             doorController.CloseDoor();
@@ -15,4 +17,6 @@ public class Door : MonoBehaviour, IInteractable
             doorController.OpenDoor();
         }
     }
+
+
 }
