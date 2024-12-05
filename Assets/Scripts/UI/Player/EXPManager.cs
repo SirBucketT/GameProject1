@@ -46,7 +46,13 @@ public class EXPManager : MonoBehaviour
 
         if (exp >= maxHealth && !_isPlayerExpFull)
         {
+            //will implement GainExperiancePoints here later. The below code is temporary.
             _isPlayerExpFull = true;
+            playerLevel += 1;
+            maxHealth *= 2;
+            exp = minHealth;
+            Debug.Log($"Max EXP reached, leveling up to: {playerLevel}");
+            _isPlayerExpFull = false;
         }
     }
 
@@ -59,12 +65,12 @@ public class EXPManager : MonoBehaviour
 
         if (exp >= maxHealth)
         {
-            playerLevel += 1;
-            maxHealth *= 2;
+            _isPlayerExpFull = true;
+            //playerLevel += 1; 
+            //maxHealth *= 2;
             exp = minHealth;
             Debug.Log($"Max EXP reached, leveling up to: {playerLevel}");
             _isPlayerExpFull = false;
         }
-
     }
 }
