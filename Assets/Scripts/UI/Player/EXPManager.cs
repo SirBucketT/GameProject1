@@ -55,18 +55,21 @@ public class EXPManager : MonoBehaviour
         Debug.Log($"S pressed, you gained {expGain} EXP");
         Debug.Log($"Player EXP: {_levelData.minExp}");
         
-        if (_exp >= maxHealth)
+        while (_exp >= maxHealth)
         {
+            _exp -= maxHealth;
+            _levelData.playerLevel += 1; 
+            maxHealth *= 2; 
+            Debug.Log($"Max EXP reached, leveling up to: {_levelData.playerLevel}");
+            
             if (_levelData.playerLevel >= _levelData.maxPlayerLevel)
             {
                 _levelData.playerLevel = _levelData.maxPlayerLevel;
             }
-            else
-            {
-                _levelData.playerLevel += 1; 
-                _levelData.maxExp *= 2;
-                Debug.Log($"Max EXP reached, leveling up to: {_levelData.playerLevel}");
-            }
         }
+        
+        _levelData.exp = _exp;
+        playerExpBar.maxValue = maxHealth;
+        playerExpBarBack.maxValue = maxHealth;
     }
 }
