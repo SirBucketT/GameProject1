@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class MenuScript : MonoBehaviour
 {
-    //[SerializeField] private ScriptableObject MenuScriptableObject;
-    
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private GameObject gameUI;
     
@@ -11,12 +9,12 @@ public class MenuScript : MonoBehaviour
     [SerializeField] private string exitGame;
 
 
-    // void Start()
-    // {
-    //     Time.timeScale = 1.0f;
-    //     pauseMenuUI.SetActive(false);
-    //     gameUI.SetActive(true);
-    // }
+     void Start()
+     {
+         Time.timeScale = 1.0f;
+         pauseMenuUI.SetActive(false);
+         gameUI.SetActive(true);
+     }
     
     void Update()
     {
