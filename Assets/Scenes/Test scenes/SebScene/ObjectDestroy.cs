@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class ObjectDestroy : MonoBehaviour
 {
-    [SerializeField] private so_ObjectDestroyData settings;  
+    [SerializeField] private bool _isObjectDestroyed;  // Whether the object should be destroyed on collision.
 
     public void OnCollisionEnter(Collision other)
     {
         if (!other.gameObject.CompareTag("Player")) return;
-        switch (settings.isDisabledOnContact)
+
+        if (_isObjectDestroyed)
         {
-            case true when !settings.isDestroyedOnContact:
-                this.gameObject.SetActive(false);
-                Debug.Log("Object deactivated");
-                break;
-            case false when settings.isDestroyedOnContact:
-                Destroy(this.gameObject);
-                Debug.Log("Object Destroyed");
-                break;
+            DestroyObject();
         }
+    }
+
+    private void DestroyObject()
+    {
+        Destroy(this.gameObject);
+        Debug.Log("Object Destroyed");
     }
 }
