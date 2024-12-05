@@ -21,6 +21,8 @@ public class EXPManager : MonoBehaviour
     {
         exp = minHealth;
         _isPlayerExpFull = false;
+        
+        //temporary test code, will implement a scriptable object to store current level later.
         playerLevel = 1; //SO_levelManager.CurrentLevel();
     }
 
