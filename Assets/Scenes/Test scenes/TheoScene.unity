@@ -196,8 +196,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -739,7 +739,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 383.90002, y: -53.810005}
+  m_AnchoredPosition: {x: 383.90002, y: -28.68}
   m_SizeDelta: {x: 767.8, y: 44.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &712008744
@@ -847,7 +847,7 @@ GameObject:
   - component: {fileID: 725784886}
   - component: {fileID: 725784885}
   m_Layer: 5
-  m_Name: EXP
+  m_Name: MP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -892,7 +892,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'EXP
+  m_text: 'MP
 
 '
   m_isRightToLeft: 0
@@ -903,8 +903,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1042,7 +1042,7 @@ GameObject:
   - component: {fileID: 833162658}
   - component: {fileID: 833162657}
   m_Layer: 5
-  m_Name: MaxEXP
+  m_Name: MAX MP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1096,8 +1096,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1649,7 +1649,7 @@ GameObject:
   - component: {fileID: 1525537646}
   - component: {fileID: 1525537645}
   m_Layer: 5
-  m_Name: EXP Display
+  m_Name: MP DISPLAY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1694,7 +1694,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 1000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1703,8 +1703,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2245,6 +2245,14 @@ PrefabInstance:
       propertyPath: MpData
       value: 
       objectReference: {fileID: 11400000, guid: dfcd8c5dc259bd8409b8b1bac3517e0c, type: 2}
+    - target: {fileID: 5008699646697694595, guid: 282015fe0a0e640839df9c339beb122f, type: 3}
+      propertyPath: maxMpDisplay
+      value: 
+      objectReference: {fileID: 833162657}
+    - target: {fileID: 5008699646697694595, guid: 282015fe0a0e640839df9c339beb122f, type: 3}
+      propertyPath: currentExpDisplay
+      value: 
+      objectReference: {fileID: 1525537645}
     - target: {fileID: 6521766475418553269, guid: 282015fe0a0e640839df9c339beb122f, type: 3}
       propertyPath: m_text
       value: 0
