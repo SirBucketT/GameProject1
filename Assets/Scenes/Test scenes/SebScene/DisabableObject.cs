@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ObjectDisable : MonoBehaviour
+public class DisabableObject : MonoBehaviour
 {
     [SerializeField] private bool _isObjectDisabled;
 

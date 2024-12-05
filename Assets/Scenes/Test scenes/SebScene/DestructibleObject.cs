@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ObjectDestroy : MonoBehaviour
+public class DestructibleObject : MonoBehaviour
 {
     [SerializeField] private bool _isObjectDestroyed;
     [SerializeField] private bool _isObjectDestroyedOnKeyPress;
