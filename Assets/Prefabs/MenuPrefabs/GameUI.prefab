@@ -1063,6 +1063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d123bb34fb0452e448e5bc8bf5851351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _levelData: {fileID: 11400000, guid: 0e4e0c98af7992e47b3bc9d1970d7175, type: 2}
   playerExpBar: {fileID: 7852092169322586859}
   playerExpBarBack: {fileID: 5003796030104763250}
   levelUiDsiplay: {fileID: 6521766475418553269}

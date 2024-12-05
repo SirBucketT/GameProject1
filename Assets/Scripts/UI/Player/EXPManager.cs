@@ -5,12 +5,12 @@ using UI.Player;
 
 public class EXPManager : MonoBehaviour
 {
-    private static LevelManagerScriptableObject _levelData;
+    public LevelManagerScriptableObject _levelData;
     
     [SerializeField] private Slider playerExpBar;
     [SerializeField] private Slider playerExpBarBack;
-    private float maxHealth = _levelData.maxExp;
-    private float minHealth = _levelData.minExp;
+    private float maxHealth;
+    private float minHealth;
     
     private float _exp;
     private readonly float _lerpSpeed = 0.05f;
@@ -22,6 +22,8 @@ public class EXPManager : MonoBehaviour
     void Start()
     {
         _exp = _levelData.exp;
+        maxHealth = _levelData.maxExp;
+        minHealth = _levelData.minExp;
         isPlayerExpFull = false;
         //temporary test code, will implement a scriptable object to store current level later.
     }
@@ -60,7 +62,7 @@ public class EXPManager : MonoBehaviour
     void GainExperiancePoints(float expGain)
     {
         _exp += expGain;
-        _exp = _levelData.exp;
+        _levelData.exp = _exp;
         Debug.Log($"S pressed, you gained {expGain} EXP");
         Debug.Log($"Player EXP: {_levelData.minExp}");
         
