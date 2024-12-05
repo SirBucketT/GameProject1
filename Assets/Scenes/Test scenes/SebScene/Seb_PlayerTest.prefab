@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6950284078628815385}
   - component: {fileID: 755988155584669786}
   - component: {fileID: 2180997137397798156}
-  - component: {fileID: 1038759339339719017}
   m_Layer: 0
   m_Name: Seb_PlayerTest
   m_TagString: Player
@@ -139,15 +138,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1038759339339719017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3261511583740928259}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9e58beb8e4576844af4b7b604b92e19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

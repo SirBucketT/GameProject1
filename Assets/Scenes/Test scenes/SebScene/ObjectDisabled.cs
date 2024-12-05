@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class ObjectDeactivate : MonoBehaviour
+public class ObjectDisable : MonoBehaviour
 {
-    [SerializeField] private bool _isObjectDisabled;   // Whether the object should be disabled on collision.
+    [SerializeField] private bool _isObjectDisabled;
 
     public void OnCollisionEnter(Collision other)
     {
@@ -13,7 +13,7 @@ public class ObjectDeactivate : MonoBehaviour
             DeactivateObject();
         }
     }
-
+    
     private void DeactivateObject()
     {
         this.gameObject.SetActive(false);
