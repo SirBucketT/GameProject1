@@ -4,6 +4,7 @@ using UI.Player;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using TMPro;
 
 public class MPManager : MonoBehaviour
 { 
@@ -15,6 +16,10 @@ public class MPManager : MonoBehaviour
     private float MP;
     private readonly float _lerpSpeed = 0.05f;
     
+    
+    [SerializeField] private TMP_Text currentExpDisplay;
+    [SerializeField] private TMP_Text maxMpDisplay;
+    
     void Start()
     {
         maxHealth = MpData.maxMp;
@@ -23,6 +28,9 @@ public class MPManager : MonoBehaviour
 
     void Update()
     {
+        maxMpDisplay.text = MpData.maxMp.ToString();
+        currentExpDisplay.text = MpData.mp.ToString();
+
         //slider code, do not touch
         if (playerMpbar.value != MP){
             playerMpbar.value = MP;
