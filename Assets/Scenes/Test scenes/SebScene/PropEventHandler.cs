@@ -3,16 +3,16 @@ using UnityEngine.Events;
 
 public class PropEventHandler : MonoBehaviour
 {
-    public UnityEvent onDisableEvent;
+    public UnityEvent onCollisonEvent;
     private void Start()
     {
-        onDisableEvent ??= new UnityEvent();
+        onCollisonEvent ??= new UnityEvent();
     }
 
     private void TriggerDisableEvent()
     {
         Debug.Log("Disable event triggered!");
-        onDisableEvent.Invoke();
+        onCollisonEvent.Invoke();
     }
 
     private void OnCollisionEnter(Collision collision)
