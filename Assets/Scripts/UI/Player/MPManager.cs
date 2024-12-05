@@ -22,6 +22,7 @@ public class MPManager : MonoBehaviour
     
     void Start()
     {
+        MpData.maxMp = 100;
         maxHealth = MpData.maxMp;
         MP = MpData.mp;
     }
