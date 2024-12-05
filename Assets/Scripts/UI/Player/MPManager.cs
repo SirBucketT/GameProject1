@@ -1,23 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using UI.Player;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class MPManager : MonoBehaviour
 { 
+    public MP_ScriptableObject MpData;
+    
     [SerializeField] private Slider playerMpbar; 
     [SerializeField] private Slider playerMpBarBack;
     [SerializeField] private float maxHealth = 100;
     private float MP;
     private readonly float _lerpSpeed = 0.05f;
     
-    private bool _isPlayerMPempty;
-    
     void Start()
     {
-        MP = maxHealth;
-        _isPlayerMPempty = false;
+        maxHealth = MpData.maxMp;
+        MP = MpData.mp;
     }
 
     void Update()
@@ -32,15 +33,16 @@ public class MPManager : MonoBehaviour
         if (playerMpbar.value != playerMpBarBack.value) {
             playerMpBarBack.value = Mathf.Lerp(playerMpBarBack.value, MP, _lerpSpeed); 
         }
-        if (MP <= 0 && !_isPlayerMPempty) {
-            _isPlayerMPempty = true;
-        //     TODO implement feature that loads MP empty UI elements
+        if (MP <= 0) {
+            MP = 0;
+            //     TODO implement feature that loads MP empty UI elements
         }
     }
     
     // ReSharper disable Unity.PerformanceAnalysis
     void MpDeplete(float mpCost) {
         MP -= mpCost;
+        MpData.mp = MP;
         Debug.Log("A pressed, you lose 10 MP");
         Debug.Log($"Player MP: {MP}");
     }

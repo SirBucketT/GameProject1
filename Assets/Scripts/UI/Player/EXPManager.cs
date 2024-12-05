@@ -16,20 +16,27 @@ public class EXPManager : MonoBehaviour
     private readonly float _lerpSpeed = 0.05f;
     
     [SerializeField] private TMP_Text levelUiDsiplay;
-
-    private bool isPlayerExpFull;
+    [SerializeField] private TMP_Text currentExpDisplay;
+    [SerializeField] private TMP_Text maxExpDisplay;
 
     void Start()
     {
+        //temporary code to make testing of the game easier, will be changed later
+        _levelData.exp = 0;
+        _levelData.playerLevel = 0;
+        _levelData.maxExp = 100;
+        //
         _exp = _levelData.exp;
         maxHealth = _levelData.maxExp;
         minHealth = _levelData.minExp;
-        isPlayerExpFull = false;
     }
 
     void Update()
     {
         levelUiDsiplay.text = _levelData.playerLevel.ToString();
+        currentExpDisplay.text = _levelData.exp.ToString();
+        maxExpDisplay.text = maxHealth.ToString();
+        
         //slider code, do not touch
         if (playerExpBar.value != _exp)
         {
@@ -38,7 +45,7 @@ public class EXPManager : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.S))
         {
-            GainExperiancePoints(10);
+            GainExperiancePoints(15);
         }
 
         if (playerExpBar.value != playerExpBarBack.value)
@@ -47,7 +54,6 @@ public class EXPManager : MonoBehaviour
         }
     }
     
-    // ReSharper disable Unity.PerformanceAnalysis
     void GainExperiancePoints(float expGain)
     {
         _exp += expGain;
@@ -61,11 +67,11 @@ public class EXPManager : MonoBehaviour
             _levelData.playerLevel += 1; 
             maxHealth *= 2; 
             Debug.Log($"Max EXP reached, leveling up to: {_levelData.playerLevel}");
-            
-            if (_levelData.playerLevel >= _levelData.maxPlayerLevel)
-            {
-                _levelData.playerLevel = _levelData.maxPlayerLevel;
-            }
+        }
+        if (_levelData.playerLevel >= _levelData.maxPlayerLevel)
+        {
+            _levelData.playerLevel = _levelData.maxPlayerLevel;
+            return;
         }
         
         _levelData.exp = _exp;
