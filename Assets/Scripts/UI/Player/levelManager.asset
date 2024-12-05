@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654bedf6b98e7994d895e0c6b4c3e88b, type: 3}
   m_Name: levelManager
   m_EditorClassIdentifier: 
-  playerLevel: 0
+  playerLevel: 38
   maxPlayerLevel: 10
   minExp: 0
   maxExp: 100

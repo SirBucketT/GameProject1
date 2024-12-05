@@ -57,13 +57,16 @@ public class EXPManager : MonoBehaviour
         
         if (_exp >= maxHealth)
         {
-            isPlayerExpFull = true;
-            _levelData.playerLevel += 1; 
-            _levelData.maxExp *= 2;
-            maxHealth *= 2;
-            minHealth = 0;
-            Debug.Log($"Max EXP reached, leveling up to: {_levelData.playerLevel}");
-            isPlayerExpFull = false;
+            if (_levelData.playerLevel >= _levelData.maxPlayerLevel)
+            {
+                _levelData.playerLevel = _levelData.maxPlayerLevel;
+            }
+            else
+            {
+                _levelData.playerLevel += 1; 
+                _levelData.maxExp *= 2;
+                Debug.Log($"Max EXP reached, leveling up to: {_levelData.playerLevel}");
+            }
         }
     }
 }
