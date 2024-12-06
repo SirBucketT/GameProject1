@@ -37,18 +37,19 @@ public class MenuScript : MonoBehaviour
         gameUI.SetActive(true);
     }
     
+    public void QuitGameButton()
+    {
+    #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        Debug.Log("Quit button pressed");
+    #endif
+        Application.Quit();
+    }
+    
     
     // public void startGameButton()
     // {
     //     SceneManager.LoadScene();
     // }
     
-    public void QuitGameButton()
-    {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-        Debug.Log("Quit button pressed");
-#endif
-        Application.Quit();
-    }
 }
