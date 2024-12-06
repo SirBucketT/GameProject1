@@ -54,6 +54,10 @@ public class MPManager : MonoBehaviour
         MpData.mp = MP;
         Debug.Log("A pressed, you lose 10 MP");
         Debug.Log($"Player MP: {MP}");
+        if (MpData.mp <= 0)
+        {
+            MpData.mp = 0;
+        }
     }
 
 }
