@@ -7,7 +7,7 @@ public class PropEventHandler : MonoBehaviour
     
     public UnityEvent onCollisionEvent;
     public UnityEvent onKeyPressEvent;
-    private bool isPlayerInRange = false;  
+    public bool PlayerIsWithinRange { get; private set; }
     private bool isKeyPressed = false;     
     private void Start()
     {

@@ -5,7 +5,7 @@ public class DoorController : MonoBehaviour
     [SerializeField] private Animator anim;
     public bool IsOpen => anim.GetBool("IsOpen");
     public bool PlayerIsWithinRange { get; private set; }
-    
+
 
     [ContextMenu("Open Door")]
     public void OpenDoor()
