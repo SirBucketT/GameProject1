@@ -1750,6 +1750,10 @@ PrefabInstance:
       value: -27.27
       objectReference: {fileID: 0}
     - target: {fileID: 6460094725786129330, guid: 282015fe0a0e640839df9c339beb122f, type: 3}
+      propertyPath: HpData
+      value: 
+      objectReference: {fileID: 11400000, guid: d669f751e3d2046f181b40dd9e391f86, type: 2}
+    - target: {fileID: 6460094725786129330, guid: 282015fe0a0e640839df9c339beb122f, type: 3}
       propertyPath: maxMpDisplay
       value: 
       objectReference: {fileID: 427130784}
