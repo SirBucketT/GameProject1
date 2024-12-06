@@ -31,5 +31,7 @@ public class CameraRayCaster : MonoBehaviour
                 {
                         Debug.DrawRay(ray.origin, ray.direction * rayDistance, Color.red, 0.5f);
                 }
+                
         }
-}
+        
+}      

@@ -3,39 +3,38 @@ using UnityEngine.Events;
 
 public class PropEventHandler : MonoBehaviour
 {
-    [SerializeField] private KeyCode _playerInteractKet= KeyCode.D;
+    [SerializeField] private KeyCode _playerInteractKet = KeyCode.D;
+    private PlayerIsWithinRange _playerIsWithinRange;
     
     public UnityEvent onCollisionEvent;
     public UnityEvent onKeyPressEvent;
-    private bool isPlayerInRange = false;  
-    private bool isKeyPressed = false;     
+
     private void Start()
     {
         onCollisionEvent ??= new UnityEvent();
         onKeyPressEvent ??= new UnityEvent();
+        _playerIsWithinRange =Object.FindAnyObjectByType<PlayerIsWithinRange>();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(_playerInteractKet))
         {
-            isKeyPressed = true;
             TriggerKeyPressEvent();
         }
     }
-
-    private void TriggerCollisionEvent()
-    {
-        Debug.Log("Collision event triggered!");
-        onCollisionEvent.Invoke();
-    }
-
     private void TriggerKeyPressEvent()
     {
-        Debug.Log("Key press event triggered!");
-        onKeyPressEvent.Invoke();
+        if (_playerIsWithinRange != null && _playerIsWithinRange.IsPlayerWithinRange())
+        {
+            Debug.Log("Key press event triggered!");
+            onKeyPressEvent.Invoke();
+        }
+        else
+        {
+            Debug.Log("Player is not in range!");
+        }
     }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -43,4 +42,11 @@ public class PropEventHandler : MonoBehaviour
             TriggerCollisionEvent();
         }
     }
+    
+    private void TriggerCollisionEvent()
+    {
+        Debug.Log("Collision!");
+        onCollisionEvent.Invoke();
+    }
+    
 }
