@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLevel: 0
   maxPlayerLevel: 10
-  minExp: 0
+  minExp: 100
   maxExp: 100
   exp: 0
