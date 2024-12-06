@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cda550027b8617438748cb228b5c952, type: 3}
   m_Name: ManagerMP
   m_EditorClassIdentifier: 
-  mp: 30
+  mp: 100
   maxMp: 100
