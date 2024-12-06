@@ -29,8 +29,8 @@ public class HealthbarManager : MonoBehaviour
 
     void Update()
     {
-        currentHealth.text = HpData.maxHP.ToString();
-        maxMpDisplay.text = HpData.currentHP.ToString();
+        currentHealth.text = HpData.currentHP.ToString();
+        maxMpDisplay.text = HpData.maxHP.ToString();
         
         //slider code, do not touch
         if (playerHealthbar.value != HpData.currentHP){
@@ -41,10 +41,6 @@ public class HealthbarManager : MonoBehaviour
         }
         if (playerHealthbar.value != playerHealthbarBackSlider.value) {
             playerHealthbarBackSlider.value = Mathf.Lerp(playerHealthbarBackSlider.value, HpData.currentHP, _lerpSpeed); 
-        }
-        if (HpData.currentHP <= 0 && !_isPlayerDead) {
-            _isPlayerDead = true;
-        //     TODO implement feature that loads game over UI elements
         }
     }
     
@@ -57,6 +53,15 @@ public class HealthbarManager : MonoBehaviour
         if (HpData.currentHP <= 0)
         {
             HpData.currentHP = 0;
+        }
+    }
+    
+    public void UpdateHealthBarMaxValue()
+    {
+        playerHealthbar.maxValue = HpData.maxHP;
+        playerHealthbar.value = HpData.currentHP;
+        if (playerHealthbar.value != playerHealthbarBackSlider.value) {
+            playerHealthbarBackSlider.value = Mathf.Lerp(playerHealthbarBackSlider.value, HpData.currentHP, _lerpSpeed); 
         }
     }
 

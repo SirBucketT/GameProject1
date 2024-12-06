@@ -5,8 +5,9 @@ using UI.Player;
 
 public class EXPManager : MonoBehaviour
 {
-    public LevelManagerScriptableObject _levelData;
-    public HPManager hpManager;
+    [SerializeField] private LevelManagerScriptableObject _levelData;
+    [SerializeField] private HPManager hpManager;
+    [SerializeField] private HealthbarManager _healthbarManager;
     
     [SerializeField] private Slider playerExpBar;
     [SerializeField] private Slider playerExpBarBack;
@@ -67,6 +68,7 @@ public class EXPManager : MonoBehaviour
             maxHealth *= 2;
             hpManager.maxHP *= 1.5f;
             hpManager.currentHP *= 1.3f;
+            _healthbarManager.UpdateHealthBarMaxValue();
             Debug.Log($"Max EXP reached, leveling up to: {_levelData.playerLevel}");
         }
         if (_levelData.playerLevel >= _levelData.maxPlayerLevel)
