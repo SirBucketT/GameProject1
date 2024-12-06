@@ -65,7 +65,8 @@ public class EXPManager : MonoBehaviour
             _exp -= maxHealth;
             _levelData.playerLevel += 1; 
             maxHealth *= 2;
-            hpManager.maxHP *= 0.5f;
+            hpManager.maxHP *= 1.5f;
+            hpManager.currentHP *= 1.3f;
             Debug.Log($"Max EXP reached, leveling up to: {_levelData.playerLevel}");
         }
         if (_levelData.playerLevel >= _levelData.maxPlayerLevel)
