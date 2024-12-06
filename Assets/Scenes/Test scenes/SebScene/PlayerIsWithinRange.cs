@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class PLayerIsWithinRange : MonoBehaviour
+public class PlayerIsWithinRange : MonoBehaviour
 {
     [SerializeField] public float interactRadius;
     private bool _playerIsWithinRange { get; set; }
+ 
     public void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player"))
@@ -19,11 +20,15 @@ public class PLayerIsWithinRange : MonoBehaviour
     }
 
     public void OnDrawGizmos()
-    {
+    { 
         var color = _playerIsWithinRange 
             ? Color.green
             : Color.red;
         Gizmos.color = color;
         Gizmos.DrawWireSphere(transform.position, interactRadius );
+    }
+    public bool IsPlayerWithinRange()
+    {
+        return _playerIsWithinRange;
     }
 }
