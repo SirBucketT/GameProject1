@@ -4,9 +4,12 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using TMPro;
+using UI.Player;
 
 public class HealthbarManager : MonoBehaviour
 { 
+    public HPManager HpData;
+    
     [SerializeField] private Slider playerHealthbar; 
     [SerializeField] private Slider playerHealthbarBackSlider;
     [SerializeField] private float maxHealth = 100;
@@ -14,6 +17,9 @@ public class HealthbarManager : MonoBehaviour
     private readonly float _lerpSpeed = 0.05f;
     
     private bool _isPlayerDead;
+    
+    [SerializeField] private TMP_Text currentHealth;
+    [SerializeField] private TMP_Text maxMpDisplay;
     
     void Start()
     {
@@ -23,6 +29,9 @@ public class HealthbarManager : MonoBehaviour
 
     void Update()
     {
+        currentHealth.text = HpData.maxHP.ToString();
+        maxMpDisplay.text = HpData.currentHP.ToString();
+        
         //slider code, do not touch
         if (playerHealthbar.value != health){
             playerHealthbar.value = health;
