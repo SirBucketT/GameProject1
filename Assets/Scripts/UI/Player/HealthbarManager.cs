@@ -60,9 +60,7 @@ public class HealthbarManager : MonoBehaviour
     {
         playerHealthbar.maxValue = HpData.maxHP;
         playerHealthbar.value = HpData.currentHP;
-        if (playerHealthbar.value != playerHealthbarBackSlider.value) {
-            playerHealthbarBackSlider.value = Mathf.Lerp(playerHealthbarBackSlider.value, HpData.currentHP, _lerpSpeed); 
-        }
+        playerHealthbarBackSlider.value = HpData.currentHP;
     }
 
 }
