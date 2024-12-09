@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90cea46da35900b4087b838ef4e4fb7c, type: 3}
   m_Name: EnemyData
   m_EditorClassIdentifier: 
-  enemyName: 
-  enemyHealth: 0
-  enemyDamage: 0
-  enemyIsAlive: 0
-  enemyTexture: {fileID: 0}
-  enemyImage: {fileID: 0}
+  _enemyName: 
+  _enemyHealth: 0
+  _enemyDamage: 0
+  _enemyIsAlive: 0
+  _enemyTexture: {fileID: 0}
+  _enemyImage: {fileID: 0}
