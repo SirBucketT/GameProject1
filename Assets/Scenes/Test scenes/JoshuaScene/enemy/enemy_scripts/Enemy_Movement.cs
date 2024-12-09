@@ -11,7 +11,7 @@ public class Enemy_Movement : MonoBehaviour
     private Rigidbody _rigidbody;
     private Player_Awareness_Controller _playerAwarenessController;
 
-    private Vector2 _targetDirection;
+    private Vector3 _targetDirection;
 
     private void Awake()
     {
@@ -40,16 +40,12 @@ public class Enemy_Movement : MonoBehaviour
 
     private void RotateTowardsTarget()
     {
-        if (_targetDirection == Vector2.zero)
+        if (_targetDirection == Vector3.zero)
         {
             return;
         }
-        // Quaternion targetDirection = Quaternion.LookRotation(transform.up, _targetDirection);
-        // Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetDirection, rotationSpeed * Time.deltaTime);
-        // _rigidbody.SetRotation(rotation);
-
-        Vector3 targetDirection = new Vector3(_targetDirection.x, 0, _targetDirection.y);
-        Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+        
+        Quaternion targetRotation = Quaternion.LookRotation(_targetDirection);
         
         _rigidbody.MoveRotation(Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime));
         
@@ -57,13 +53,17 @@ public class Enemy_Movement : MonoBehaviour
 
     private void SetVelocity()
     {
-        if (_targetDirection == Vector2.zero)
+        if (_targetDirection == Vector3.zero)
         {
             _rigidbody.linearVelocity = Vector3.zero;
         }
         else
         {
-            _rigidbody.linearVelocity = transform.forward * speed; 
+// <<<<<<< HEAD
+//             _rigidbody.linearVelocity = transform.forward * speed; 
+// =======
+//             _rigidbody.linearVelocity = _targetDirection * speed; 
+// >>>>>>> 84b5bfe2d1eb7d353214b741670a17f933bbb820
         }
     }
 }
