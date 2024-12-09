@@ -10,11 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90cea46da35900b4087b838ef4e4fb7c, type: 3}
-  m_Name: EnemyData
+  m_Name: EnemyGobboData
   m_EditorClassIdentifier: 
-  _enemyName: 
-  _enemyHealth: 0
-  _enemyDamage: 0
-  _enemyIsAlive: 0
-  _enemyTexture: {fileID: 0}
-  _enemyImage: {fileID: 0}
+  _prefabName: 
+  _numberOfPrefabsToCreate: 2
+  _spawnPoints: []
+  _enemyName: Gobbo
+  _enemyHealth: 10
+  _enemyDamage: 3
+  _enemyIsAlive: 1
+  _enemyTexture: {fileID: 2800000, guid: abc00000000001588960982501439460, type: 3}
+  _enemyImage: {fileID: 2800000, guid: 8a5f9829a049c704fa992203bfc451f2, type: 3}
