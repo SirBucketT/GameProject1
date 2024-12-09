@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 654bedf6b98e7994d895e0c6b4c3e88b, type: 3}
-  m_Name: levelManager
+  m_Script: {fileID: 11500000, guid: 66d1b0c0ec6734bb6ac95ebe02456bce, type: 3}
+  m_Name: GoldData
   m_EditorClassIdentifier: 
-  playerLevel: 1
-  maxPlayerLevel: 10
-  minExp: 1
-  maxExp: 100
-  exp: 0
+  gold: 0

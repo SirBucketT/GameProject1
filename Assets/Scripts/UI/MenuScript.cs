@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
@@ -47,9 +48,9 @@ public class MenuScript : MonoBehaviour
     }
     
     
-    // public void startGameButton()
-    // {
-    //     SceneManager.LoadScene();
-    // }
+    public void MainMenuButton()
+    {
+         SceneManager.LoadScene(1);
+    }
     
 }
