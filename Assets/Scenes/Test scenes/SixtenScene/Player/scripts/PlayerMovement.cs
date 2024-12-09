@@ -24,8 +24,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            // Single Click
-            if (Physics.Raycast(ray.origin, ray.direction, out hitInfo))
+            
+            if (Physics.Raycast(ray.origin, ray.direction, out hitInfo)) // Single Click
             {
                 agent.destination = hitInfo.point;
             }
