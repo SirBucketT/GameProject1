@@ -17,7 +17,7 @@ public class MPManager : MonoBehaviour
     private readonly float _lerpSpeed = 0.05f;
     
     
-    [SerializeField] private TMP_Text currentExpDisplay;
+    [SerializeField] private TMP_Text currentMpDisplay;
     [SerializeField] private TMP_Text maxMpDisplay;
     
     void Start()
@@ -30,7 +30,7 @@ public class MPManager : MonoBehaviour
     void Update()
     {
         maxMpDisplay.text = MpData.maxMp.ToString();
-        currentExpDisplay.text = MpData.mp.ToString();
+        currentMpDisplay.text = MpData.mp.ToString();
 
         //slider code, do not touch
         if (playerMpbar.value != MP){
@@ -54,6 +54,10 @@ public class MPManager : MonoBehaviour
         MpData.mp = MP;
         Debug.Log("A pressed, you lose 10 MP");
         Debug.Log($"Player MP: {MP}");
+        if (MpData.mp <= 0)
+        {
+            MpData.mp = 0;
+        }
     }
 
 }

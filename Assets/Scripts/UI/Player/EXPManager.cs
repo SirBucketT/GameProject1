@@ -5,12 +5,13 @@ using UI.Player;
 
 public class EXPManager : MonoBehaviour
 {
-    public LevelManagerScriptableObject _levelData;
+    [SerializeField] private LevelManagerScriptableObject _levelData;
+    [SerializeField] private HPManager hpManager;
+    [SerializeField] private HealthbarManager _healthbarManager;
     
     [SerializeField] private Slider playerExpBar;
     [SerializeField] private Slider playerExpBarBack;
     private float maxHealth;
-    private float minHealth;
     
     private float _exp;
     private readonly float _lerpSpeed = 0.05f;
@@ -28,7 +29,6 @@ public class EXPManager : MonoBehaviour
         //
         _exp = _levelData.exp;
         maxHealth = _levelData.maxExp;
-        minHealth = _levelData.minExp;
     }
 
     void Update()
@@ -65,7 +65,10 @@ public class EXPManager : MonoBehaviour
         {
             _exp -= maxHealth;
             _levelData.playerLevel += 1; 
-            maxHealth *= 2; 
+            maxHealth *= 2;
+            hpManager.maxHP *= 1.5f;
+            hpManager.currentHP *= 1.3f;
+            _healthbarManager.UpdateHealthBarMaxValue();
             Debug.Log($"Max EXP reached, leveling up to: {_levelData.playerLevel}");
         }
         if (_levelData.playerLevel >= _levelData.maxPlayerLevel)

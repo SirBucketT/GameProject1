@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class MenuScript : MonoBehaviour
 {
-    //[SerializeField] private ScriptableObject MenuScriptableObject;
-    
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private GameObject gameUI;
     
@@ -11,12 +9,12 @@ public class MenuScript : MonoBehaviour
     [SerializeField] private string exitGame;
 
 
-    // void Start()
-    // {
-    //     Time.timeScale = 1.0f;
-    //     pauseMenuUI.SetActive(false);
-    //     gameUI.SetActive(true);
-    // }
+     void Start()
+     {
+         Time.timeScale = 1.0f;
+         pauseMenuUI.SetActive(false);
+         gameUI.SetActive(true);
+     }
     
     void Update()
     {
@@ -24,6 +22,12 @@ public class MenuScript : MonoBehaviour
         {
             PauseGame();
         }
+    }
+    private void PauseGame()
+    {
+        pauseMenuUI.SetActive(!pauseMenuUI.activeSelf);
+        Time.timeScale = pauseMenuUI.activeSelf ? 0 : 1;
+        gameUI.SetActive(!pauseMenuUI.activeSelf);
     }
 
     public void ResumeGame()
@@ -33,24 +37,19 @@ public class MenuScript : MonoBehaviour
         gameUI.SetActive(true);
     }
     
-    private void PauseGame()
+    public void QuitGameButton()
     {
-        pauseMenuUI.SetActive(!pauseMenuUI.activeSelf);
-        Time.timeScale = pauseMenuUI.activeSelf ? 0 : 1;
-        gameUI.SetActive(!pauseMenuUI.activeSelf);
+    #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        Debug.Log("Quit button pressed");
+    #endif
+        Application.Quit();
     }
+    
     
     // public void startGameButton()
     // {
     //     SceneManager.LoadScene();
     // }
     
-    public void QuitGameButton()
-    {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-        Debug.Log("Quit button pressed");
-#endif
-        Application.Quit();
-    }
 }
