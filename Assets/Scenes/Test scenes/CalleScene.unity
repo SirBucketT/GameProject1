@@ -132,8 +132,8 @@ GameObject:
   - component: {fileID: 555653230}
   - component: {fileID: 555653229}
   - component: {fileID: 555653233}
-  - component: {fileID: 555653235}
   - component: {fileID: 555653234}
+  - component: {fileID: 555653235}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -288,16 +288,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 555653228}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2b7d02f9504bb34aa42a39fbf10de25, type: 3}
+  m_Script: {fileID: 11500000, guid: 804211d798de82b469c14fa0c17cd675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
-  accelerationFactor: 2
-  deceleration: 10
-  animator: {fileID: 555653234}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 1
 --- !u!1 &708161855
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,6 +725,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 6964272146699444980, guid: f30bf0b5f6f48ae4d836de71b4906139, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 555653232}
     - target: {fileID: 8196834784485391084, guid: f30bf0b5f6f48ae4d836de71b4906139, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
