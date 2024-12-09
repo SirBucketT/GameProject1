@@ -1,9 +1,47 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/3D/Player/katana/source/katana.fbx.meta
 guid: 1eb7a11924efcbf4789961da84d7c9f5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
   externalObjects: {}
+========
+guid: 4e7fab3bc47997a4399baaea47e4497e
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kachujin_MAT
+    second: {fileID: 2100000, guid: cc1292477e5be794e9d67182702bc56a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kachujin_MAT_
+    second: {fileID: 2100000, guid: 26b5c5f9ca4351b47869f226c7b868c4, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Kachujin_diffuse
+    second: {fileID: 2800000, guid: f3371fef3757cd343a6208504e284283, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Kachujin_diffuse_body
+    second: {fileID: 2800000, guid: 2c07dc35cc6ec764d8adaa5f8c4af118, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Kachujin_normal
+    second: {fileID: 2800000, guid: d3bc37fa3c77e604d9fbbf05a42b2eed, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Kachujin_specular
+    second: {fileID: 2800000, guid: 246e6d6a745780b4ab556b31bc95bcb6, type: 3}
+>>>>>>>> 6c03c4e8f7982799a29b58ca84cb2244a6c80c0b:Assets/3D/Player/Kachujin G Rosales@Walking.fbx.meta
   materials:
     materialImportMode: 2
     materialName: 0
