@@ -7,11 +7,11 @@ public class Enemy_Movement : MonoBehaviour
     
     [SerializeField]
     private float rotationSpeed;
-
+    
     private Rigidbody _rigidbody;
     private Player_Awareness_Controller _playerAwarenessController;
 
-    private Vector2 targetDirection;
+    private Vector2 _targetDirection;
 
     private void Awake()
     {
@@ -30,35 +30,40 @@ public class Enemy_Movement : MonoBehaviour
     {
         if (_playerAwarenessController.AwareOfPlayer)
         {
-            targetDirection = _playerAwarenessController.DirectionToPlayer;
+            _targetDirection = _playerAwarenessController.DirectionToPlayer;
         }
         else
         {
-            targetDirection = Vector2.zero;
+            _targetDirection = Vector2.zero;
         }
     }
 
     private void RotateTowardsTarget()
     {
-        if (targetDirection == Vector2.zero)
+        if (_targetDirection == Vector2.zero)
         {
             return;
         }
-        Quaternion targetDirection = Quaternion.LookRotation(transform.forward, _targerDirection);
-        Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetDirection, rotationSpeeed * Time.deltaTime);
+        // Quaternion targetDirection = Quaternion.LookRotation(transform.up, _targetDirection);
+        // Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetDirection, rotationSpeed * Time.deltaTime);
+        // _rigidbody.SetRotation(rotation);
+
+        Vector3 targetDirection = new Vector3(_targetDirection.x, 0, _targetDirection.y);
+        Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
         
-        _rigidbody.SetRotation(rotation);
+        _rigidbody.MoveRotation(Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime));
+        
     }
 
-    private void SetVeclocity()
+    private void SetVelocity()
     {
-        if (targetDirection == Vector2.zero)
+        if (_targetDirection == Vector2.zero)
         {
-            _rigidbody.linearVelocity = Vector2.zero;
+            _rigidbody.velocity = Vector3.zero;
         }
         else
         {
-            _rigidbody.linearVelocity = transform.forward * speed; 
+            _rigidbody.velocity = transform.forward * speed; 
         }
     }
 }
