@@ -9,6 +9,7 @@ public class EXPManager : MonoBehaviour
     [SerializeField] private HPManager hpManager;
     [SerializeField] private HealthbarManager _healthbarManager;
     
+    [Header("Front and back slider for UI sliders")]
     [SerializeField] private Slider playerExpBar;
     [SerializeField] private Slider playerExpBarBack;
     private float maxHealth;
@@ -16,6 +17,7 @@ public class EXPManager : MonoBehaviour
     private float _exp;
     private readonly float _lerpSpeed = 0.05f;
     
+    [Header("UI Text Elements")]
     [SerializeField] private TMP_Text levelUiDsiplay;
     [SerializeField] private TMP_Text currentExpDisplay;
     [SerializeField] private TMP_Text maxExpDisplay;
