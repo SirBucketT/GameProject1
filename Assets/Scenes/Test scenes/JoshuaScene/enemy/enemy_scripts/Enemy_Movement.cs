@@ -45,7 +45,7 @@ public class Enemy_Movement : MonoBehaviour
             return;
         }
         
-        Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+        Quaternion targetRotation = Quaternion.LookRotation(_targetDirection);
         
         _rigidbody.MoveRotation(Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime));
         
@@ -55,11 +55,11 @@ public class Enemy_Movement : MonoBehaviour
     {
         if (_targetDirection == Vector3.zero)
         {
-            _rigidbody.velocity = Vector3.zero;
+            _rigidbody.linearVelocity = Vector3.zero;
         }
         else
         {
-            _rigidbody.velocity = _targetDirection * speed; 
+            _rigidbody.linearVelocity = _targetDirection * speed; 
         }
     }
 }
