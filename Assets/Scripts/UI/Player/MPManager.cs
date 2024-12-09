@@ -20,6 +20,12 @@ public class MPManager : MonoBehaviour
     [SerializeField] private TMP_Text currentMpDisplay;
     [SerializeField] private TMP_Text maxMpDisplay;
     
+    //mpRegenRate determines how fast MP is recovered each second and mpRegenDelay determines how long the game will wait until it starts to regen MP. 
+    [Header("Regeneration Settings")]
+    [SerializeField] private float mpRegenRate = 5f; 
+    [SerializeField] private float mpRegenDelay = 2f; 
+    private float regenCooldown;
+    
     void Start()
     {
         MpData.maxMp = 100;
@@ -30,7 +36,7 @@ public class MPManager : MonoBehaviour
     void Update()
     {
         maxMpDisplay.text = MpData.maxMp.ToString();
-        currentMpDisplay.text = MpData.mp.ToString();
+        currentMpDisplay.text = Mathf.RoundToInt(MpData.mp).ToString();
 
         //slider code, do not touch
         if (playerMpbar.value != MP){
@@ -42,9 +48,16 @@ public class MPManager : MonoBehaviour
         if (playerMpbar.value != playerMpBarBack.value) {
             playerMpBarBack.value = Mathf.Lerp(playerMpBarBack.value, MP, _lerpSpeed); 
         }
+        
         if (MP <= 0) {
             MP = 0;
             //     TODO implement feature that loads MP empty UI elements
+        }
+        if (regenCooldown <= 0 && MP < MpData.maxMp) {
+            RegenerateMp();
+        }
+        else {
+            regenCooldown -= Time.deltaTime;
         }
     }
     
@@ -58,6 +71,13 @@ public class MPManager : MonoBehaviour
         {
             MpData.mp = 0;
         }
+    }
+    
+    void RegenerateMp()
+    {
+        MP += mpRegenRate * Time.deltaTime;
+        MP = Mathf.Clamp(MP, 0, MpData.maxMp);
+        MpData.mp = MP;
     }
 
 }
