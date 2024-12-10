@@ -1,22 +1,22 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private int _numberOfPrefabsToCreate;
+    [SerializeField] private int _numberOfEnemiesToCreate;
     [SerializeField] private Transform _spawnPoint;
-    List<GameObject> 
-    public GameObject EnemyPrefab; 
+    private List<GameObject> _spawnedEnemies = new();
+    private  GameObject _spawnedPrefab; 
 
     WaitForSeconds waitSeconds = new WaitForSeconds(spawnDelay);
-    WaitForFixedUpdate waitFixedUpdate = new WaitForFixedUpdate();
     private static float spawnDelay = 1f;  
     int instanceNumber = 1;
    
     
-    private void Start()
+    private void OnEnable()
     {
         StartCoroutine(SpawnEntitiesWithDelay());
     }
@@ -24,12 +24,27 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator SpawnEntitiesWithDelay()
     {
         int currentSpawnPointIndex = 0;
-        
-        for (int i = 0; i < _numberOfPrefabsToCreate; i++)
-        { 
-            Instantiate(EnemyPrefab, _spawnPoint.position, Quaternion.identity);
+
+        for (int i = 0; i < _numberOfEnemiesToCreate; i++)
+        {
+            Instantiate(_spawnedPrefab, _spawnPoint.position, Quaternion.identity);
+            var enemeyReference = Instantiate(_spawnedPrefab, _spawnPoint.position, Quaternion.identity);
+
+            _spawnedEnemies.Add(enemeyReference);
             Debug.Log($"Spawn enemies!");
-            yield return waitFixedUpdate;
+            yield return new WaitForFixedUpdate();
+        }
+
+        StartCoroutine(DespawnEnemies());
+    }
+
+    IEnumerator DespawnEnemies()
+    {
+        yield return waitSeconds;
+        foreach (var _spawnedObjects in _spawnedEnemies)
+        {
+            Destroy(_spawnedObjects);
+            yield return new WaitForFixedUpdate();
         }
     }
 }
