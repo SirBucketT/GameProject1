@@ -4,31 +4,27 @@ public class Attributes_Manager : MonoBehaviour
 {
   public float health;
   public float attack;
-  [SerializeField] private float InvokeAttackDistance;
+  [SerializeField] private float InvokeAttackDistance = 0.7f;
+
 
  public HPManager playerTakeDamage;
 
  private void Start()
  {
-  playerTakeDamage = new();
-  playerTakeDamage.TakeDamage(5);
+  
  }
 
  private void Update()
  {
+  
+   RaycastHit hit;
 
-  CalculateDistance();
-
-
- }
-
- void CalculateDistance()
- {
   Vector3 fwd = transform.TransformDirection(Vector3.forward);
-
-  if (Physics.Raycast(transform.position, fwd, InvokeAttackDistance))
+  
+  if (Physics.Raycast(transform.position, fwd, out hit, InvokeAttackDistance))
   {
-   
+   playerTakeDamage.TakeDamage(attack);
   }
+  //Debug.Log($"Damage dealt by enemy: {attack} \n Distance = {hit.distance}");
  }
 }
