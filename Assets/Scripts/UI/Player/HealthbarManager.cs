@@ -14,8 +14,6 @@ public class HealthbarManager : MonoBehaviour
     [SerializeField] private Slider playerHealthbarBackSlider;
     private readonly float _lerpSpeed = 0.05f;
     
-    private bool _isPlayerDead;
-    
     [SerializeField] private TMP_Text currentHealth;
     [SerializeField] private TMP_Text maxMpDisplay;
     
@@ -24,7 +22,6 @@ public class HealthbarManager : MonoBehaviour
         HpData.maxHP = 100;
         
         HpData.currentHP = HpData.maxHP;
-        _isPlayerDead = false;
     }
 
     void Update()

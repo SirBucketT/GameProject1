@@ -6,10 +6,10 @@ public class EnemyData : ScriptableObject
 {
     private EnemyHealthbar healthbar;
     
-    [SerializeField] public int CurrentHealth;
-    [SerializeField] public int MaxHealth;
+    [SerializeField] public float CurrentHealth;
+    [SerializeField] public float MaxHealth;
     
-    public void TakeDamage(int damage) {
+    public void TakeDamage(float damage) {
         CurrentHealth -= damage;
         healthbar.UpdateEnemyHealth();
     }

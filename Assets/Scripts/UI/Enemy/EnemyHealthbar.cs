@@ -22,7 +22,7 @@ namespace Enemy
 
         private void Start()
         {
-            _enemyData.MaxHealth = (int)_attributesManager.health;
+            _enemyData.MaxHealth = _attributesManager.health;
             _enemyData.CurrentHealth = _enemyData.MaxHealth;
         }
 
