@@ -4,8 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemyData", menuName = "Scriptable Objects/EnemyData")]
 public class EnemyData : ScriptableObject
 {
-    private EnemyHealthbar _healthbar;
-    Attributes_Manager _attributes;
+    EnemyHealthbar _healthbar;
     
     [SerializeField] public float CurrentHealth;
     [SerializeField] public float MaxHealth;

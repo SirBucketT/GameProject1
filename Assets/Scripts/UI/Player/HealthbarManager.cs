@@ -18,8 +18,7 @@ public class HealthbarManager : MonoBehaviour
     [SerializeField] private TMP_Text maxMpDisplay;
     
     void Start()
-    { 
-        HpData = new HPManager();
+    {
         HpData.maxHP = 100;
         
         HpData.currentHP = HpData.maxHP;
