@@ -14,10 +14,5 @@ public class HPManager : ScriptableObject
         Debug.Log("spaceBar pressed, you lose 10 health");
         Debug.Log($"Player health: {currentHP}");
         EnemyHealthbar.UpdateEnemyHealth();
-
-        if (currentHP <= 0)
-        {
-            currentHP = 0;
-        }
     }
 }

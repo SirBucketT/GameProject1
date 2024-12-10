@@ -43,6 +43,11 @@ namespace Enemy
             if (healthbarSlider.value != healthbarSliderBack.value) {
                 healthbarSliderBack.value = Mathf.Lerp(healthbarSliderBack.value, _enemyData.CurrentHealth, _lerpSpeed); 
             }
+            
+            if (_enemyData.CurrentHealth <= 0)
+            {
+                _enemyData.CurrentHealth = 0;
+            }
         }
         
         public void UpdateEnemyHealth()
