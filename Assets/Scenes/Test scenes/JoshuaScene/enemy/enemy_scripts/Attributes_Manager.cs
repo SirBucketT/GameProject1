@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Attributes_Manager : MonoBehaviour
 {
- public float health;
- public float attack;
+ [SerializeField] private float health;
+ [SerializeField] private float attack;
 
 
  public HPManager playerTakeDamage;
