@@ -121,6 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185ca9b6be8f4a8408c044b44842a80b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _numberOfPrefabsToCreate: 3
+  _numberOfEnemiesToCreate: 4
   _spawnPoint: {fileID: 534286098353882557}
-  EnemyPrefab: {fileID: 5243760781529867094, guid: 0d19359d174cd3040892869a725225bd, type: 3}
+  _spawnedPrefab: {fileID: 5243760781529867094, guid: 0d19359d174cd3040892869a725225bd, type: 3}

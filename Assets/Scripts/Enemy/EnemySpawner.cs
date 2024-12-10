@@ -9,14 +9,14 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private int _numberOfEnemiesToCreate;
     [SerializeField] private Transform _spawnPoint;
     private List<GameObject> _spawnedEnemies = new();
-    private  GameObject _spawnedPrefab; 
-
-    WaitForSeconds waitSeconds = new WaitForSeconds(spawnDelay);
-    private static float spawnDelay = 1f;  
+    [SerializeField] private  GameObject _spawnedPrefab; 
+    
+    [SerializeField] float spawnDelay = 1f;  
+    [SerializeField] float destroyDelay = 1f;  
     int instanceNumber = 1;
    
     
-    private void OnEnable()
+    private void Start()
     {
         StartCoroutine(SpawnEntitiesWithDelay());
     }
@@ -27,12 +27,12 @@ public class EnemySpawner : MonoBehaviour
 
         for (int i = 0; i < _numberOfEnemiesToCreate; i++)
         {
-            Instantiate(_spawnedPrefab, _spawnPoint.position, Quaternion.identity);
+            // Instantiate(_spawnedPrefab, _spawnPoint.position, Quaternion.identity);
             var enemeyReference = Instantiate(_spawnedPrefab, _spawnPoint.position, Quaternion.identity);
 
             _spawnedEnemies.Add(enemeyReference);
             Debug.Log($"Spawn enemies!");
-            yield return new WaitForFixedUpdate();
+            yield return new WaitForSeconds(spawnDelay);
         }
 
         StartCoroutine(DespawnEnemies());
@@ -40,7 +40,7 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator DespawnEnemies()
     {
-        yield return waitSeconds;
+        yield return new WaitForSeconds(destroyDelay);
         foreach (var _spawnedObjects in _spawnedEnemies)
         {
             Destroy(_spawnedObjects);
