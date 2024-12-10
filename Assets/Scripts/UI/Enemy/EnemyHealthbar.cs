@@ -9,8 +9,8 @@ namespace Enemy
 {
     public class EnemyHealthbar : MonoBehaviour
     {
-        public EnemyData _enemyData;
-        public Attributes_Manager _attributesManager; 
+        EnemyData _enemyData;
+        Attributes_Manager _attributesManager; 
         
         [SerializeField] private Slider healthbarSlider;
         [SerializeField] private Slider healthbarSliderBack;
@@ -37,7 +37,7 @@ namespace Enemy
             }
 
             if (Input.GetKeyUp(KeyCode.O)) {
-                _enemyData.TakeDamage(10);
+                _enemyData.EnemyTakeDamage(10);
             }
 
             if (healthbarSlider.value != healthbarSliderBack.value) {

@@ -22,19 +22,19 @@ public class HealthbarManager : MonoBehaviour
         HpData.maxHP = 100;
         
         HpData.currentHP = HpData.maxHP;
+        maxMpDisplay.text = HpData.maxHP.ToString();
     }
 
     void Update()
     {
         currentHealth.text = HpData.currentHP.ToString();
-        maxMpDisplay.text = HpData.maxHP.ToString();
         
         //slider code, do not touch
         if (playerHealthbar.value != HpData.currentHP){
             playerHealthbar.value = HpData.currentHP;
         }
         if (Input.GetKeyUp(KeyCode.Space)) {
-            HpData.TakeDamage(10);
+            HpData.PlayerTakeDamage(10);
         }
         if (playerHealthbar.value != playerHealthbarBackSlider.value) {
             playerHealthbarBackSlider.value = Mathf.Lerp(playerHealthbarBackSlider.value, HpData.currentHP, _lerpSpeed); 
