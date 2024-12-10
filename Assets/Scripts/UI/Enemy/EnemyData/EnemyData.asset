@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: EnemyData
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  healthbar: {fileID: 0}
   CurrentHealth: 100
   MaxHealth: 100
