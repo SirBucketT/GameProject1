@@ -12,6 +12,6 @@ public class EnemyData : ScriptableObject
     public void TakeDamage(float damage) {
         CurrentHealth -= damage;
         _healthbar.UpdateEnemyHealth();
-        Debug.Log($"Enemy damaged: {damage}");
+        Debug.Log($"Enemy health: {CurrentHealth}");
     }
 }
