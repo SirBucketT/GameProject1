@@ -5,17 +5,17 @@ using Object = UnityEngine.Object;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _enemiesToSpawn;
-    [SerializeField] private Vector3[] _spawnPoints;
-    private float spawnDelay = 1f;  
+    [SerializeField] private int _numberOfPrefabsToCreate;
+    [SerializeField] private Transform _spawnPoint;
+    List<GameObject> 
+    public GameObject EnemyPrefab; 
 
-    [SerializeField] private SO_EnemyData _enemyData;
-    private void OnEnable()
-    {
-        var meshRenderer = GetComponent<MeshRenderer>();
-        meshRenderer.material.color = _enemyData.GetEnemyColor;
-    }
-
+    WaitForSeconds waitSeconds = new WaitForSeconds(spawnDelay);
+    WaitForFixedUpdate waitFixedUpdate = new WaitForFixedUpdate();
+    private static float spawnDelay = 1f;  
+    int instanceNumber = 1;
+   
+    
     private void Start()
     {
         StartCoroutine(SpawnEntitiesWithDelay());
@@ -25,11 +25,11 @@ public class EnemySpawner : MonoBehaviour
     {
         int currentSpawnPointIndex = 0;
         
-        foreach (var enemy in _enemiesToSpawn)
-        {
-            Instantiate(enemy, transform.position, Quaternion.identity);
-            currentSpawnPointIndex = (currentSpawnPointIndex + 1) % _spawnPoints.Length;
-            yield return new WaitForSeconds(spawnDelay);
+        for (int i = 0; i < _numberOfPrefabsToCreate; i++)
+        { 
+            Instantiate(EnemyPrefab, _spawnPoint.position, Quaternion.identity);
+            Debug.Log($"Spawn enemies!");
+            yield return waitFixedUpdate;
         }
     }
 }
