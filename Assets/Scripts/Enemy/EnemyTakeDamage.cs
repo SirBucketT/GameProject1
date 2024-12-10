@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour, ITakeDamage, IInteractable
 {
-    private SOEnemyData enemyData;
+    private SO_EnemyData enemyData;
 
-    private int currentHealth;
+    private float currentHealth;
     private bool isAlive;
 
     private void Start()
     {
-        currentHealth = enemyData.EnemyHealth; 
+        currentHealth = enemyData.GetEnemyHealth; 
         isAlive = true;
     }
 

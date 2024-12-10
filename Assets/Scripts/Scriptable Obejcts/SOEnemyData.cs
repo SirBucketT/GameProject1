@@ -1,0 +1,21 @@
+using UnityEngine;
+using UnityEngine.UIElements;
+
+[CreateAssetMenu(fileName = "EnemyData", menuName = "ScriptableObjects/EnemyDataSO", order = 1)]
+    public class SO_EnemyData : ScriptableObject
+    { 
+       [SerializeField] private string _enemyName; 
+       [SerializeField] private float _enemyHealth; 
+       [SerializeField] private float _enemyDamage; 
+       [SerializeField] private bool _enemyIsAlive;
+       [SerializeField] private Color _enemyColor;
+       [SerializeField] private Texture2D _texture;
+   
+        public string GetEnemyName => _enemyName;
+        public float GetEnemyHealth => _enemyHealth;
+        public float GetEnemyDamage => _enemyDamage;
+        public Color GetEnemyColor => _enemyColor;
+        public bool GetEnemyIsAlive => _enemyIsAlive;
+      
+    } 
+    
