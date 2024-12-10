@@ -10,5 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90cea46da35900b4087b838ef4e4fb7c, type: 3}
-  m_Name: EnemyOrc
+  m_Name: Enemy1
   m_EditorClassIdentifier: 
+  _enemyName: Gobbo
+  _enemyHealth: 10
+  _enemyDamage: 3
+  _enemyIsAlive: 1
+  _enemyColor: {r: 0.07164473, g: 0.6603774, b: 0.1655471, a: 1}
+  _texture: {fileID: 0}
