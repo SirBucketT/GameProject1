@@ -5,14 +5,11 @@ using Object = UnityEngine.Object;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private SO_EnemyData _enemyData;
-    [SerializeField] private  int _numberOfPrefabsToCreate;
+    [SerializeField] private GameObject[] _enemiesToSpawn;
     [SerializeField] private Vector3[] _spawnPoints;
-    public GameObject EnemyPrefab; 
-    private string _prefabName;
     private float spawnDelay = 1f;  
-    int instanceNumber = 1;
 
+    [SerializeField] private SO_EnemyData _enemyData;
     private void OnEnable()
     {
         var meshRenderer = GetComponent<MeshRenderer>();
@@ -28,15 +25,10 @@ public class EnemySpawner : MonoBehaviour
     {
         int currentSpawnPointIndex = 0;
         
-        for (int i = 0; i < _numberOfPrefabsToCreate; i++)
+        foreach (var enemy in _enemiesToSpawn)
         {
-            Object currentEntity = Instantiate(EnemyPrefab, _spawnPoints[currentSpawnPointIndex], Quaternion.identity);
-            currentEntity.name = _prefabName + instanceNumber;
-            
+            Instantiate(enemy, transform.position, Quaternion.identity);
             currentSpawnPointIndex = (currentSpawnPointIndex + 1) % _spawnPoints.Length;
-
-            instanceNumber++;
-            
             yield return new WaitForSeconds(spawnDelay);
         }
     }

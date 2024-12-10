@@ -4,12 +4,12 @@ public class EnemyController : MonoBehaviour, ITakeDamage, IInteractable
 {
     private SO_EnemyData enemyData;
 
-    private float currentHealth;
+    private int currentHealth;
     private bool isAlive;
 
     private void Start()
     {
-        currentHealth = enemyData.GetEnemyHealth; 
+        currentHealth = (int)enemyData.GetEnemyHealth; 
         isAlive = true;
     }
 
