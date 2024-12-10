@@ -42,6 +42,12 @@ public class HealthbarManager : MonoBehaviour
         if (playerHealthbar.value != playerHealthbarBackSlider.value) {
             playerHealthbarBackSlider.value = Mathf.Lerp(playerHealthbarBackSlider.value, HpData.currentHP, _lerpSpeed); 
         }
+
+        if (HpData.currentHP <= 0)
+        {
+            HpData.currentHP = 0;
+        }
+        
     }
     
     
