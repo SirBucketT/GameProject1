@@ -1,21 +1,21 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _enemiesToSpawn;
-    [SerializeField] private Vector3[] _spawnPoints;
-    private float spawnDelay = 1f;  
-
-    [SerializeField] private SO_EnemyData _enemyData;
-    private void OnEnable()
-    {
-        var meshRenderer = GetComponent<MeshRenderer>();
-        meshRenderer.material.color = _enemyData.GetEnemyColor;
-    }
-
+    [SerializeField] private int _numberOfEnemiesToCreate;
+    [SerializeField] private Transform _spawnPoint;
+    private List<GameObject> _spawnedEnemies = new();
+    [SerializeField] private  GameObject _spawnedPrefab; 
+    
+    [SerializeField] float spawnDelay = 1f;  
+    [SerializeField] float destroyDelay = 1f;  
+    int instanceNumber = 1;
+   
+    
     private void Start()
     {
         StartCoroutine(SpawnEntitiesWithDelay());
@@ -24,12 +24,27 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator SpawnEntitiesWithDelay()
     {
         int currentSpawnPointIndex = 0;
-        
-        foreach (var enemy in _enemiesToSpawn)
+
+        for (int i = 0; i < _numberOfEnemiesToCreate; i++)
         {
-            Instantiate(enemy, transform.position, Quaternion.identity);
-            currentSpawnPointIndex = (currentSpawnPointIndex + 1) % _spawnPoints.Length;
+            // Instantiate(_spawnedPrefab, _spawnPoint.position, Quaternion.identity);
+            var enemeyReference = Instantiate(_spawnedPrefab, _spawnPoint.position, Quaternion.identity);
+
+            _spawnedEnemies.Add(enemeyReference);
+            Debug.Log($"Spawn enemies!");
             yield return new WaitForSeconds(spawnDelay);
+        }
+
+        StartCoroutine(DespawnEnemies());
+    }
+
+    IEnumerator DespawnEnemies()
+    {
+        yield return new WaitForSeconds(destroyDelay);
+        foreach (var _spawnedObjects in _spawnedEnemies)
+        {
+            Destroy(_spawnedObjects);
+            yield return new WaitForFixedUpdate();
         }
     }
 }
