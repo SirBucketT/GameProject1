@@ -262,7 +262,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 3
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -302,6 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   attack: 5
+  InvokeAttackDistance: 0
   playerTakeDamage: {fileID: 11400000, guid: d669f751e3d2046f181b40dd9e391f86, type: 2}
 --- !u!1 &240909035
 GameObject:

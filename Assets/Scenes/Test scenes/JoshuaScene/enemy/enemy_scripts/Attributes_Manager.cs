@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Attributes_Manager : MonoBehaviour
 {
- [SerializeField] private float health;
- [SerializeField] private float attack;
-
+  public float health;
+  public float attack;
+  [SerializeField] private float InvokeAttackDistance;
 
  public HPManager playerTakeDamage;
 
@@ -26,9 +26,9 @@ public class Attributes_Manager : MonoBehaviour
  {
   Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
-  if (Physics.Raycast(transform.position, fwd, 10))
+  if (Physics.Raycast(transform.position, fwd, InvokeAttackDistance))
   {
-   Debug.Log($"Distance to player is: {fwd}");
+   
   }
  }
 }
