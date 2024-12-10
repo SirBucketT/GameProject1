@@ -37,24 +37,13 @@ public class HealthbarManager : MonoBehaviour
             playerHealthbar.value = HpData.currentHP;
         }
         if (Input.GetKeyUp(KeyCode.Space)) {
-            TakeDamage(10);
+            HpData.TakeDamage(10);
         }
         if (playerHealthbar.value != playerHealthbarBackSlider.value) {
             playerHealthbarBackSlider.value = Mathf.Lerp(playerHealthbarBackSlider.value, HpData.currentHP, _lerpSpeed); 
         }
     }
     
-    // ReSharper disable Unity.PerformanceAnalysis
-    void TakeDamage(float damage) {
-        HpData.currentHP -= damage;
-        Debug.Log("spaceBar pressed, you lose 10 health");
-        Debug.Log($"Player health: {HpData.currentHP}");
-
-        if (HpData.currentHP <= 0)
-        {
-            HpData.currentHP = 0;
-        }
-    }
     
     public void UpdateHealthBarMaxValue()
     {
