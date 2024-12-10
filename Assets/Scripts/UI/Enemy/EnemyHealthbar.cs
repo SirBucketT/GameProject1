@@ -10,6 +10,7 @@ namespace Enemy
     public class EnemyHealthbar : MonoBehaviour
     {
         public EnemyData _enemyData;
+        public Attributes_Manager _attributesManager; 
         
         [SerializeField] private Slider healthbarSlider;
         [SerializeField] private Slider healthbarSliderBack;
@@ -18,11 +19,10 @@ namespace Enemy
         [Header("UI Text Elements")]
         [SerializeField] private TMP_Text currentHealth;
         [SerializeField] private TMP_Text MaxHealth;
-        [SerializeField] private int startHealth = 100;
 
         private void Start()
         {
-            _enemyData.MaxHealth = startHealth;
+            _enemyData.MaxHealth = (int)_attributesManager.health;
             _enemyData.CurrentHealth = _enemyData.MaxHealth;
         }
 
