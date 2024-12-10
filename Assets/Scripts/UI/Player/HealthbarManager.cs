@@ -19,7 +19,6 @@ public class HealthbarManager : MonoBehaviour
     
     void Start()
     { 
-        HpData = new HPManager();
         HpData.maxHP = 100;
         
         HpData.currentHP = HpData.maxHP;
