@@ -1696,10 +1696,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConfirmQuitUI
       objectReference: {fileID: 0}
-    - target: {fileID: 7841279423655091273, guid: 539e6fcff54049842abd49f47c68a0fb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8515809298584417813, guid: 539e6fcff54049842abd49f47c68a0fb, type: 3}
       propertyPath: m_SizeDelta.x
       value: 994.5462
