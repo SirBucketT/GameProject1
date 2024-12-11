@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 [CreateAssetMenu(fileName = "EnemyData", menuName = "ScriptableObjects/EnemyDataSO", order = 1)]
-    public class SO_EnemyData : ScriptableObject
+    internal class SO_EnemyData : ScriptableObject
     { 
        [SerializeField] private string _enemyName; 
        [SerializeField] private int _enemyHealth; 
