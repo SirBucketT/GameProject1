@@ -6,7 +6,7 @@ using UnityEngine.Timeline;
 
 public class PlayerMovement : MonoBehaviour
 {
-    RaycastHit hitInfo = new();
+    RaycastHit hitInfo;
     NavMeshAgent agent;
     private Animator animator;
 
