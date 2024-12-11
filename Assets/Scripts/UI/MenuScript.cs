@@ -52,12 +52,12 @@ public class MenuScript : MonoBehaviour
     
     public void MainMenuButton()
     {
-         SceneManager.LoadScene(1);
+         SceneManager.LoadScene(0);
     }
 
     public void PlayGameButton()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     public void RestartGameButton()
