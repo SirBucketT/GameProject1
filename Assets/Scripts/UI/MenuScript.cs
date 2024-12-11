@@ -55,6 +55,11 @@ public class MenuScript : MonoBehaviour
          SceneManager.LoadScene(1);
     }
 
+    public void PlayGameButton()
+    {
+        SceneManager.LoadScene(2);
+    }
+
     public void RestartGameButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
