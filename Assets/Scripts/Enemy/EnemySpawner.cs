@@ -9,7 +9,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private int _numberOfEnemiesToCreate;
     [SerializeField] private Transform _spawnPoint;
     private List<GameObject> _spawnedEnemies = new();
-    [SerializeField] private  GameObject _spawnedPrefab; 
+    [SerializeField] private  GameObject _spawnedPrefab;
+    [SerializeField] private bool _IsDestroyedOnTimer;
     
     [SerializeField] float spawnDelay = 1f;  
     [SerializeField] float destroyDelay = 1f;  
@@ -27,7 +28,6 @@ public class EnemySpawner : MonoBehaviour
 
         for (int i = 0; i < _numberOfEnemiesToCreate; i++)
         {
-            // Instantiate(_spawnedPrefab, _spawnPoint.position, Quaternion.identity);
             var enemeyReference = Instantiate(_spawnedPrefab, _spawnPoint.position, Quaternion.identity);
 
             _spawnedEnemies.Add(enemeyReference);
@@ -39,8 +39,9 @@ public class EnemySpawner : MonoBehaviour
     }
 
     IEnumerator DespawnEnemies()
-    {
-        yield return new WaitForSeconds(destroyDelay);
+    { 
+        if (_IsDestroyedOnTimer)
+            yield return new WaitForSeconds(destroyDelay);
         foreach (var _spawnedObjects in _spawnedEnemies)
         {
             Destroy(_spawnedObjects);
