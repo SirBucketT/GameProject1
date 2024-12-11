@@ -30,11 +30,15 @@ internal class EnemyController : MonoBehaviour, IInteractable
     public void Interact()
     {
         if (!_isAttacked && _enemyHealthManager != null)
-        {
+        {  
+            Debug.Log("Player attacked with" + _TestPlayerAttackDamage + " damage.");
             _enemyHealthManager.TakeDamage(_TestPlayerAttackDamage);
-            Debug.Log("Enemy attacked with " + _TestPlayerAttackDamage + " damage.");
-            StartCoroutine(AttackedCooldown());
+            if (this != null && gameObject.activeSelf)
+            {
+                StartCoroutine(AttackedCooldown());
+            }
         }
+
     }
 
     private IEnumerator AttackedCooldown()
