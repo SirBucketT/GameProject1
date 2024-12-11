@@ -9,6 +9,7 @@ using UI.Player;
 public class HealthbarManager : MonoBehaviour
 { 
     public HPManager HpData;
+    public MenuScript MenuScript;
     
     [SerializeField] private Slider playerHealthbar; 
     [SerializeField] private Slider playerHealthbarBackSlider;
@@ -43,6 +44,7 @@ public class HealthbarManager : MonoBehaviour
         if (HpData.currentHP <= 0)
         {
             HpData.currentHP = 0;
+            MenuScript.gameOverMenuUI.SetActive(true);
         }
         
     }

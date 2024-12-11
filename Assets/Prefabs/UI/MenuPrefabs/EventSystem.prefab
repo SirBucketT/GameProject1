@@ -94,5 +94,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 0}
   gameUI: {fileID: 0}
-  mainMenu: 
-  exitGame: exitGame
+  gameOverMenuUI: {fileID: 0}

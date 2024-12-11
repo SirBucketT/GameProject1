@@ -5,16 +5,18 @@ public class MenuScript : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private GameObject gameUI;
-    
-    [SerializeField] private string mainMenu;
-    [SerializeField] private string exitGame;
+    [SerializeField] public GameObject gameOverMenuUI;
+    [SerializeField] private GameObject confirmQuitUI;
 
 
      void Start()
      {
          Time.timeScale = 1.0f;
          pauseMenuUI.SetActive(false);
+         gameOverMenuUI.SetActive(false);
+         confirmQuitUI.SetActive(false);
          gameUI.SetActive(true);
+         
      }
     
     void Update()
@@ -51,6 +53,21 @@ public class MenuScript : MonoBehaviour
     public void MainMenuButton()
     {
          SceneManager.LoadScene(1);
+    }
+
+    public void RestartGameButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void CloseQuitButton()
+    {
+        confirmQuitUI.SetActive(false);
+    }
+
+    public void OpenQuitButton()
+    {
+        confirmQuitUI.SetActive(true);
     }
     
 }
