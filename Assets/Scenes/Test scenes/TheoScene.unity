@@ -1964,6 +1964,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 94000120}
     m_Modifications:
+    - target: {fileID: 1088541397672467418, guid: 6d370a93e6284174c8fc90f84e44ca15, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2917033643517556474, guid: 6d370a93e6284174c8fc90f84e44ca15, type: 3}
       propertyPath: cam
       value: 

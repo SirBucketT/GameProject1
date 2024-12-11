@@ -1169,7 +1169,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 635.03, y: 4.66}
+  m_AnchoredPosition: {x: 635.03, y: 4.659973}
   m_SizeDelta: {x: 100.8, y: 22.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &9191436376740041664
@@ -1217,7 +1217,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &5243099219280207806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1247,7 +1247,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b36aef84fac4561a16afc2da16c99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyData: {fileID: 11400000, guid: 68879e1d63fc2264eba783193dfce999, type: 2}
   healthbarSlider: {fileID: 3987169692404035917}
   healthbarSliderBack: {fileID: 8262657242245010207}
   currentHealth: {fileID: 1156065873644902111}
