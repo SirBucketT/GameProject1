@@ -1617,8 +1617,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1072485952054445242, guid: 539e6fcff54049842abd49f47c68a0fb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 935.7482
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072485952054445242, guid: 539e6fcff54049842abd49f47c68a0fb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 246.9629
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072485952054445242, guid: 539e6fcff54049842abd49f47c68a0fb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.1034
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072485952054445242, guid: 539e6fcff54049842abd49f47c68a0fb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -229
+      value: -327.4814
       objectReference: {fileID: 0}
     - target: {fileID: 1142643613679011182, guid: 539e6fcff54049842abd49f47c68a0fb, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1681,12 +1693,24 @@ PrefabInstance:
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6935645839851535619, guid: 539e6fcff54049842abd49f47c68a0fb, type: 3}
+      propertyPath: m_text
+      value: ARE YOU SURE YOU WANT TO QUIT?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6935645839851535619, guid: 539e6fcff54049842abd49f47c68a0fb, type: 3}
       propertyPath: m_fontSize
       value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6935645839851535619, guid: 539e6fcff54049842abd49f47c68a0fb, type: 3}
       propertyPath: m_margin.w
-      value: -132.42078
+      value: -3.8476562
+      objectReference: {fileID: 0}
+    - target: {fileID: 6935645839851535619, guid: 539e6fcff54049842abd49f47c68a0fb, type: 3}
+      propertyPath: m_margin.x
+      value: -4.2991333
+      objectReference: {fileID: 0}
+    - target: {fileID: 6935645839851535619, guid: 539e6fcff54049842abd49f47c68a0fb, type: 3}
+      propertyPath: m_margin.z
+      value: -0.11230469
       objectReference: {fileID: 0}
     - target: {fileID: 6935645839851535619, guid: 539e6fcff54049842abd49f47c68a0fb, type: 3}
       propertyPath: m_fontSizeBase
