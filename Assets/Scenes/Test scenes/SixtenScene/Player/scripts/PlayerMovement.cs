@@ -43,5 +43,6 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetTrigger("Sword");
         }
+        
     }
 }
