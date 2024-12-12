@@ -9,7 +9,8 @@ namespace Enemy
 {
     public class EnemyHealthbar : MonoBehaviour
     {
-        public EnemyData _enemyData;
+        EnemyData _enemyData;
+        Attributes_Manager _attributesManager; 
         
         [SerializeField] private Slider healthbarSlider;
         [SerializeField] private Slider healthbarSliderBack;
@@ -18,11 +19,10 @@ namespace Enemy
         [Header("UI Text Elements")]
         [SerializeField] private TMP_Text currentHealth;
         [SerializeField] private TMP_Text MaxHealth;
-        [SerializeField] private int startHealth = 100;
 
         private void Start()
         {
-            _enemyData.MaxHealth = startHealth;
+            _enemyData.MaxHealth = _attributesManager.health;
             _enemyData.CurrentHealth = _enemyData.MaxHealth;
         }
 
@@ -37,11 +37,16 @@ namespace Enemy
             }
 
             if (Input.GetKeyUp(KeyCode.O)) {
-                _enemyData.TakeDamage(10);
+                _enemyData.EnemyTakeDamage(10);
             }
 
             if (healthbarSlider.value != healthbarSliderBack.value) {
                 healthbarSliderBack.value = Mathf.Lerp(healthbarSliderBack.value, _enemyData.CurrentHealth, _lerpSpeed); 
+            }
+            
+            if (_enemyData.CurrentHealth <= 0)
+            {
+                _enemyData.CurrentHealth = 0;
             }
         }
         

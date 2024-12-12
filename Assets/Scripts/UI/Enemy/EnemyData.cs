@@ -4,13 +4,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemyData", menuName = "Scriptable Objects/EnemyData")]
 public class EnemyData : ScriptableObject
 {
-    public EnemyHealthbar healthbar;
+    EnemyHealthbar _healthbar;
     
-    [SerializeField] public int CurrentHealth;
-    [SerializeField] public int MaxHealth;
+    [SerializeField] public float CurrentHealth;
+    [SerializeField] public float MaxHealth;
     
-    public void TakeDamage(int damage) {
+    public void EnemyTakeDamage(float damage) {
         CurrentHealth -= damage;
-        healthbar.UpdateEnemyHealth();
+        _healthbar.UpdateEnemyHealth();
+        Debug.Log($"Enemy health: {CurrentHealth}");
     }
 }
