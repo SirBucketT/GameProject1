@@ -1,10 +1,16 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
     [SerializeField] GameObject credits;
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject QuitGameUI;
+    
+    public void PlayGameButton()
+    {
+        SceneManager.LoadScene(1);
+    }
     
     public void OpenCreditsButton()
     {
