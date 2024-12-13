@@ -46,6 +46,7 @@ public class MainMenuScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Time.timeScale = 1.0f;
         credits.SetActive(false);
         mainMenu.SetActive(true);
         QuitGameUI.SetActive(false);
