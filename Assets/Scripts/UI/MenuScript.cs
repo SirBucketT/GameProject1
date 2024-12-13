@@ -64,15 +64,5 @@ public class MenuScript : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
-    public void CloseQuitButton()
-    {
-        confirmQuitUI.SetActive(false);
-    }
-
-    public void OpenQuitButton()
-    {
-        confirmQuitUI.SetActive(true);
-    }
     
 }
