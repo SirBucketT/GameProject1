@@ -33,6 +33,11 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.value = _currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
     }
+
+    public void SetResolution(int resolutionIndex) {
+        Resolution resolution = _resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
     
     public void CloseSettingsMenu() {
         settingsMenu.SetActive(false);
