@@ -18,6 +18,8 @@ public class MainMenuScript : MonoBehaviour
     {
         credits.SetActive(true);
         mainMenu.SetActive(false);
+        quitGameUI.SetActive(false);
+        settingsMenu.SetActive(false);
     }
    
     public void CloseCreditsButton()
@@ -43,16 +45,22 @@ public class MainMenuScript : MonoBehaviour
 
     public void OpenQuitButton()
     {
-        quitGameUI.SetActive(true);
+        credits.SetActive(false);
         mainMenu.SetActive(false);
+        quitGameUI.SetActive(true);
+        settingsMenu.SetActive(false);
         
     }
     
     public void CloseSettingsMenu() {
         settingsMenu.SetActive(false);
+        mainMenu.SetActive(true);
     }
 
     public void OpenSettingsMenu() {
+        credits.SetActive(false);
+        mainMenu.SetActive(false);
+        quitGameUI.SetActive(false);
         settingsMenu.SetActive(true);
     }
     
