@@ -7,6 +7,7 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] GameObject credits;
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject quitGameUI;
+    [SerializeField] GameObject settingsMenu;
     
     public void PlayGameButton()
     {
@@ -44,6 +45,15 @@ public class MainMenuScript : MonoBehaviour
     {
         quitGameUI.SetActive(true);
         mainMenu.SetActive(false);
+        
+    }
+    
+    public void CloseSettingsMenu() {
+        settingsMenu.SetActive(false);
+    }
+
+    public void OpenSettingsMenu() {
+        settingsMenu.SetActive(true);
     }
     
     void Start()

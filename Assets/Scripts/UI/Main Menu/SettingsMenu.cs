@@ -7,7 +7,6 @@ using System.Linq;
 
 public class SettingsMenu : MonoBehaviour
 {
-    [SerializeField] GameObject settingsMenu;
 
     Resolution[] _resolutions;
     [SerializeField] TMP_Dropdown resolutionDropdown;
@@ -44,14 +43,6 @@ public class SettingsMenu : MonoBehaviour
     public void SetResolution(int resolutionIndex) {
         Resolution resolution = uniqueResolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-    }
-    
-    public void CloseSettingsMenu() {
-        settingsMenu.SetActive(false);
-    }
-
-    public void OpenSettingsMenu() {
-        settingsMenu.SetActive(true);
     }
     
     public void SetFullscreen(bool isFullscreen) {
