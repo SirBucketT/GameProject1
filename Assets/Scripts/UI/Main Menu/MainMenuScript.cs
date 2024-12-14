@@ -28,6 +28,7 @@ public class MainMenuScript : MonoBehaviour
     public void CloseQuitButton()
     {
         quitGameUI.SetActive(false);
+        mainMenu.SetActive(true);
     }
     
     public void QuitGameButton()
@@ -42,20 +43,14 @@ public class MainMenuScript : MonoBehaviour
     public void OpenQuitButton()
     {
         quitGameUI.SetActive(true);
+        mainMenu.SetActive(false);
     }
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Time.timeScale = 1.0f;
         credits.SetActive(false);
         mainMenu.SetActive(true);
         quitGameUI.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
