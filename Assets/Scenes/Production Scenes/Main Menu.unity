@@ -17428,6 +17428,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 3412227354494238577, guid: dc6a36febee1cf44caf773905d0a1ab8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3618320894294102883, guid: dc6a36febee1cf44caf773905d0a1ab8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4082649484750193679, guid: dc6a36febee1cf44caf773905d0a1ab8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -18158,8 +18166,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 570668979431134261, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1726953299720417572, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2095922397}
     - target: {fileID: 2142898860794861375, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -18240,22 +18252,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3692982533049541772, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
+    - target: {fileID: 3242966545413019642, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 48680192}
+    - target: {fileID: 5087130595923598111, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2095922397}
-    - target: {fileID: 8621659479038100985, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8621659479038100985, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 8621659479038100985, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
-      objectReference: {fileID: 0}
+    - target: {fileID: 8748675300021767688, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2095922397}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
