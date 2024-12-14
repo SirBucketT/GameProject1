@@ -16840,7 +16840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   credits: {fileID: 446286763}
   mainMenu: {fileID: 388865167}
-  QuitGameUI: {fileID: 2135019546}
+  quitGameUI: {fileID: 2135019546}
 --- !u!114 &2098601476 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6765654570040829105, guid: 80af835a867bee24ca44cac9f10153ba, type: 3}
@@ -18166,12 +18166,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 570668979431134261, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1726953299720417572, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2095922397}
+    - target: {fileID: 2092556122777353556, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
+      propertyPath: m_text
+      value: Go Back
+      objectReference: {fileID: 0}
     - target: {fileID: 2142898860794861375, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -18260,6 +18264,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2095922397}
+    - target: {fileID: 7370531612930269828, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
+      propertyPath: m_Name
+      value: GoBack
+      objectReference: {fileID: 0}
     - target: {fileID: 8748675300021767688, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

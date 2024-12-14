@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class MainMenuScript : MonoBehaviour
 {
     [SerializeField] GameObject credits;
     [SerializeField] GameObject mainMenu;
-    [SerializeField] GameObject QuitGameUI;
+    [SerializeField] GameObject quitGameUI;
     
     public void PlayGameButton()
     {
@@ -26,7 +27,7 @@ public class MainMenuScript : MonoBehaviour
     
     public void CloseQuitButton()
     {
-        QuitGameUI.SetActive(false);
+        quitGameUI.SetActive(false);
     }
     
     public void QuitGameButton()
@@ -40,7 +41,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void OpenQuitButton()
     {
-        QuitGameUI.SetActive(true);
+        quitGameUI.SetActive(true);
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -49,7 +50,7 @@ public class MainMenuScript : MonoBehaviour
         Time.timeScale = 1.0f;
         credits.SetActive(false);
         mainMenu.SetActive(true);
-        QuitGameUI.SetActive(false);
+        quitGameUI.SetActive(false);
     }
 
     // Update is called once per frame
