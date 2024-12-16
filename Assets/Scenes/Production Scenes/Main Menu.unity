@@ -17747,6 +17747,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 384026339064492730, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
+      propertyPath: m_text
+      value: GO BACK
+      objectReference: {fileID: 0}
     - target: {fileID: 2154108086704576716, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
       propertyPath: m_Name
       value: HowToPlay
@@ -17757,7 +17761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228509355104928598, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
       propertyPath: m_Name
-      value: Close
+      value: GoBack
       objectReference: {fileID: 0}
     - target: {fileID: 5644931038493725097, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
