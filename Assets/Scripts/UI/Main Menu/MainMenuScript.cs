@@ -8,10 +8,26 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject quitGameUI;
     [SerializeField] GameObject settingsMenu;
+    [SerializeField] GameObject howToPlay;
     
     public void PlayGameButton()
     {
         SceneManager.LoadScene(1);
+    }
+    
+    public void OpenTutorial()
+    {
+        credits.SetActive(false);
+        mainMenu.SetActive(false);
+        quitGameUI.SetActive(false);
+        settingsMenu.SetActive(false);
+        howToPlay.SetActive(true);
+    }
+
+    public void CloseTutorial()
+    {
+        mainMenu.SetActive(true);
+        howToPlay.SetActive(false);
     }
     
     public void OpenCreditsButton()
@@ -20,6 +36,7 @@ public class MainMenuScript : MonoBehaviour
         mainMenu.SetActive(false);
         quitGameUI.SetActive(false);
         settingsMenu.SetActive(false);
+        howToPlay.SetActive(false);
     }
    
     public void CloseCreditsButton()
@@ -49,6 +66,7 @@ public class MainMenuScript : MonoBehaviour
         mainMenu.SetActive(false);
         quitGameUI.SetActive(true);
         settingsMenu.SetActive(false);
+        howToPlay.SetActive(false);
         
     }
     
@@ -62,6 +80,7 @@ public class MainMenuScript : MonoBehaviour
         mainMenu.SetActive(false);
         quitGameUI.SetActive(false);
         settingsMenu.SetActive(true);
+        howToPlay.SetActive(false);
     }
     
     void Start()
@@ -70,5 +89,6 @@ public class MainMenuScript : MonoBehaviour
         credits.SetActive(false);
         mainMenu.SetActive(true);
         quitGameUI.SetActive(false);
+        howToPlay.SetActive(false);
     }
 }
