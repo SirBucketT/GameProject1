@@ -466,7 +466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3368130323546888409, guid: 6da0ee3d722465e4386d398cb629f9c0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.81
       objectReference: {fileID: 0}
     - target: {fileID: 3368130323546888409, guid: 6da0ee3d722465e4386d398cb629f9c0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -523,7 +523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7012762935458049542, guid: 4b434d4542ce264478a2595715b0c26b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.21
       objectReference: {fileID: 0}
     - target: {fileID: 7012762935458049542, guid: 4b434d4542ce264478a2595715b0c26b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1059,7 +1059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6277734630426493214, guid: 2a5b530902dc17f4a8bdbef8787dbbe6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.34
       objectReference: {fileID: 0}
     - target: {fileID: 6277734630426493214, guid: 2a5b530902dc17f4a8bdbef8787dbbe6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1273,7 +1273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5422280170279662132, guid: 69cfb71035be1c14897faf9b3131953f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.71
       objectReference: {fileID: 0}
     - target: {fileID: 5422280170279662132, guid: 69cfb71035be1c14897faf9b3131953f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1436,7 +1436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2937220352573932400, guid: dda06eb7623a5b64595da60e92820cfd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.62
       objectReference: {fileID: 0}
     - target: {fileID: 2937220352573932400, guid: dda06eb7623a5b64595da60e92820cfd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1534,7 +1534,7 @@ PrefabInstance:
     - target: {fileID: 7301891922466539410, guid: cdcab39adabf67b4b8722088809de3d2, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: 704c4e457f5c9584286ad26f7ac879e0, type: 2}
+      objectReference: {fileID: 23800000, guid: 99fc4c992fc6846358a0d7deceb33d54, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
