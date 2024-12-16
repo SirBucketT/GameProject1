@@ -9,8 +9,8 @@ namespace Enemy
 {
     public class EnemyHealthbar : MonoBehaviour
     {
-        EnemyData _enemyData;
-        Attributes_Manager _attributesManager; 
+        [SerializeField] SO_EnemyData _enemyData;
+        private EnemyHealthManager _enemyHealthManager;
         
         [SerializeField] private Slider healthbarSlider;
         [SerializeField] private Slider healthbarSliderBack;
@@ -22,39 +22,30 @@ namespace Enemy
 
         private void Start()
         {
-            _enemyData.MaxHealth = _attributesManager.health;
-            _enemyData.CurrentHealth = _enemyData.MaxHealth;
+            healthbarSlider.maxValue = _enemyData.GetEnemyMaxHealth;
+            healthbarSliderBack.maxValue = healthbarSlider.maxValue;
         }
 
         void Update()
         {
-            currentHealth.text = _enemyData.CurrentHealth.ToString();
-            MaxHealth.text = _enemyData.MaxHealth.ToString();
+            currentHealth.text = _enemyData.GetEnemyHealth.ToString();
+            MaxHealth.text = _enemyData.GetEnemyMaxHealth.ToString();
             
             //slider code, do not touch
-            if (healthbarSlider.value != _enemyData.CurrentHealth){
-                healthbarSlider.value = _enemyData.CurrentHealth;
-            }
-
-            if (Input.GetKeyUp(KeyCode.O)) {
-                _enemyData.EnemyTakeDamage(10);
+            if (healthbarSlider.value != _enemyData.GetEnemyHealth){
+                healthbarSlider.value = _enemyData.GetEnemyHealth;
             }
 
             if (healthbarSlider.value != healthbarSliderBack.value) {
-                healthbarSliderBack.value = Mathf.Lerp(healthbarSliderBack.value, _enemyData.CurrentHealth, _lerpSpeed); 
-            }
-            
-            if (_enemyData.CurrentHealth <= 0)
-            {
-                _enemyData.CurrentHealth = 0;
+                healthbarSliderBack.value = Mathf.Lerp(healthbarSliderBack.value, _enemyData.GetEnemyHealth, _lerpSpeed); 
             }
         }
         
         public void UpdateEnemyHealth()
         {
-            healthbarSlider.maxValue = _enemyData.MaxHealth;
-            healthbarSlider.value = _enemyData.CurrentHealth;
-            healthbarSliderBack.value = _enemyData.CurrentHealth;
+            healthbarSlider.maxValue = _enemyData.GetEnemyMaxHealth;
+            healthbarSlider.value = _enemyData.GetEnemyHealth;
+            healthbarSliderBack.value = _enemyData.GetEnemyHealth;
         }
     }
 }
