@@ -4,7 +4,8 @@ using UnityEngine.UIElements;
 [CreateAssetMenu(fileName = "EnemyData", menuName = "ScriptableObjects/EnemyDataSO", order = 1)]
     internal class SO_EnemyData : ScriptableObject
     { 
-       [SerializeField] private string _enemyName; 
+       [SerializeField] private string _enemyName;
+       [SerializeField] private int _enemyMaxHealth;
        [SerializeField] private int _enemyHealth; 
        [SerializeField] private int _enemyDamage; 
        [SerializeField] private bool _enemyIsAlive;
@@ -12,6 +13,7 @@ using UnityEngine.UIElements;
        [SerializeField] private Texture2D _texture;
    
         public string GetEnemyName => _enemyName;
+        public int GetEnemyMaxHealth => _enemyMaxHealth;
         public int GetEnemyHealth => _enemyHealth;
         public int GetEnemyDamage => _enemyDamage;
         public Color GetEnemyColor => _enemyColor;
