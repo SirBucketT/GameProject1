@@ -12,12 +12,11 @@ using UnityEngine.UIElements;
        [SerializeField] private Color _enemyColor;
        [SerializeField] private Texture2D _texture;
    
-        public string GetEnemyName => _enemyName;
-        public int GetEnemyMaxHealth => _enemyMaxHealth;
-        public int GetEnemyHealth => _enemyHealth;
-        public int GetEnemyDamage => _enemyDamage;
-        public Color GetEnemyColor => _enemyColor;
-        public bool GetEnemyIsAlive => _enemyIsAlive;
-      
+        internal string GetEnemyName => _enemyName;
+        internal int GetEnemyMaxHealth => _enemyMaxHealth;
+        internal int GetEnemyHealth => _enemyHealth;
+        internal int GetEnemyDamage => _enemyDamage;
+        internal Color GetEnemyColor => _enemyColor;
+        internal bool GetEnemyIsAlive => _enemyIsAlive;
     } 
     
