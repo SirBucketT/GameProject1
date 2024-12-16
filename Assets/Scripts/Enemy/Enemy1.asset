@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Enemy1
   m_EditorClassIdentifier: 
   _enemyName: Gobbo
+  _enemyMaxHealth: 10
   _enemyHealth: 10
   _enemyDamage: 3
   _enemyIsAlive: 1
