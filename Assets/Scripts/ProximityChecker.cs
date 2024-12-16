@@ -2,38 +2,35 @@ using UnityEngine;
 
 public class ProximityChecker : MonoBehaviour
 {
-    [SerializeField] public bool ProximityIsOn;
-    [SerializeField] private float ProximityRange;
+    [SerializeField] public bool _proximityIsOn;
+    [SerializeField] private float _proximityRange;
     [SerializeField] private GameObject _targetOfRange;
-    // private bool _isWithinRange;
-    // private bool _targetIsWithinRange;
-
-    // public void OnDrawGizmos()
-    // {
-    //     if (!ProximityIsOn) return;
-    //     {
-    //             
-    //         var color = _targetOfRange
-    //             ? Color.green
-    //             : Color.red;
-    //         Gizmos.color = color;
-    //         Gizmos.DrawWireSphere(transform.position, ProximityRange);
-    //     }
-    // }
-
-    private void ActivateProximity()
-    {
-        if (ProximityIsOn == true)
-        {
-            OnDrawGizmos();
-        }
-    }
+    private bool _isWithinRange;
+    private bool _targetIsWithinRange;
+    
     public void OnDrawGizmos()
     {
-        var color = _targetOfRange
-            ? Color.green
-            : Color.red;
+        if (!_proximityIsOn) return;
+        var color = _targetIsWithinRange 
+            ? Color.red
+            : Color.green;
         Gizmos.color = color;
-        Gizmos.DrawWireSphere(transform.position, ProximityRange);
+        Gizmos.DrawWireSphere(transform.position, _proximityRange );
+
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (!_targetOfRange)
+            return;
+        _targetIsWithinRange = true;
+        Debug.Log($"{_targetOfRange} is inside of range");
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (!_targetOfRange)
+            return;
+        _targetIsWithinRange = false;
+        Debug.Log($"{_targetOfRange} is outside of range");
     }
 }

@@ -10,6 +10,7 @@ public class PlayerIsWithinRange : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
         _playerIsWithinRange = true;
+        Debug.Log("Player is within the range of " + interactRadius);
     }
 
     public void OnTriggerExit(Collider other)
@@ -17,6 +18,7 @@ public class PlayerIsWithinRange : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
         _playerIsWithinRange = false;
+        Debug.Log("Player is outside the range of " + interactRadius);
     }
 
     public void OnDrawGizmos()
