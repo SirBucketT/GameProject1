@@ -12,7 +12,7 @@ public class HPManager : ScriptableObject
     public void PlayerTakeDamage(float damage)
     {
         currentHP -= damage;
-        Debug.Log("spaceBar pressed, you lose 10 health");
+        Debug.Log($"Damage taken, you lose {damage}");
         Debug.Log($"Player health: {currentHP}");
         HPbar.UpdateHealthBarMaxValue();
     }
