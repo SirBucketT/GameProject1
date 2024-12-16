@@ -34,9 +34,6 @@ public class HealthbarManager : MonoBehaviour
         if (playerHealthbar.value != HpData.currentHP){
             playerHealthbar.value = HpData.currentHP;
         }
-        if (Input.GetKeyUp(KeyCode.Space)) {
-            HpData.PlayerTakeDamage(10);
-        }
         if (playerHealthbar.value != playerHealthbarBackSlider.value) {
             playerHealthbarBackSlider.value = Mathf.Lerp(playerHealthbarBackSlider.value, HpData.currentHP, _lerpSpeed); 
         }
