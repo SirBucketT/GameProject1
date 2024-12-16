@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test scenes/TheoScene.unity
     guid: 1b4e1eb5ea3eb8040908a6f11debe907
+  - enabled: 1
+    path: Assets/Scenes/Production Scenes/level_1.unity
+    guid: 2070fa3ffd7f84141ae65e9611854de5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0

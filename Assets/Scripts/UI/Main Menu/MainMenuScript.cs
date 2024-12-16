@@ -12,7 +12,7 @@ public class MainMenuScript : MonoBehaviour
     
     public void PlayGameButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
     
     public void OpenTutorial()
