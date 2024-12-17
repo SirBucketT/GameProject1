@@ -5,9 +5,6 @@ using UI.Player;
 
 public class EXPManager : MonoBehaviour
 {
-    [SerializeField] private LevelManagerScriptableObject _levelData;
-    [SerializeField] private HPManager hpManager;
-    [SerializeField] private HealthbarManager _healthbarManager;
     
     [Header("Front and back slider for UI sliders")]
     [SerializeField] public Slider playerExpBar;

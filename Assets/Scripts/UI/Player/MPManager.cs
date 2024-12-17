@@ -8,12 +8,10 @@ using TMPro;
 
 public class MPManager : MonoBehaviour
 { 
-    public MP_ScriptableObject MpData;
+    public PlayerData MpData;
     
     [SerializeField] private Slider playerMpbar; 
     [SerializeField] private Slider playerMpBarBack;
-    [SerializeField] private float maxHealth = 100;
-    private float MP;
     private readonly float _lerpSpeed = 0.05f;
     
     
@@ -24,60 +22,59 @@ public class MPManager : MonoBehaviour
     [Header("Regeneration Settings")]
     [SerializeField] private float mpRegenRate = 5f; 
     [SerializeField] private float mpRegenDelay = 2f; 
-    private float regenCooldown;
+    private float _regenCooldown;
     
     void Start()
     {
-        MpData.maxMp = 100;
-        maxHealth = MpData.maxMp;
-        MP = MpData.mp;
+        
     }
 
     void Update()
     {
         maxMpDisplay.text = MpData.maxMp.ToString();
-        currentMpDisplay.text = Mathf.RoundToInt(MpData.mp).ToString();
+        currentMpDisplay.text = Mathf.RoundToInt(MpData.currentMp).ToString();
 
         //slider code, do not touch
-        if (playerMpbar.value != MP){
-            playerMpbar.value = MP;
+        if (playerMpbar.value != MpData.currentMp){
+            playerMpbar.value = MpData.currentMp;
         }
         if (Input.GetKeyUp(KeyCode.A)) {
             MpDeplete(10);
         }
         if (playerMpbar.value != playerMpBarBack.value) {
-            playerMpBarBack.value = Mathf.Lerp(playerMpBarBack.value, MP, _lerpSpeed); 
+            playerMpBarBack.value = Mathf.Lerp(playerMpBarBack.value, MpData.currentMp, _lerpSpeed); 
         }
         
-        if (MP <= 0) {
-            MP = 0;
+        if (MpData.currentMp <= 0) {
+            MpData.currentMp = 0;
             //     TODO implement feature that loads MP empty UI elements
         }
-        if (regenCooldown <= 0 && MP < MpData.maxMp) {
+        if (_regenCooldown <= 0 && MpData.currentMp < MpData.maxMp) {
             RegenerateMp();
         }
         else {
-            regenCooldown -= Time.deltaTime;
+            _regenCooldown -= Time.deltaTime;
         }
     }
     
+    
+    
+    
     // ReSharper disable Unity.PerformanceAnalysis
     void MpDeplete(float mpCost) {
-        MP -= mpCost;
-        MpData.mp = MP;
-        Debug.Log("A pressed, you lose 10 MP");
-        Debug.Log($"Player MP: {MP}");
-        if (MpData.mp <= 0)
+        MpData.currentMp -= mpCost;
+        Debug.Log($"Player MP: {MpData.currentMp}");
+        if (MpData.currentMp <= 0)
         {
-            MpData.mp = 0;
+            MpData.currentMp = 0;
         }
     }
     
     void RegenerateMp()
     {
-        MP += mpRegenRate * Time.deltaTime;
-        MP = Mathf.Clamp(MP, 0, MpData.maxMp);
-        MpData.mp = MP;
+        MpData.currentMp += mpRegenRate * Time.deltaTime;
+        MpData.currentMp = Mathf.Clamp(MpData.currentMp, 0, MpData.maxMp);
+        MpData.currentMp = MpData.currentMp;
     }
 
 }
