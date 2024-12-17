@@ -8,7 +8,7 @@ using UI.Player;
 
 public class HealthbarManager : MonoBehaviour
 { 
-    public HPManager HpData;
+    public PlayerData playerData;
     public MenuScript MenuScript;
     
     [SerializeField] private Slider playerHealthbar; 
@@ -19,28 +19,26 @@ public class HealthbarManager : MonoBehaviour
     [SerializeField] private TMP_Text maxMpDisplay;
     
     void Start()
-    { 
-        HpData.maxHP = 100;
-        
-        HpData.currentHP = HpData.maxHP;
-        maxMpDisplay.text = HpData.maxHP.ToString();
+    {
+        playerData.currentHealth = playerData.maxHealth;
     }
 
     void Update()
     {
-        currentHealth.text = HpData.currentHP.ToString();
+        currentHealth.text = playerData.currentHealth.ToString();
+        maxMpDisplay.text = playerData.maxHealth.ToString();
         
         //slider code, do not touch
-        if (playerHealthbar.value != HpData.currentHP){
-            playerHealthbar.value = HpData.currentHP;
+        if (playerHealthbar.value != playerData.currentHealth){
+            playerHealthbar.value = playerData.currentHealth;
         }
         if (playerHealthbar.value != playerHealthbarBackSlider.value) {
-            playerHealthbarBackSlider.value = Mathf.Lerp(playerHealthbarBackSlider.value, HpData.currentHP, _lerpSpeed); 
+            playerHealthbarBackSlider.value = Mathf.Lerp(playerHealthbarBackSlider.value, playerData.currentHealth, _lerpSpeed); 
         }
 
-        if (HpData.currentHP <= 0)
+        if (playerData.currentHealth <= 0)
         {
-            HpData.currentHP = 0;
+            playerData.currentHealth = 0;
             MenuScript.gameOverMenuUI.SetActive(true);
         }
         
@@ -49,9 +47,9 @@ public class HealthbarManager : MonoBehaviour
     
     public void UpdateHealthBarMaxValue()
     {
-        playerHealthbar.maxValue = HpData.maxHP;
-        playerHealthbar.value = HpData.currentHP;
-        playerHealthbarBackSlider.value = HpData.currentHP;
+        playerHealthbar.maxValue = playerData.maxHealth;
+        playerHealthbar.value = playerData.currentHealth;
+        playerHealthbarBackSlider.value = playerData.currentHealth;
     }
 
 }
