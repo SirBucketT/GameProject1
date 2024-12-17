@@ -5,13 +5,11 @@ using UI.Player;
 
 public class EXPManager : MonoBehaviour
 {
-    
+    [SerializeField] PlayerData playerData;
     [Header("Front and back slider for UI sliders")]
     [SerializeField] public Slider playerExpBar;
     [SerializeField] public Slider playerExpBarBack;
-    private float maxHealth;
     
-    private float _exp;
     private readonly float _lerpSpeed = 0.05f;
     
     [Header("UI Text Elements")]
@@ -22,29 +20,26 @@ public class EXPManager : MonoBehaviour
     void Start()
     {
         //temporary code to make testing of the game easier, will be changed later
-        _levelData.exp = 0;
-        _levelData.playerLevel = 0;
-        _levelData.maxExp = 100;
-        //
-        _exp = _levelData.exp;
-        maxHealth = _levelData.maxExp;
+        playerData.minExp= 0;
+        playerData.playerLevel = 0;
+        playerData.maxExp = 100;
     }
 
     void Update()
     {
-        levelUiDsiplay.text = _levelData.playerLevel.ToString();
-        currentExpDisplay.text = _levelData.exp.ToString();
-        maxExpDisplay.text = maxHealth.ToString();
+        levelUiDsiplay.text = playerData.playerLevel.ToString();
+        currentExpDisplay.text = playerData.currentExp.ToString();
+        maxExpDisplay.text = playerData.maxExp.ToString();
         
         //slider code, do not touch
-        if (playerExpBar.value != _exp)
+        if (playerExpBar.value != playerData.currentExp)
         {
-            playerExpBar.value = _exp;
+            playerExpBar.value = playerData.currentExp;
         }
 
         if (playerExpBar.value != playerExpBarBack.value)
         {
-            playerExpBarBack.value = Mathf.Lerp(playerExpBarBack.value, _exp, _lerpSpeed);
+            playerExpBarBack.value = Mathf.Lerp(playerExpBarBack.value, playerData.currentExp, _lerpSpeed);
         }
     }
     
