@@ -1,11 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour, IInteractable
+internal class EnemyController : MonoBehaviour, IInteractable
 {
     [SerializeField] private int _TestPlayerAttackDamage;
     [SerializeField] private float _attackCooldownTime = 1.0f;
-    private TakeDamageManager _takeDamageManager;
+    
     private EnemyHealthManager _enemyHealthManager;
     private bool _isAttacked = false;
 
@@ -32,7 +32,7 @@ public class EnemyController : MonoBehaviour, IInteractable
         if (!_isAttacked && _enemyHealthManager != null)
         {  
             Debug.Log("Player attacked with" + _TestPlayerAttackDamage + " damage.");
-            _takeDamageManager.TakeDamage(_TestPlayerAttackDamage);
+            _enemyHealthManager.TakeDamage(_TestPlayerAttackDamage);
             if (this != null && gameObject.activeSelf)
             {
                 StartCoroutine(AttackedCooldown());

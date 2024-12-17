@@ -3,18 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealthManager : MonoBehaviour
+public class EnemyHealthManager : MonoBehaviour, ITakeDamage
 {
     [SerializeField] private SO_EnemyData enemyData;
-    private TakeDamageManager _takeDamageManager;
+
     private int _currentHealth;
+    private bool _isAlive;
+    
     private bool _isDestroyed = false;
     private bool _isDisabled;
-    private bool isAlive => _takeDamageManager._isAlive;
-    
     private static int destroyedCount = 0;
     private static int disabledCount = 0;
-    
+
+    bool ITakeDamage.isAlive => _isAlive;
 
     public void Start()
     {
@@ -29,18 +30,27 @@ public class EnemyHealthManager : MonoBehaviour
             return;
         }
         _currentHealth = enemyData.GetEnemyHealth;
+        _isAlive = true;
         Debug.Log("Enemy Initialized with health: " + _currentHealth); 
     }
 
-    private void Die()
+    public void TakeDamage(int damageAmount)
     {
-        Debug.Log($"{gameObject.name} has died.");
-        _isDestroyed = true;
-        DisableObject();
+        if (!_isAlive) return;
+
+        _currentHealth -= damageAmount;
+        Debug.Log("Enemy took damage. Current health: " + _currentHealth);
+        if (_currentHealth <= 0 && _isAlive)
+        {
+            _isAlive = false;
+            Debug.Log("Enemy has died.");
+            DisableEnemy();
+        }
     }
-    private void DisableObject()
+
+    private void DisableEnemy()
     {
-        if (_currentHealth <= 0 && !_takeDamageManager._isAlive && !_isDisabled) 
+        if (_currentHealth <= 0 && !_isAlive && !_isDisabled) 
         {
             _isDisabled = true;
             
@@ -69,4 +79,5 @@ public class EnemyHealthManager : MonoBehaviour
             _isDestroyed = true;
         }
     }
+
 }
