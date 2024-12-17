@@ -7,8 +7,8 @@ public class EXPManager : MonoBehaviour
 {
     [SerializeField] PlayerData playerData;
     [Header("Front and back slider for UI sliders")]
-    [SerializeField] public Slider playerExpBar;
-    [SerializeField] public Slider playerExpBarBack;
+    [SerializeField] Slider playerExpBar;
+    [SerializeField] Slider playerExpBarBack;
     
     private readonly float _lerpSpeed = 0.05f;
     
