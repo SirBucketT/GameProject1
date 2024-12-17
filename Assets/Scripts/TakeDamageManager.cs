@@ -12,7 +12,7 @@ public class TakeDamageManager : MonoBehaviour
     
     private static int destroyedCount = 0;
     private static int disabledCount = 0;
-    public void TakeDamage(int damageAmount)
+    public virtual void TakeDamage(int damageAmount)
     {
         if (!_isAlive) return;
 
