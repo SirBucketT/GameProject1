@@ -4,7 +4,7 @@ public class GetGold : MonoBehaviour
 {
     [SerializeField] PlayerData playerData;
     
-    public void GetGold(int amount) {
+    public void GetCash(int amount) {
         playerData.gold += amount;
     }
 }
