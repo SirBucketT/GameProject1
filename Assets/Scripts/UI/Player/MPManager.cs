@@ -26,7 +26,7 @@ public class MPManager : MonoBehaviour
     
     void Start()
     {
-        
+        MpData.currentMp = MpData.maxMp;
     }
 
     void Update()

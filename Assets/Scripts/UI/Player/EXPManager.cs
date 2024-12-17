@@ -23,6 +23,7 @@ public class EXPManager : MonoBehaviour
         playerData.minExp= 0;
         playerData.playerLevel = 0;
         playerData.maxExp = 100;
+        playerData.currentExp = playerData.minExp;
     }
 
     void Update()

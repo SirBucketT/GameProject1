@@ -21,6 +21,7 @@ public class HealthbarManager : MonoBehaviour
     void Start()
     {
         playerData.currentHealth = playerData.maxHealth;
+        playerData.currentHealth = playerData.maxHealth;
         maxMpDisplay.text = playerData.maxHealth.ToString();
     }
 
