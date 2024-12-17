@@ -33,7 +33,7 @@ RectTransform:
   m_Father: {fileID: 1773000185596601014}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -735,7 +735,7 @@ RectTransform:
   m_Father: {fileID: 60773137979547972}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1055,7 +1055,7 @@ RectTransform:
   m_Father: {fileID: 580683895092585091}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.117, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1311,14 +1311,14 @@ GameObject:
   - component: {fileID: 6460094725786129330}
   - component: {fileID: 5008699646697694595}
   - component: {fileID: 2280373866670239391}
-  - component: {fileID: 5366384459413689480}
+  - component: {fileID: 9060795418435043492}
   m_Layer: 5
   m_Name: GameUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3008550456744788114
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1418,7 +1418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 661497b5f81334ccaaec6e91d42adbb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HpData: {fileID: 11400000, guid: d669f751e3d2046f181b40dd9e391f86, type: 2}
+  playerData: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
   MenuScript: {fileID: 0}
   playerHealthbar: {fileID: 2633485825046686319}
   playerHealthbarBackSlider: {fileID: 6701576720860753577}
@@ -1436,10 +1436,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9048c858e0713ba4e9492f3cab5d74a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MpData: {fileID: 11400000, guid: dfcd8c5dc259bd8409b8b1bac3517e0c, type: 2}
+  MpData: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
   playerMpbar: {fileID: 2043489895457378770}
   playerMpBarBack: {fileID: 3857765795933851918}
-  maxHealth: 100
   currentMpDisplay: {fileID: 313016710586418013}
   maxMpDisplay: {fileID: 5667129268153340225}
   mpRegenRate: 5
@@ -1456,15 +1455,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d123bb34fb0452e448e5bc8bf5851351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelData: {fileID: 11400000, guid: 0e4e0c98af7992e47b3bc9d1970d7175, type: 2}
-  hpManager: {fileID: 11400000, guid: d669f751e3d2046f181b40dd9e391f86, type: 2}
-  _healthbarManager: {fileID: 6460094725786129330}
+  playerData: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
   playerExpBar: {fileID: 7852092169322586859}
   playerExpBarBack: {fileID: 5003796030104763250}
   levelUiDsiplay: {fileID: 6521766475418553269}
   currentExpDisplay: {fileID: 3522902048688727983}
   maxExpDisplay: {fileID: 2609275789761772434}
---- !u!114 &5366384459413689480
+--- !u!114 &9060795418435043492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1476,8 +1473,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c652fc15f8d24cd1ba13de89389a73b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: {fileID: 11400000, guid: 7f4efab5cb6bf445982e50ae35407650, type: 2}
-  goldText: {fileID: 1681733711238702766}
+  gold: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
+  goldText: {fileID: 8588908597967935884}
 --- !u!1 &4353279040232307367
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,7 +2033,7 @@ RectTransform:
   m_Father: {fileID: 6059915335711795715}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.11699991, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2111,7 +2108,7 @@ RectTransform:
   m_Father: {fileID: 521342584167188646}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4087,7 +4084,7 @@ RectTransform:
   m_Father: {fileID: 1527395458183302554}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
