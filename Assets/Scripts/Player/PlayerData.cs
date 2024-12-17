@@ -10,4 +10,11 @@ public class PlayerData : ScriptableObject
     
     public float maxHealth;
     public float currentHealth;
+
+    public int playerLevel;
+    public int playerMaxLevel;
+
+    public float minExp;
+    public float maxExp;
+    public float currentExp;
 }
