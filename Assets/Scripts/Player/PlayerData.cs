@@ -4,4 +4,10 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     public int gold;
+    
+    public float currentMp;
+    public float maxMp;
+    
+    public float maxHealth;
+    public float currentHealth;
 }
