@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealthManager : MonoBehaviour
+public class EnemyTakeDamage : MonoBehaviour
 {
     [SerializeField] private SO_EnemyData enemyData;
     private TakeDamageManager _takeDamageManager;
