@@ -4,23 +4,34 @@ using UnityEngine.AI;
 public class EnemyAttackAnimation : MonoBehaviour
 {
     [SerializeField] Animator _animator;
+    [SerializeField] private float detectionRange;
     private NavMeshAgent _navMeshAgent;
     
-    private Transform _player;  
-    private NavMeshAgent _enemyAgent;  
+    public Transform player;  
+    public NavMeshAgent enemyAgent;  
     
     void Update()
     {
-        var distanceToPlayer = Vector3.Distance(_player.position, _enemyAgent.transform.position);
-        if (distanceToPlayer <= _enemyAgent.stoppingDistance)
-        {
-            _animator.SetBool("IsPlayerClose", true);
-            Debug.Log($"Enemy attack anmation is on");
+        var distanceToPlayer = Vector3.Distance(player.position, enemyAgent.transform.position);
+        if (distanceToPlayer <= enemyAgent.stoppingDistance)
+        { 
+            EnemySwingLeft();
         }
         else
         {
             _animator.SetBool("IsPlayerClose", false);
-            Debug.Log($"Enemy attack animation is off");
         }
+    }
+    
+    [ContextMenu("EnemySwingLeft")]
+    public void EnemySwingLeft()
+    {
+        _animator.SetBool("IsPlayerClose", true);
+    }
+
+    [ContextMenu("EnemySwingStop")]
+    public void EnemySwingRight()
+    {
+        _animator.SetBool("IsPlayerClose", false);
     }
 }
