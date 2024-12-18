@@ -39,6 +39,18 @@ public class MenuScript : MonoBehaviour
         Time.timeScale = 1;
         gameUI.SetActive(true);
     }
+
+    public void OpenQuitButton()
+    {
+        pauseMenuUI.SetActive(false);
+        confirmQuitUI.SetActive(true);
+    }
+
+    public void CloseQuitButton()
+    {
+        confirmQuitUI.SetActive(false);
+        pauseMenuUI.SetActive(true);
+    }
     
     public void QuitGameButton()
     {
