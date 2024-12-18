@@ -17413,10 +17413,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Menu
       objectReference: {fileID: 0}
-    - target: {fileID: 3412227354494238577, guid: dc6a36febee1cf44caf773905d0a1ab8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4082649484750193679, guid: dc6a36febee1cf44caf773905d0a1ab8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -17497,34 +17493,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4248053348997924191, guid: dc6a36febee1cf44caf773905d0a1ab8, type: 3}
-      propertyPath: m_Name
-      value: CREDITS
-      objectReference: {fileID: 0}
     - target: {fileID: 4293919108667000543, guid: dc6a36febee1cf44caf773905d0a1ab8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2095922397}
-    - target: {fileID: 4293919108667000543, guid: dc6a36febee1cf44caf773905d0a1ab8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MainMenuScript, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 5975142812013679177, guid: dc6a36febee1cf44caf773905d0a1ab8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2095922397}
-    - target: {fileID: 5975142812013679177, guid: dc6a36febee1cf44caf773905d0a1ab8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenSettingsMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 6411725795852869995, guid: dc6a36febee1cf44caf773905d0a1ab8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2095922397}
-    - target: {fileID: 6411725795852869995, guid: dc6a36febee1cf44caf773905d0a1ab8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MainMenuScript, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 7139779022970814178, guid: dc6a36febee1cf44caf773905d0a1ab8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -17532,20 +17512,6 @@ PrefabInstance:
     - target: {fileID: 7139779022970814178, guid: dc6a36febee1cf44caf773905d0a1ab8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OpenTutorial
-      objectReference: {fileID: 0}
-    - target: {fileID: 8454209371222330449, guid: dc6a36febee1cf44caf773905d0a1ab8, type: 3}
-      propertyPath: m_text
-      value: 'SETTINGS
-
-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 8733475541262846358, guid: dc6a36febee1cf44caf773905d0a1ab8, type: 3}
-      propertyPath: m_Name
-      value: SETTINGS
-      objectReference: {fileID: 0}
-    - target: {fileID: 8973817047524751330, guid: dc6a36febee1cf44caf773905d0a1ab8, type: 3}
-      propertyPath: m_text
-      value: CREDITS
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17747,10 +17713,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 384026339064492730, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
-      propertyPath: m_text
-      value: GO BACK
-      objectReference: {fileID: 0}
     - target: {fileID: 2154108086704576716, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
       propertyPath: m_Name
       value: HowToPlay
@@ -17758,10 +17720,6 @@ PrefabInstance:
     - target: {fileID: 2154108086704576716, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5228509355104928598, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
-      propertyPath: m_Name
-      value: GoBack
       objectReference: {fileID: 0}
     - target: {fileID: 5644931038493725097, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -17888,10 +17846,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2095922397}
-    - target: {fileID: 1763329436898193127, guid: 80af835a867bee24ca44cac9f10153ba, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MainMenuScript, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 3755575386426208317, guid: 80af835a867bee24ca44cac9f10153ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -17983,10 +17937,6 @@ PrefabInstance:
     - target: {fileID: 6310966616535676448, guid: 80af835a867bee24ca44cac9f10153ba, type: 3}
       propertyPath: m_Name
       value: Settings
-      objectReference: {fileID: 0}
-    - target: {fileID: 6310966616535676448, guid: 80af835a867bee24ca44cac9f10153ba, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8381641858025327359, guid: 80af835a867bee24ca44cac9f10153ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -18147,10 +18097,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2095922397}
-    - target: {fileID: 2092556122777353556, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
-      propertyPath: m_text
-      value: GO BACK
-      objectReference: {fileID: 0}
     - target: {fileID: 2142898860794861375, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -18235,10 +18181,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2095922397}
-    - target: {fileID: 3242966545413019642, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MainMenuScript, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 5087130595923598111, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -18250,10 +18192,6 @@ PrefabInstance:
     - target: {fileID: 5369280267819467952, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OpenTutorial
-      objectReference: {fileID: 0}
-    - target: {fileID: 7370531612930269828, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
-      propertyPath: m_Name
-      value: GoBack
       objectReference: {fileID: 0}
     - target: {fileID: 8748675300021767688, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
