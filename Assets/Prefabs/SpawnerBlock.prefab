@@ -123,4 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _numberOfEnemiesToCreate: 4
   _spawnPoint: {fileID: 534286098353882557}
-  _spawnedPrefab: {fileID: 5243760781529867094, guid: 0d19359d174cd3040892869a725225bd, type: 3}
+  _spawnedPrefab: {fileID: 2766363418891292287, guid: 85250260dd65bf845aac6a615d81d69e, type: 3}
+  _isDestroyedOnTimer: 0
+  spawnDelay: 1
+  destroyDelay: 1
