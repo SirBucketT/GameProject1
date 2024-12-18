@@ -38,11 +38,6 @@ public class PlayerMovement : MonoBehaviour
                 agent.destination = hitInfo.point;
             }
         }
-
-        if (Input.GetKeyDown("space"))
-        {
-            animator.SetTrigger("Sword");
-        }
         
     }
 }
