@@ -6,6 +6,7 @@ public class EnemyAttackController : MonoBehaviour
     [SerializeField] Animator _animator;
     [SerializeField] private GameObject _weapon;
     [SerializeField] float _attackRange;
+    private bool hasSwung = false; 
     private Transform _player;
     
     private void Start()
@@ -19,17 +20,23 @@ public class EnemyAttackController : MonoBehaviour
     }
     private void Update()
     {
-        if (_player == null) return;  
-        
+        if (!_player) return;
+
         float distanceToPlayer = Vector3.Distance(_player.position, transform.position);
-        
+
         if (distanceToPlayer < _attackRange)
         {
-            EnemySwing();
+            if (!hasSwung)
+            {
+                EnemySwing();
+                hasSwung = true;
+            }
         }
         else
         {
+            if (!hasSwung) return;
             EnemySwingStop();
+            hasSwung = false;  
         }
     }
     [ContextMenu("EnemySwing")]
