@@ -26,7 +26,7 @@ public class SwordHandler : MonoBehaviour
         {
             if (Input.GetKeyDown("space"))
             {
-                animator.SetTrigger("Sword");
+                animator.SetTrigger("DrawSword");
             }
         }
 }
