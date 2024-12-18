@@ -4,33 +4,42 @@ using UnityEngine.AI;
 public class EnemyAttackController : MonoBehaviour
 {
     [SerializeField] Animator _animator;
-    [SerializeField] private float detectionRange;
-    private NavMeshAgent _navMeshAgent;
+    [SerializeField] private GameObject _weapon;
+    [SerializeField] float _attackRange;
+    private Transform _player;
     
-    public Transform player;  
-    public NavMeshAgent enemyAgent;  
-    
-    void Update()
+    private void Start()
     {
-        var distanceToPlayer = Vector3.Distance(player.position, enemyAgent.transform.position);
-        if (distanceToPlayer <= enemyAgent.stoppingDistance)
-        { 
-            EnemySwingLeft();
+        _player = GameObject.FindGameObjectWithTag("Player").transform;
+        
+        if (_weapon != null)
+        {
+            _animator = _weapon.GetComponent<Animator>();
+        }
+    }
+    private void Update()
+    {
+        if (_player == null) return;  
+        
+        float distanceToPlayer = Vector3.Distance(_player.position, transform.position);
+        
+        if (distanceToPlayer < _attackRange)
+        {
+            EnemySwing();
         }
         else
         {
-            _animator.SetBool("IsPlayerClose", false);
+            EnemySwingStop();
         }
     }
-    
-    [ContextMenu("EnemySwingLeft")]
-    public void EnemySwingLeft()
+    [ContextMenu("EnemySwing")]
+    public void EnemySwing()
     {
         _animator.SetBool("IsPlayerClose", true);
     }
-
+    
     [ContextMenu("EnemySwingStop")]
-    public void EnemySwingRight()
+    public void EnemySwingStop()
     {
         _animator.SetBool("IsPlayerClose", false);
     }
