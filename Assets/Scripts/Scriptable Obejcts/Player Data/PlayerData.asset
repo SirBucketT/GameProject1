@@ -16,7 +16,7 @@ MonoBehaviour:
   currentMp: 0
   maxMp: 100
   maxHealth: 100
-  currentHealth: 0
+  currentHealth: 100
   playerLevel: 1
   playerMaxLevel: 10
   minExp: 0
