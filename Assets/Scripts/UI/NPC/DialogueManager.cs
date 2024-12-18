@@ -1,16 +1,14 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
 
 public class DialogueManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
+    private Queue<string> _sentences;
+    
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _sentences = new Queue<string>();
     }
 }
