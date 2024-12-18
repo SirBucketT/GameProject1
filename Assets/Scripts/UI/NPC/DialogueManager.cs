@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour {
 
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
+    [SerializeField] GameObject dialogueStarter;
 
     public Animator animator;
 
@@ -34,7 +35,7 @@ public class DialogueManager : MonoBehaviour {
         DisplayNextSentence();
     }
 
-    public void DisplayNextSentence ()
+    public void DisplayNextSentence()
     {
         if (_sentences.Count == 0)
         {
@@ -60,6 +61,7 @@ public class DialogueManager : MonoBehaviour {
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        dialogueStarter.SetActive(true);
     }
 
 }
