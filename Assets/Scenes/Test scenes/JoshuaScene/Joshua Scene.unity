@@ -625,11 +625,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!195 &1530915662 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 1498525218786205416, guid: 85250260dd65bf845aac6a615d81d69e, type: 3}
-  m_PrefabInstance: {fileID: 3004677529799969355}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1530915669 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6465401576325296148, guid: 85250260dd65bf845aac6a615d81d69e, type: 3}
@@ -644,13 +639,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1530915660}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0beef49fe61d9c4fb744ebe9895cb5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 42dda32c7d297db4ca672b854768243d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 1942748681}
-  detectionRange: 0
-  player: {fileID: 1683621148}
-  enemyAgent: {fileID: 1530915662}
+  _animator: {fileID: 0}
+  _weapon: {fileID: 0}
+  _attackRange: 0
 --- !u!20 &1634246057 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 3713818669486062918, guid: c6a3a8565b65e9c43856e5a27db82b0b, type: 3}
@@ -797,13 +791,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942748676}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.71858126, y: 0.057337034, z: -0.059661254, w: 0.69050276}
-  m_LocalPosition: {x: -0.12, y: 0, z: -1.62}
+  m_LocalRotation: {x: 0.7029333, y: 0.15436332, z: -0.16063303, w: 0.6754656}
+  m_LocalPosition: {x: -0.418, y: 0, z: -1.422}
   m_LocalScale: {x: 0.2809973, y: 1.1533529, z: 0.24208}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1530915669}
-  m_LocalEulerAnglesHint: {x: 92.28299, y: 9.477997, z: -0.015014648}
+  m_LocalEulerAnglesHint: {x: 92.28299, y: 25.729996, z: -0.014007568}
 --- !u!95 &1942748681
 Animator:
   serializedVersion: 7
@@ -814,7 +808,7 @@ Animator:
   m_GameObject: {fileID: 1942748676}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bfd2fabcafb291b4bae373f26e195b79, type: 2}
+  m_Controller: {fileID: 9100000, guid: befd47754d4ffdb4d87ff729d67b3f8a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
