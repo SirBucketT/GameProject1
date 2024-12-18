@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAttackAnimation : MonoBehaviour
+public class EnemyAttackController : MonoBehaviour
 {
     [SerializeField] Animator _animator;
     [SerializeField] private float detectionRange;
