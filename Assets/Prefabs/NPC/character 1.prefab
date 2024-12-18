@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5172219568639727328
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a533526897213c441901094c6dda56be, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.5655136
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a533526897213c441901094c6dda56be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0000009536743
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a533526897213c441901094c6dda56be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.6618152
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a533526897213c441901094c6dda56be, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a533526897213c441901094c6dda56be, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a533526897213c441901094c6dda56be, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a533526897213c441901094c6dda56be, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a533526897213c441901094c6dda56be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a533526897213c441901094c6dda56be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a533526897213c441901094c6dda56be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a533526897213c441901094c6dda56be, type: 3}
+      propertyPath: m_Name
+      value: character 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a533526897213c441901094c6dda56be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4015434112663194015}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a533526897213c441901094c6dda56be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2983525426114447836}
+  m_SourcePrefab: {fileID: 100100000, guid: a533526897213c441901094c6dda56be, type: 3}
+--- !u!1 &5406012365568568241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a533526897213c441901094c6dda56be, type: 3}
+  m_PrefabInstance: {fileID: 5172219568639727328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4015434112663194015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5406012365568568241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f276dacbb98154ab8ac8d2b0776f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Kaelith
+    sentences:
+    - "The shadows whisper truths most dare not hear\u2014are you bold enough to
+      listen?"
+    - I have walked paths where even light fears to tread; tread carefully, or you
+      may lose more than your way.
+    - 'Welcome sir Traveler to our Cursed land
+
+'
+--- !u!95 &2983525426114447836
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5406012365568568241}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 057e268f8534a93419e17cf3b141d304, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
