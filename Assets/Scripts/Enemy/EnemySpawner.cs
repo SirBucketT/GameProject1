@@ -5,11 +5,11 @@ using UnityEngine;
 internal class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private int _numberOfEnemiesToCreate;
-    [SerializeField] private Transform _spawnPoint;
-    [SerializeField] private GameObject _spawnedPrefab;
-    [SerializeField] private bool _isDestroyedOnTimer;
-    [SerializeField] private float spawnDelay = 1f;
-    [SerializeField] private float destroyDelay = 1f;
+  //  [SerializeField] private Transform _spawnPoint;
+    [SerializeField] GameObject _spawnedPrefab;
+    [SerializeField] bool _isDestroyedOnTimer;
+    [SerializeField] float spawnDelay = 1f;
+    [SerializeField] float destroyDelay = 1f;
 
     private List<GameObject> _spawnedEnemies = new();
 
@@ -20,7 +20,7 @@ internal class EnemySpawner : MonoBehaviour
 
     private GameObject EnemyInstantiate()
     {
-        GameObject enemy = Instantiate(_spawnedPrefab, _spawnPoint.position, Quaternion.identity);
+        GameObject enemy = Instantiate(_spawnedPrefab, transform.position, Quaternion.identity);
         EnemySetActive(enemy);
         return enemy;  
     }
@@ -65,4 +65,11 @@ internal class EnemySpawner : MonoBehaviour
         _spawnedEnemies.Clear();  
         Debug.Log("All enemies destroyed.");
     }
+   
+    private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawCube(transform.position, Vector3.one);
+        }
+   
 }

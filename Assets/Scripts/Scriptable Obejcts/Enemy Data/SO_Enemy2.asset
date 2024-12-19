@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: SO_Enemy2
   m_EditorClassIdentifier: 
   _enemyName: 
-  _enemyHealth: 20
+  _enemyMaxHealth: 25
+  _enemyHealth: 25
   _enemyDamage: 6
   _enemyIsAlive: 0
   _enemyColor: {r: 0.83410394, g: 0.9607843, b: 0.32941175, a: 0}
