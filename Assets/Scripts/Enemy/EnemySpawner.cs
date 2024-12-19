@@ -4,32 +4,23 @@ using UnityEngine;
 
 internal class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] GameObject _spawnedPrefab;
-    [SerializeField] private int _numberOfEnemiesToCreate;
-    [SerializeField] private bool _usingProximity;
-    [SerializeField] float _firstSpawnDelay = 1f;
-    [SerializeField] float _newSpawnDelay = 1f;
-    [SerializeField] bool _isSpawnLimitOn;
-    [SerializeField] private bool _despawnOldestOnLimit;
-    [SerializeField] float _enemyLimit;
-    [SerializeField] float _despawnDelay = 1f;
+    [SerializeField] private SO_SpawnerData _spawnerData;
     private bool hasSpawned = false;
-    
     private ProximityChecker _proximityChecker;
     private List<GameObject> _spawnedEnemies = new List<GameObject>();
-    
+
     private void Start()
     {
         _proximityChecker = GetComponentInChildren<ProximityChecker>();
-        if (!_usingProximity)
+        if (!_spawnerData.usingProximity)
         {
             StartCoroutine(SpawnEntitiesWithDelay());
         }
     }
-    
+
     private void Update()
     {
-        if (_usingProximity && _proximityChecker.TargetIsWithinRange && !hasSpawned)
+        if (_spawnerData.usingProximity && _proximityChecker.TargetIsWithinRange && !hasSpawned)
         {
             hasSpawned = true;
             StartCoroutine(SpawnEntitiesWithDelay());
@@ -38,32 +29,32 @@ internal class EnemySpawner : MonoBehaviour
 
     private GameObject EnemyInstantiate()
     {
-        GameObject enemy = Instantiate(_spawnedPrefab, transform.position, Quaternion.identity);
+        GameObject enemy = Instantiate(_spawnerData.spawnedPrefab, transform.position, Quaternion.identity);
         enemy.SetActive(true);
         return enemy;
     }
 
     private IEnumerator SpawnEntitiesWithDelay()
     {
-        yield return new WaitForSeconds(_firstSpawnDelay);
-        
-        for (int i = 0; i < _numberOfEnemiesToCreate; i++)
+        yield return new WaitForSeconds(_spawnerData.firstSpawnDelay);
+
+        for (int i = 0; i < _spawnerData.numberOfEnemiesToCreate; i++)
         {
             GameObject enemy = EnemyInstantiate();
             _spawnedEnemies.Add(enemy);
 
-            if (_isSpawnLimitOn && _spawnedEnemies.Count >= _enemyLimit)
+            if (_spawnerData.isSpawnLimitOn && _spawnedEnemies.Count >= _spawnerData.enemyLimit)
             {
                 CheckDespawnEnemies();
             }
 
-            yield return new WaitForSeconds(_newSpawnDelay);
+            yield return new WaitForSeconds(_spawnerData.newSpawnDelay);
         }
     }
 
     private void CheckDespawnEnemies()
     {
-        if (_despawnOldestOnLimit)
+        if (_spawnerData.despawnOldestOnLimit)
         {
             StartCoroutine(DespawnOldestEnemy());
         }
@@ -89,16 +80,17 @@ internal class EnemySpawner : MonoBehaviour
         {
             if (enemy != null)
             {
-                yield return new WaitForSeconds(_despawnDelay);
+                yield return new WaitForSeconds(_spawnerData.despawnDelay);
                 enemy.SetActive(false);
                 Destroy(enemy);
             }
         }
         _spawnedEnemies.Clear();
     }
+
     private IEnumerator DespawnEnemy(GameObject enemy)
     {
-        yield return new WaitForSeconds(_despawnDelay);
+        yield return new WaitForSeconds(_spawnerData.despawnDelay);
         if (enemy != null)
         {
             enemy.SetActive(false);
