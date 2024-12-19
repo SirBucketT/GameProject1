@@ -3719,6 +3719,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: character
       objectReference: {fileID: 0}
+    - target: {fileID: 8660328169949700751, guid: a0505897d6cc79f4a95e7b5db95a365d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.04577119
+      objectReference: {fileID: 0}
+    - target: {fileID: 8660328169949700751, guid: a0505897d6cc79f4a95e7b5db95a365d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.06
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3815,6 +3823,18 @@ PrefabInstance:
     - target: {fileID: 7819043179568508327, guid: 82ab42f90e0c3b64c94260c184899aad, type: 3}
       propertyPath: m_Name
       value: dialogueCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855956034321143655, guid: 82ab42f90e0c3b64c94260c184899aad, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855956034321143655, guid: 82ab42f90e0c3b64c94260c184899aad, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855956034321143655, guid: 82ab42f90e0c3b64c94260c184899aad, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
