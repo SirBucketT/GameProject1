@@ -4,75 +4,111 @@ using UnityEngine;
 
 internal class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private int _numberOfEnemiesToCreate;
     [SerializeField] GameObject _spawnedPrefab;
-    [SerializeField] bool _isDestroyedOnDelay;
-    [SerializeField] float spawnDelay = 1f;
-    [SerializeField] float destroyDelay = 1f;
-    private bool _hasSpawnedAllEnemies = false;
-
-    private List<GameObject> _spawnedEnemies = new();
-
+    [SerializeField] private int _numberOfEnemiesToCreate;
+    [SerializeField] private bool _usingProximity;
+    [SerializeField] float _firstSpawnDelay = 1f;
+    [SerializeField] float _newSpawnDelay = 1f;
+    [SerializeField] bool _isSpawnLimitOn;
+    [SerializeField] private bool _despawnOldestOnLimit;
+    [SerializeField] float _enemyLimit;
+    [SerializeField] float _despawnDelay = 1f;
+    private bool hasSpawned = false;
+    
+    private ProximityChecker _proximityChecker;
+    private List<GameObject> _spawnedEnemies = new List<GameObject>();
+    
     private void Start()
     {
-        StartCoroutine(SpawnEntitiesWithDelay());
+        _proximityChecker = GetComponentInChildren<ProximityChecker>();
+        if (!_usingProximity)
+        {
+            StartCoroutine(SpawnEntitiesWithDelay());
+        }
+    }
+    
+    private void Update()
+    {
+        if (_usingProximity && _proximityChecker.TargetIsWithinRange && !hasSpawned)
+        {
+            hasSpawned = true;
+            StartCoroutine(SpawnEntitiesWithDelay());
+        }
     }
 
     private GameObject EnemyInstantiate()
     {
         GameObject enemy = Instantiate(_spawnedPrefab, transform.position, Quaternion.identity);
-        EnemySetActive(enemy);
-        return enemy;  
-    }
-
-    private void EnemySetActive(GameObject enemy)
-    {
-        if (enemy != null)
-        {
-            enemy.SetActive(true);  
-        }
-    }
-
-    private void Update()
-    {
-        if (_hasSpawnedAllEnemies && _isDestroyedOnDelay && _spawnedEnemies.Count > 0)
-        {
-            StartCoroutine(DestroyEnemies());
-            _hasSpawnedAllEnemies = false; 
-        }
+        enemy.SetActive(true);
+        return enemy;
     }
 
     private IEnumerator SpawnEntitiesWithDelay()
     {
+        yield return new WaitForSeconds(_firstSpawnDelay);
+        
         for (int i = 0; i < _numberOfEnemiesToCreate; i++)
         {
-            GameObject enemy = EnemyInstantiate();  
-            _spawnedEnemies.Add(enemy);  
-            Debug.Log($"Spawned enemy {i + 1} of {_numberOfEnemiesToCreate}");
+            GameObject enemy = EnemyInstantiate();
+            _spawnedEnemies.Add(enemy);
 
-            yield return new WaitForSeconds(spawnDelay);  
+            if (_isSpawnLimitOn && _spawnedEnemies.Count >= _enemyLimit)
+            {
+                CheckDespawnEnemies();
+            }
+
+            yield return new WaitForSeconds(_newSpawnDelay);
         }
-        
-        _hasSpawnedAllEnemies = true;
     }
-    
-    private IEnumerator DestroyEnemies()
+
+    private void CheckDespawnEnemies()
     {
-        yield return new WaitForSeconds(destroyDelay);
+        if (_despawnOldestOnLimit)
+        {
+            StartCoroutine(DespawnOldestEnemy());
+        }
+        else
+        {
+            StartCoroutine(DespawnAllEnemies());
+        }
+    }
+
+    private IEnumerator DespawnOldestEnemy()
+    {
+        if (_spawnedEnemies.Count > 0)
+        {
+            GameObject oldestEnemy = _spawnedEnemies[0];
+            _spawnedEnemies.RemoveAt(0);
+            yield return DespawnEnemy(oldestEnemy);
+        }
+    }
+
+    private IEnumerator DespawnAllEnemies()
+    {
         foreach (var enemy in _spawnedEnemies)
         {
             if (enemy != null)
             {
-                Destroy(enemy); 
-                yield return new WaitForFixedUpdate();  
+                yield return new WaitForSeconds(_despawnDelay);
+                enemy.SetActive(false);
+                Destroy(enemy);
             }
         }
-        _spawnedEnemies.Clear();  
+        _spawnedEnemies.Clear();
     }
-   
-    private void OnDrawGizmos()
+    private IEnumerator DespawnEnemy(GameObject enemy)
+    {
+        yield return new WaitForSeconds(_despawnDelay);
+        if (enemy != null)
         {
-            Gizmos.color = Color.magenta;
-            Gizmos.DrawCube(transform.position, Vector3.one);
+            enemy.SetActive(false);
+            Destroy(enemy);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawCube(transform.position, Vector3.one);
+    }
 }

@@ -30,7 +30,6 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
         }
         _currentHealth = enemyData.GetEnemyHealth;
         _isAlive = true;
-        
     }
 
     public void TakeDamage(int damageAmount)

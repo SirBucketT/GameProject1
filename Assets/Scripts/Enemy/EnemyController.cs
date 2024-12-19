@@ -5,7 +5,7 @@ internal class EnemyController : MonoBehaviour, IInteractable
 {
     [SerializeField] private int _TestPlayerAttackDamage;
     [SerializeField] private float _attackCooldownTime = 1.0f;
-    
+    [SerializeField] private SO_EnemyData _enemyData;
     private EnemyHealthManager _enemyHealthManager;
     private bool _isAttacked = false;
 
