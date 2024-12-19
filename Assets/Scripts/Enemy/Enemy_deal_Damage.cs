@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Enemy_deal_Damage : MonoBehaviour
 {
-    [SerializedField] private int damage;
+    [SerializeField] private int damage;
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
