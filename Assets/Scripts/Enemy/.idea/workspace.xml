@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23be001c-0855-42a2-ad4e-1d765d04ae9a" name="Changes" comment="" />
+    <list default="true" id="23be001c-0855-42a2-ad4e-1d765d04ae9a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Scenes/Test scenes/SebScene/SebEnemyTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Test scenes/SebScene/SebEnemyTestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deal_Damage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Deal_Damage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EnemyHealthManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EnemyHealthManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Player/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Player/PlayerHealth.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
