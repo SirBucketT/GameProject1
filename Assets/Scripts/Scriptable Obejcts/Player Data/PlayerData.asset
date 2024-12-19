@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   gold: 150
-  currentMp: 0
+  currentMp: 100
   maxMp: 100
   maxHealth: 100
-  currentHealth: 100000000
-  playerLevel: 1
+  currentHealth: 0
+  playerLevel: 0
   playerMaxLevel: 10
   minExp: 0
   maxExp: 100

@@ -15,7 +15,7 @@ MonoBehaviour:
   _enemyName: Gobbo
   _enemyMaxHealth: 10
   _enemyHealth: 10
-  _enemyDamage: 3
+  _enemyDamage: 1
   _enemyIsAlive: 1
   _enemyColor: {r: 0.07164473, g: 0.6603774, b: 0.1655471, a: 1}
   _texture: {fileID: 0}
