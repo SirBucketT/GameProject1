@@ -7,7 +7,7 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
 {
     [SerializeField] private SO_EnemyData enemyData;
 
-    private int _currentHealth;
+    [SerializeField] int _currentHealth;
     private bool _isAlive;
     
     private bool _isDestroyed = false;

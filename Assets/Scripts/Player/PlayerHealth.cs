@@ -9,7 +9,6 @@ public class PlayerHealth : MonoBehaviour
     public void PlayerTakeDamage(float damage)
     {
         _playerData.currentHealth -= damage;
-        Debug.Log($"Player health {_playerData.currentHealth}");
-
+        // Debug.Log($"Player health {_playerData.currentHealth}");
     }
 }
