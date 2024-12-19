@@ -14,7 +14,7 @@ public class Deal_Damage : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<_currentHealth>().TakeDamage(damage);
+            other.gameObject.GetComponent<EnemyHealthManager>().TakeDamage(damage);
             Debug.Log($"Player dealt {damage} to Enemy!");
         }
     }
