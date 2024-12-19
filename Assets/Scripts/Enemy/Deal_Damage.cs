@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Enemy_deal_Damage : MonoBehaviour
+public class Deal_Damage : MonoBehaviour
 {
     [SerializeField] private int damage;
     private void OnCollisionEnter(Collision other)
@@ -10,6 +10,12 @@ public class Enemy_deal_Damage : MonoBehaviour
         {
             other.gameObject.GetComponent<PlayerHealth>().PlayerTakeDamage(damage);
             Debug.Log($"Enemy dealt {damage} to Player!");
+        }
+
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            other.gameObject.GetComponent<_currentHealth>().TakeDamage(damage);
+            Debug.Log($"Player dealt {damage} to Enemy!");
         }
     }
 }
