@@ -5,11 +5,11 @@ using UnityEngine;
 internal class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private int _numberOfEnemiesToCreate;
-  //  [SerializeField] private Transform _spawnPoint;
     [SerializeField] GameObject _spawnedPrefab;
-    [SerializeField] bool _isDestroyedOnTimer;
+    [SerializeField] bool _isDestroyedOnDelay;
     [SerializeField] float spawnDelay = 1f;
     [SerializeField] float destroyDelay = 1f;
+    private bool _hasSpawnedAllEnemies = false;
 
     private List<GameObject> _spawnedEnemies = new();
 
@@ -33,6 +33,15 @@ internal class EnemySpawner : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (_hasSpawnedAllEnemies && _isDestroyedOnDelay && _spawnedEnemies.Count > 0)
+        {
+            StartCoroutine(DestroyEnemies());
+            _hasSpawnedAllEnemies = false; 
+        }
+    }
+
     private IEnumerator SpawnEntitiesWithDelay()
     {
         for (int i = 0; i < _numberOfEnemiesToCreate; i++)
@@ -40,17 +49,14 @@ internal class EnemySpawner : MonoBehaviour
             GameObject enemy = EnemyInstantiate();  
             _spawnedEnemies.Add(enemy);  
             Debug.Log($"Spawned enemy {i + 1} of {_numberOfEnemiesToCreate}");
-            
+
             yield return new WaitForSeconds(spawnDelay);  
         }
-
-        if (_isDestroyedOnTimer)
-        {
-            StartCoroutine(DespawnEnemies());
-        }
+        
+        _hasSpawnedAllEnemies = true;
     }
-
-    private IEnumerator DespawnEnemies()
+    
+    private IEnumerator DestroyEnemies()
     {
         yield return new WaitForSeconds(destroyDelay);
         foreach (var enemy in _spawnedEnemies)
@@ -58,12 +64,10 @@ internal class EnemySpawner : MonoBehaviour
             if (enemy != null)
             {
                 Destroy(enemy); 
-                Debug.Log("Destroyed enemy.");
                 yield return new WaitForFixedUpdate();  
             }
         }
         _spawnedEnemies.Clear();  
-        Debug.Log("All enemies destroyed.");
     }
    
     private void OnDrawGizmos()
@@ -71,5 +75,4 @@ internal class EnemySpawner : MonoBehaviour
             Gizmos.color = Color.magenta;
             Gizmos.DrawCube(transform.position, Vector3.one);
         }
-   
 }

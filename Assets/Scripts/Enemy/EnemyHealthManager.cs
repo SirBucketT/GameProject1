@@ -6,7 +6,6 @@ using UnityEngine;
 public class EnemyHealthManager : MonoBehaviour, ITakeDamage
 {
     [SerializeField] private SO_EnemyData enemyData;
-
     [SerializeField] int _currentHealth;
     private bool _isAlive;
     
@@ -26,12 +25,12 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
     {
         if (enemyData == null)
         {
-            Debug.LogError("EnemyData is not assigned!");
+            
             return;
         }
         _currentHealth = enemyData.GetEnemyHealth;
         _isAlive = true;
-        Debug.Log("Enemy Initialized with health: " + _currentHealth); 
+        
     }
 
     public void TakeDamage(int damageAmount)
@@ -39,7 +38,6 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
         if (!_isAlive) return;
 
         _currentHealth -= damageAmount;
-        Debug.Log("Enemy took damage. Current health: " + _currentHealth);
         if (_currentHealth <= 0 && _isAlive)
         {
             _isAlive = false;
@@ -55,8 +53,6 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
             _isDisabled = true;
             
             gameObject.SetActive(false);
-            disabledCount++;
-            Debug.Log($"Enemy disabled (SetActive false). Total disabled count: {disabledCount}. GameObject: {gameObject.name}");
             
             if (this != null && gameObject.activeSelf)
             {
@@ -73,9 +69,7 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
         if (gameObject != null && !_isDestroyed)
         {
             Destroy(this.gameObject);
-            destroyedCount++;  
-            Debug.Log($"Enemy destroyed (GameObject destroyed). " +
-                      $"Total destroyed count: {destroyedCount}. GameObject: {gameObject.name}");
+            
             _isDestroyed = true;
         }
     }
