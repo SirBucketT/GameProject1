@@ -2,13 +2,18 @@ using UnityEngine;
 
 public class ProximityChecker : MonoBehaviour
 {
-    [SerializeField] public bool _proximityIsOn;
-    [SerializeField] private float _proximityRange;
+    [SerializeField] private bool _proximityIsOn;
     [SerializeField] private GameObject _targetOfRange;
     private bool _targetIsWithinRange = false;
     public bool TargetIsWithinRange => _targetIsWithinRange; 
-    
-    public void OnTriggerEnter(Collider other)
+
+    private SphereCollider _sphereCollider;
+    void Start()
+    {
+        _sphereCollider = GetComponent<SphereCollider>();
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == _targetOfRange)
         {
@@ -16,27 +21,28 @@ public class ProximityChecker : MonoBehaviour
         }
     }
 
-    public void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject == _targetOfRange)
         {
             _targetIsWithinRange = false;
         }
-        
     }
-     public void OnDrawGizmos()
+
+    private void OnDrawGizmos()
+    {  
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, 3f);
+        
+        if (!_proximityIsOn || _sphereCollider == null)
         {
-            if (!_proximityIsOn) 
-            {
-                return;
-            }
-            else
-            {  
-            var color = !_targetIsWithinRange 
-                ? Color.red
-                : Color.green;
-            Gizmos.color = color;
-            Gizmos.DrawWireSphere(transform.position, _proximityRange);
-            }
+            return;
         }
+        else
+        {
+        var color = !_targetIsWithinRange ? Color.red : Color.green;
+        Gizmos.color = color;
+        Gizmos.DrawWireSphere(transform.position, _sphereCollider.radius);
+        }
+    }
 }

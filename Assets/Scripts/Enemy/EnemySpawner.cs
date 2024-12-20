@@ -9,6 +9,18 @@ internal class EnemySpawner : MonoBehaviour
     private ProximityChecker _proximityChecker;
     private List<GameObject> _spawnedEnemies = new List<GameObject>();
 
+	private Vector3 _spawnPositionOffset;
+
+    private void Awake()
+    {
+        _spawnPositionOffset = new Vector3(
+            Random.Range(-1f, 1f),
+            Random.Range(-1f, 1f),
+            Random.Range(-1f, 1f)
+        );
+    }
+
+
     private void Start()
     {
         _proximityChecker = GetComponentInChildren<ProximityChecker>();
@@ -27,9 +39,18 @@ internal class EnemySpawner : MonoBehaviour
         }
     }
 
+ private Vector3 GetRandomSpawnOffset()
+    {
+        return new Vector3(
+            Random.Range(-1f, 1f),
+           0f,
+            Random.Range(-1f, 1f)
+        );
+    }
     private GameObject EnemyInstantiate()
     {
-        GameObject enemy = Instantiate(_spawnerData.spawnedPrefab, transform.position, Quaternion.identity);
+ 		Vector3 _spawnPositionOffset = GetRandomSpawnOffset();
+        GameObject enemy = Instantiate(_spawnerData.spawnedPrefab, transform.position + _spawnPositionOffset, Quaternion.identity);
         enemy.SetActive(true);
         return enemy;
     }

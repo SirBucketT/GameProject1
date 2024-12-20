@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 405600037145486815}
   - component: {fileID: 4987010037709462254}
   - component: {fileID: 9115547569032852453}
-  - component: {fileID: -3006400167703610607}
   - component: {fileID: 3431222966604092644}
+  - component: {fileID: 9152257261041223372}
   m_Layer: 0
   m_Name: EnemyTest
   m_TagString: Untagged
@@ -110,19 +110,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-3006400167703610607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8638517486930635842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ef3ee619edb0404b82fe87da753a337, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 0}
 --- !u!54 &3431222966604092644
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -150,3 +137,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &9152257261041223372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8638517486930635842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38ede1f901a3ec94bbd09368d42d479c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: dc624a70109751340a1e1ccdd19446c4, type: 2}
+  _currentHealth: 30

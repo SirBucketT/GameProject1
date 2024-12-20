@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 951ed42cba1200d41badf3e1f36ab5be, type: 2}
+  - {fileID: 2100000, guid: d415affd8ba9c0546bd6d557d9a0dd02, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c70e96a92ebc84caa256e9ace38d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyDamage: {fileID: 11400000, guid: eb9d0125ab1504a429d3f70c8a23b3bc, type: 2}
+  EnemyDamage: {fileID: 11400000, guid: 8e76a1f312173f34abd21fa82963693f, type: 2}
 --- !u!1 &7154526596106746453
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 4264985177480869317}
   - component: {fileID: 5605074453186849799}
   m_Layer: 0
-  m_Name: EnemyCapsule1
+  m_Name: EnemyCapsule_2_Blue
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,7 +246,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 951ed42cba1200d41badf3e1f36ab5be, type: 2}
+  - {fileID: 2100000, guid: d415affd8ba9c0546bd6d557d9a0dd02, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -381,5 +381,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ede1f901a3ec94bbd09368d42d479c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: eb9d0125ab1504a429d3f70c8a23b3bc, type: 2}
+  enemyData: {fileID: 11400000, guid: 8e76a1f312173f34abd21fa82963693f, type: 2}
   _currentHealth: 50

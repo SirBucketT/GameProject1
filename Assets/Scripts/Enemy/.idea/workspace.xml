@@ -5,7 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23be001c-0855-42a2-ad4e-1d765d04ae9a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Animation/EnemyWeaponSwing.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Animation/EnemyWeaponSwing.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Prefabs/EnemyCapsule1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../../Prefabs/EnemyCapsule1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Scenes/Test scenes/SebScene/EnemyTest/EnemyTest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Test scenes/SebScene/EnemyTest/EnemyTest.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Scenes/Test scenes/SebScene/SebEnemyTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Test scenes/SebScene/SebEnemyTestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Scenes/Test scenes/SebScene/SebEnemyTestScene/NavMesh-level_1_test_plane.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Test scenes/SebScene/SebEnemyTestScene/NavMesh-level_1_test_plane.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EnemyAttackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EnemyAttackController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EnemySpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ParentLineGizmo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ParentLineGizmo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProximityChecker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ProximityChecker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scriptable Obejcts/Enemy Data/SO_Enemy1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../Scriptable Obejcts/Enemy Data/SO_Enemy1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scriptable Obejcts/Player Data/PlayerData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../Scriptable Obejcts/Player Data/PlayerData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scriptable Obejcts/Spawner Data/SO_Spawner1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../Scriptable Obejcts/Spawner Data/SO_Spawner1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scriptable Obejcts/Spawner Data/SO_SpawnerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Scriptable Obejcts/Spawner Data/SO_SpawnerData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,10 +29,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Deal_Damage.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/EnemyAttackController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/EnemyAttackController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/EnemyController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/EnemyHealthManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/EnemyHealthManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../ParentLineGizmo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Player/PlayerDealDamage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Player/PlayerHealth.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../ProximityChecker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Scriptable Obejcts/Spawner Data/SO_SpawnerData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../UI/NPC/DialogueTrigger.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../UI/Player/MPManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -54,6 +73,7 @@
       <workItem from="1734564762111" duration="946000" />
       <workItem from="1734600658381" duration="228000" />
       <workItem from="1734600957457" duration="3778000" />
+      <workItem from="1734654421016" duration="9793000" />
     </task>
     <servers />
   </component>

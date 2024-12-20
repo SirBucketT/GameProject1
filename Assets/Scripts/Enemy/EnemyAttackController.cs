@@ -7,6 +7,7 @@ public class EnemyAttackController : MonoBehaviour
     [SerializeField] private GameObject _weapon;
     [SerializeField] float _attackRange;
     [SerializeField] PlayerData _playerData;
+    [SerializeField] private bool HasBoomerang = false;
     private bool hasSwung = false; 
     private Transform _player;
     
@@ -18,7 +19,12 @@ public class EnemyAttackController : MonoBehaviour
         {
             _animator = _weapon.GetComponent<Animator>();
         }
+		if (HasBoomerang && gameObject.CompareTag("Enemy"))
+		{
+			_animator.SetBool("HasBoomerang", HasBoomerang);
+		}
     }
+
     private void Update()
     {
         if (!_player || _playerData.currentHealth <= 0)
@@ -41,7 +47,9 @@ public class EnemyAttackController : MonoBehaviour
             if (!hasSwung) return;
             EnemySwingStop();
         }
+        _animator.SetBool("HasBoomerang", HasBoomerang);
     }
+
     [ContextMenu("EnemySwing")]
     public void EnemySwing()
     {

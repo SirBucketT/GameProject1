@@ -8,7 +8,7 @@ public class ParentLineGizmo : MonoBehaviour
 
         if (parent != null)
         {
-            Gizmos.color = Color.yellow;
+            Gizmos.color = Color.red;
             Gizmos.DrawLine(transform.position, parent.position);
         }
     }

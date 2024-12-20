@@ -3,9 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SO_SpawnerData", menuName = "ScriptableObjects/SO_SpawnerData", order = 1)]
 public class SO_SpawnerData : ScriptableObject
 {
-    public GameObject spawnerBlockTransform;
     public GameObject spawnedPrefab;
-    public Transform TargetOfEnemy;
     public int numberOfEnemiesToCreate;
     public bool usingProximity;
     public float firstSpawnDelay = 1f;
