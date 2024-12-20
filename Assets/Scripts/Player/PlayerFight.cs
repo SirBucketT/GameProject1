@@ -1,20 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerFight : MonoBehaviour
 {
-    private Animator animator;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private PlayerData playerData;
+    private Animator _animator;
+    private EnemyHealthManager _enemyHealth;
+
     void Start()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
+        _animator.SetBool("IsAlive", true);
     }
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        
+        if (_animator.GetBool("LockedEnemy") && Input.GetKeyDown(KeyCode.Q))
         {
-            animator.SetTrigger("E");
+            _animator.SetTrigger("Dab");
+        }
+        if (_animator.GetBool("LockedEnemy") && Input.GetKeyDown(KeyCode.W))
+        {
+            _animator.SetTrigger("Kick"); 
+        }
+        if (_animator.GetBool("LockedEnemy") && Input.GetKeyDown(KeyCode.E))
+        {
+            _animator.SetTrigger("Slash");
         }
     }
+    
+    
 }

@@ -1,3 +1,4 @@
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerData", menuName = "Scriptable Objects/PlayerData")]
@@ -22,4 +23,9 @@ public class PlayerData : ScriptableObject
     public float minExp;
     public float maxExp;
     public float currentExp;
+
+    [Header("Player Damage")] 
+    [SerializeField] public GameObject Sword;
+    [SerializeField] public int SwordAttack = 10;
+    
 }

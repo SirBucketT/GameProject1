@@ -22,3 +22,5 @@ MonoBehaviour:
   minExp: 0
   maxExp: 100
   currentExp: 0
+  Sword: {fileID: 3131040012533923090, guid: 6177869066dbc54458b4e1182031d6a2, type: 3}
+  SwordAttack: 0

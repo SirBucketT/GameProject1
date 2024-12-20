@@ -35,7 +35,7 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
     public void TakeDamage(int damageAmount)
     {
         if (!_isAlive) return;
-
+        
         _currentHealth -= damageAmount;
         if (_currentHealth <= 0 && _isAlive)
         {

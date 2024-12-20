@@ -6,38 +6,47 @@ using UnityEngine.Timeline;
 
 public class PlayerMovement : MonoBehaviour
 {
-    RaycastHit hitInfo;
-    NavMeshAgent agent;
-    private Animator animator;
+    RaycastHit _hitInfo;
+    NavMeshAgent _agent;
+    private Animator _animator;
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+        _agent = GetComponent<NavMeshAgent>();
+        _animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        float normalizedSpeed = agent.velocity.magnitude / agent.speed;
-        animator.SetFloat("Velocity", normalizedSpeed);
+        float normalizedSpeed = _agent.velocity.magnitude / _agent.speed;
+        _animator.SetFloat("Velocity", normalizedSpeed);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Input.GetMouseButtonDown(0))
         {
-            
-            if (Physics.Raycast(ray.origin, ray.direction, out hitInfo)) // Single Click
+            if (Physics.Raycast(ray.origin, ray.direction, out _hitInfo)) // Single Click
             {
-                agent.destination = hitInfo.point;
+                Vector3 directionToHit = (_hitInfo.point - transform.position).normalized;
+                float angle = Vector3.Angle(transform.forward, directionToHit);
+                if (angle > 90f)
+                {
+                    _animator.SetTrigger("180");
+                    
+                    transform.Rotate(0f, 180f, 0f, Space.Self);
+                }
+                _agent.SetDestination(_hitInfo.point);
             }
         }
 
+
         if (Input.GetMouseButton(0)) // Hold
         {
-            if (Physics.Raycast(ray.origin, ray.direction, out hitInfo))
+            if (Physics.Raycast(ray.origin, ray.direction, out _hitInfo))
             {
-                agent.destination = hitInfo.point;
+                _agent.SetDestination(_hitInfo.point);
             }
         }
-        
     }
+    
+
 }
