@@ -18,18 +18,19 @@ public class PlayerFight : MonoBehaviour
     void Update()
     {
         
-        if (_animator.GetBool("LockedEnemy") && Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             _animator.SetTrigger("Dab");
         }
-        if (_animator.GetBool("LockedEnemy") && Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             _animator.SetTrigger("Kick"); 
         }
-        if (_animator.GetBool("LockedEnemy") && Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             _animator.SetTrigger("Slash");
         }
+        
     }
     
     
