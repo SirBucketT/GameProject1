@@ -15,8 +15,8 @@ MonoBehaviour:
   gold: 150
   currentMp: 100
   maxMp: 100
-  maxHealth: 100
-  currentHealth: 1000
+  maxHealth: 1
+  currentHealth: 0
   playerLevel: 0
   playerMaxLevel: 10
   minExp: 0

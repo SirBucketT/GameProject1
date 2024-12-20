@@ -2340,6 +2340,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3819853867693952883, guid: af7bd08cf3c36a7479608845b783d856, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819853867693952883, guid: af7bd08cf3c36a7479608845b783d856, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1784921182}
+    - target: {fileID: 3819853867693952883, guid: af7bd08cf3c36a7479608845b783d856, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819853867693952883, guid: af7bd08cf3c36a7479608845b783d856, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartGameButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819853867693952883, guid: af7bd08cf3c36a7479608845b783d856, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819853867693952883, guid: af7bd08cf3c36a7479608845b783d856, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: RestartGameButton
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2463,6 +2487,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4687365358003125757, guid: 3d697d8a2c83d4c478d4b4b2fcc2ce70, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1625648805}
     - target: {fileID: 5329892891015621929, guid: 3d697d8a2c83d4c478d4b4b2fcc2ce70, type: 3}
       propertyPath: m_IsActive
       value: 0

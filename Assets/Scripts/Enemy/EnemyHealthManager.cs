@@ -72,5 +72,4 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
             _isDestroyed = true;
         }
     }
-
 }
