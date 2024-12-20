@@ -7102,10 +7102,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: KaelithNPC
       objectReference: {fileID: 0}
+    - target: {fileID: 7434036637548960098, guid: 3d697d8a2c83d4c478d4b4b2fcc2ce70, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434036637548960098, guid: 3d697d8a2c83d4c478d4b4b2fcc2ce70, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434036637548960098, guid: 3d697d8a2c83d4c478d4b4b2fcc2ce70, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434036637548960098, guid: 3d697d8a2c83d4c478d4b4b2fcc2ce70, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00000071525574
+      objectReference: {fileID: 0}
     - target: {fileID: 8062254273835946539, guid: 3d697d8a2c83d4c478d4b4b2fcc2ce70, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1565982877}
+    - target: {fileID: 8268233761271088056, guid: 3d697d8a2c83d4c478d4b4b2fcc2ce70, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 3.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268233761271088056, guid: 3d697d8a2c83d4c478d4b4b2fcc2ce70, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268233761271088056, guid: 3d697d8a2c83d4c478d4b4b2fcc2ce70, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268233761271088056, guid: 3d697d8a2c83d4c478d4b4b2fcc2ce70, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268233761271088056, guid: 3d697d8a2c83d4c478d4b4b2fcc2ce70, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.33
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
