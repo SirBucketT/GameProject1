@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1694980359148841529}
   - component: {fileID: 7633962117291513292}
   - component: {fileID: 6661428983899507336}
+  - component: {fileID: 1880465666095797832}
   m_Layer: 0
   m_Name: Prox
   m_TagString: Untagged
@@ -46,7 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _proximityIsOn: 1
-  _proximityRange: 3
   _targetOfRange: {fileID: 0}
 --- !u!135 &6661428983899507336
 SphereCollider:
@@ -69,6 +69,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1880465666095797832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701451055857923765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f8a6699170c1c438d09e6dbf23453f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9001967036373684976
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,4 +203,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185ca9b6be8f4a8408c044b44842a80b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnerData: {fileID: 11400000, guid: 43b86d6d62c09f7488b7b20b6c99a3eb, type: 2}
+  _spawnerData: {fileID: 0}

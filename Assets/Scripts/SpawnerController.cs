@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class EnemySpawner : MonoBehaviour
+internal class SpawnerController : MonoBehaviour
 {
     [SerializeField] private SO_SpawnerData _spawnerData;
+    [SerializeField] private bool usingProximity;
     private bool hasSpawned = false;
     private ProximityChecker _proximityChecker;
-    private List<GameObject> _spawnedEnemies = new List<GameObject>();
+    private List<GameObject> _spawnedPrefabs = new List<GameObject>();
 
-	private Vector3 _spawnPositionOffset;
+    private Vector3 _spawnPositionOffset;
 
     private void Awake()
     {
@@ -20,11 +21,10 @@ internal class EnemySpawner : MonoBehaviour
         );
     }
 
-
     private void Start()
     {
         _proximityChecker = GetComponentInChildren<ProximityChecker>();
-        if (!_spawnerData.usingProximity)
+        if (!usingProximity)
         {
             StartCoroutine(SpawnEntitiesWithDelay());
         }
@@ -32,25 +32,26 @@ internal class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if (_spawnerData.usingProximity && _proximityChecker.TargetIsWithinRange && !hasSpawned)
+        if (usingProximity && _proximityChecker.TargetIsWithinRange && !hasSpawned)
         {
             hasSpawned = true;
             StartCoroutine(SpawnEntitiesWithDelay());
         }
     }
 
- private Vector3 GetRandomSpawnOffset()
+    private Vector3 GetRandomSpawnOffset()
     {
         return new Vector3(
             Random.Range(-1f, 1f),
-           0f,
+            0f,
             Random.Range(-1f, 1f)
         );
     }
+
     private GameObject EnemyInstantiate()
     {
- 		Vector3 _spawnPositionOffset = GetRandomSpawnOffset();
-        GameObject enemy = Instantiate(_spawnerData.spawnedPrefab, transform.position + _spawnPositionOffset, Quaternion.identity);
+        Vector3 spawnPositionOffset = GetRandomSpawnOffset();
+        GameObject enemy = Instantiate(_spawnerData.spawnedPrefab, transform.position + spawnPositionOffset, Quaternion.identity);
         enemy.SetActive(true);
         return enemy;
     }
@@ -59,12 +60,12 @@ internal class EnemySpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(_spawnerData.firstSpawnDelay);
 
-        for (int i = 0; i < _spawnerData.numberOfEnemiesToCreate; i++)
+        for (int i = 0; i < _spawnerData.numberOfPrefabsToCreate; i++)
         {
             GameObject enemy = EnemyInstantiate();
-            _spawnedEnemies.Add(enemy);
+            _spawnedPrefabs.Add(enemy);
 
-            if (_spawnerData.isSpawnLimitOn && _spawnedEnemies.Count >= _spawnerData.enemyLimit)
+            if (_spawnerData.isSpawnLimitOn && _spawnedPrefabs.Count >= _spawnerData.enemyLimit)
             {
                 CheckDespawnEnemies();
             }
@@ -87,17 +88,17 @@ internal class EnemySpawner : MonoBehaviour
 
     private IEnumerator DespawnOldestEnemy()
     {
-        if (_spawnedEnemies.Count > 0)
+        if (_spawnedPrefabs.Count > 0)
         {
-            GameObject oldestEnemy = _spawnedEnemies[0];
-            _spawnedEnemies.RemoveAt(0);
+            GameObject oldestEnemy = _spawnedPrefabs[0];
+            _spawnedPrefabs.RemoveAt(0);
             yield return DespawnEnemy(oldestEnemy);
         }
     }
 
     private IEnumerator DespawnAllEnemies()
     {
-        foreach (var enemy in _spawnedEnemies)
+        foreach (var enemy in _spawnedPrefabs)
         {
             if (enemy != null)
             {
@@ -106,7 +107,7 @@ internal class EnemySpawner : MonoBehaviour
                 Destroy(enemy);
             }
         }
-        _spawnedEnemies.Clear();
+        _spawnedPrefabs.Clear();
     }
 
     private IEnumerator DespawnEnemy(GameObject enemy)

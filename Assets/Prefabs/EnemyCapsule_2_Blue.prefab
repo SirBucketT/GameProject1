@@ -325,12 +325,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7154526596106746453}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 926d56e2a1e10724082b03fe2353fcb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  moveTargetData: {fileID: 11400000, guid: ee8fc57a5ce4b1a4eb25e496609198c6, type: 2}
 --- !u!195 &9171519380704108746
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -369,6 +369,7 @@ MonoBehaviour:
   _weapon: {fileID: 1185440061122001698}
   _attackRange: 4
   _playerData: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
+  HasBoomerang: 0
 --- !u!114 &5605074453186849799
 MonoBehaviour:
   m_ObjectHideFlags: 0

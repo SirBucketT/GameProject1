@@ -4,15 +4,29 @@ using UnityEngine.AI;
 
 public class MoveTo : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    private Transform target;
     private NavMeshAgent agent;
     void OnEnable()
     {
         agent = GetComponent<NavMeshAgent>();
+        if (target == null)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                target = player.transform;
+                Debug.Log("Potato");
+            }
+            Debug.Log("Potato 2");
+        }
     }
 
     private void Update()
     {
-        agent.SetDestination((target.position));
+        if (target != null)
+        {
+            agent.SetDestination((target.position));
+            Debug.Log("Potato3");
+        }
     }
 }

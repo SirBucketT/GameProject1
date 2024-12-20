@@ -4,8 +4,7 @@ using UnityEngine;
 public class SO_SpawnerData : ScriptableObject
 {
     public GameObject spawnedPrefab;
-    public int numberOfEnemiesToCreate;
-    public bool usingProximity;
+    public int numberOfPrefabsToCreate;
     public float firstSpawnDelay = 1f;
     public float newSpawnDelay = 1f;
     public bool isSpawnLimitOn;
