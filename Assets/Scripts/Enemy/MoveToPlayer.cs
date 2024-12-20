@@ -15,9 +15,7 @@ public class MoveTo : MonoBehaviour
             if (player != null)
             {
                 target = player.transform;
-                Debug.Log("Potato");
             }
-            Debug.Log("Potato 2");
         }
     }
 
@@ -26,7 +24,6 @@ public class MoveTo : MonoBehaviour
         if (target != null)
         {
             agent.SetDestination((target.position));
-            Debug.Log("Potato3");
         }
     }
 }
