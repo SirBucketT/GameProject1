@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: SO_SpawnerPlayer
   m_EditorClassIdentifier: 
   spawnedPrefab: {fileID: 6825414550768407218, guid: 9b8dea77bd6dd1e49b05d9d10bbe7ab3, type: 3}
-  numberOfEnemiesToCreate: 1
-  usingProximity: 0
+  numberOfPrefabsToCreate: 1
   firstSpawnDelay: 1
   newSpawnDelay: 1
   isSpawnLimitOn: 0
   despawnOldestOnLimit: 0
-  enemyLimit: 0
+  spawnLimit: 0
   despawnDelay: 1

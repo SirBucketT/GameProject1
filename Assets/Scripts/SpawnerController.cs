@@ -65,7 +65,7 @@ internal class SpawnerController : MonoBehaviour
             GameObject enemy = EnemyInstantiate();
             _spawnedPrefabs.Add(enemy);
 
-            if (_spawnerData.isSpawnLimitOn && _spawnedPrefabs.Count >= _spawnerData.enemyLimit)
+            if (_spawnerData.isSpawnLimitOn && _spawnedPrefabs.Count >= _spawnerData.spawnLimit)
             {
                 CheckDespawnEnemies();
             }
