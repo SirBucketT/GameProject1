@@ -9,6 +9,6 @@ public class SO_SpawnerData : ScriptableObject
     public float newSpawnDelay = 1f;
     public bool isSpawnLimitOn;
     public bool despawnOldestOnLimit;
-    public float enemyLimit;
+    public float spawnLimit;
     public float despawnDelay = 1f;
 }
