@@ -32,9 +32,15 @@ public class EnemyAttackController : MonoBehaviour
             EnemySwingStop();
             return;
         }
+        else
+        {
+            DistanceCheck();
+        }
+    }
 
+    private void DistanceCheck()
+    {
         float distanceToPlayer = Vector3.Distance(_player.position, transform.position);
-
         if (distanceToPlayer < _attackRange)
         {
             if (!hasSwung)
@@ -44,12 +50,12 @@ public class EnemyAttackController : MonoBehaviour
         }
         else
         {
-            if (!hasSwung) return;
-            EnemySwingStop();
+            if (hasSwung)
+            {
+                EnemySwingStop();
+            }
         }
-        _animator.SetBool("HasBoomerang", HasBoomerang);
     }
-
     [ContextMenu("EnemySwing")]
     public void EnemySwing()
     {
