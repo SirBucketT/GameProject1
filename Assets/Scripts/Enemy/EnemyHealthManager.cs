@@ -11,8 +11,6 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
     
     private bool _isDestroyed = false;
     private bool _isDisabled;
-    private static int destroyedCount = 0;
-    private static int disabledCount = 0;
 
     bool ITakeDamage.isAlive => _isAlive;
 
