@@ -38,7 +38,6 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
         if (_currentHealth <= 0 && _isAlive)
         {
             _isAlive = false;
-            Debug.Log("Enemy has died.");
             DisableEnemy();
         }
     }
