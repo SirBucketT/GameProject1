@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cd376d77733631429c4425513218db4, type: 3}
-  m_Name: SO_SpawnerEnemy2
+  m_Name: SO_SpawnerEnemy3
   m_EditorClassIdentifier: 
-  spawnedPrefab: {fileID: 7154526596106746453, guid: 4daa220c9cbc80a4b9d032fe6804d4a0, type: 3}
-  numberOfPrefabsToCreate: 2
-  firstSpawnDelay: 3
-  newSpawnDelay: 3
-  isSpawnLimitOn: 0
-  despawnOldestOnLimit: 0
-  spawnLimit: 0
+  spawnedPrefab: {fileID: 7154526596106746453, guid: 97a30883ba5c8584b974913e13b56f08, type: 3}
+  numberOfPrefabsToCreate: 666
+  firstSpawnDelay: 1
+  newSpawnDelay: 1
+  isSpawnLimitOn: 1
+  despawnOldestOnLimit: 1
+  spawnLimit: 1
   despawnDelay: 1
