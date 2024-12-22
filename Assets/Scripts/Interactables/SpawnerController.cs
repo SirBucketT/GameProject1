@@ -5,11 +5,11 @@ using UnityEngine;
 internal class SpawnerController : MonoBehaviour
 {
     [SerializeField] private SO_SpawnerData _spawnerData;
-    [SerializeField] private bool usingProximity;
-    private bool hasSpawned = false;
+    [SerializeField] private GameObject objectToSpawn;
+    [SerializeField] private bool _usingProximity;
+    private bool _hasSpawned = false;
     private ProximityChecker _proximityChecker;
     private List<GameObject> _spawnedPrefabs = new List<GameObject>();
-
     private Vector3 _spawnPositionOffset;
 
     private void Awake()
@@ -23,8 +23,19 @@ internal class SpawnerController : MonoBehaviour
 
     private void Start()
     {
+        if (_spawnerData == null)
+        {
+            return;
+        }
+
         _proximityChecker = GetComponentInChildren<ProximityChecker>();
-        if (!usingProximity)
+        if (_usingProximity && _proximityChecker == null)
+        {
+            
+            return;
+        }
+
+        if (!_usingProximity)
         {
             StartCoroutine(SpawnEntitiesWithDelay());
         }
@@ -32,9 +43,9 @@ internal class SpawnerController : MonoBehaviour
 
     private void Update()
     {
-        if (usingProximity && _proximityChecker.TargetIsWithinRange && !hasSpawned)
+        if (_usingProximity && _proximityChecker != null && _proximityChecker.TargetIsWithinRange && !_hasSpawned)
         {
-            hasSpawned = true;
+            _hasSpawned = true;
             StartCoroutine(SpawnEntitiesWithDelay());
         }
     }
@@ -48,35 +59,42 @@ internal class SpawnerController : MonoBehaviour
         );
     }
 
+    
+
     private GameObject EnemyInstantiate()
     {
-        Vector3 spawnPositionOffset = GetRandomSpawnOffset();
-        GameObject enemy = Instantiate(_spawnerData.spawnedPrefab, transform.position + spawnPositionOffset, Quaternion.identity);
+        if (objectToSpawn == null)
+        {
+            return null;
+        }
+
+        GameObject enemy = Instantiate(objectToSpawn, transform.position + GetRandomSpawnOffset(), Quaternion.identity);
         enemy.SetActive(true);
         return enemy;
     }
 
+
     private IEnumerator SpawnEntitiesWithDelay()
     {
-        yield return new WaitForSeconds(_spawnerData.firstSpawnDelay);
+        yield return new WaitForSeconds(_spawnerData.GetFirstSpawnDelay);
 
-        for (int i = 0; i < _spawnerData.numberOfPrefabsToCreate; i++)
+        for (int i = 0; i < _spawnerData.GetNumberOfPrefabsToCreate; i++)
         {
             GameObject enemy = EnemyInstantiate();
             _spawnedPrefabs.Add(enemy);
 
-            if (_spawnerData.isSpawnLimitOn && _spawnedPrefabs.Count >= _spawnerData.spawnLimit)
+            if (_spawnerData.GetIsSpawnLimitOn && _spawnedPrefabs.Count > _spawnerData.GetSpawnLimit)
             {
                 CheckDespawnEnemies();
             }
 
-            yield return new WaitForSeconds(_spawnerData.newSpawnDelay);
+            yield return new WaitForSeconds(_spawnerData.GetNewSpawnDelay);
         }
     }
 
     private void CheckDespawnEnemies()
     {
-        if (_spawnerData.despawnOldestOnLimit)
+        if (_spawnerData.GetDespawnOldestOnLimit)
         {
             StartCoroutine(DespawnOldestEnemy());
         }
@@ -102,7 +120,7 @@ internal class SpawnerController : MonoBehaviour
         {
             if (enemy != null)
             {
-                yield return new WaitForSeconds(_spawnerData.despawnDelay);
+                yield return new WaitForSeconds(_spawnerData.GetDespawnDelay);
                 enemy.SetActive(false);
                 Destroy(enemy);
             }
@@ -112,9 +130,9 @@ internal class SpawnerController : MonoBehaviour
 
     private IEnumerator DespawnEnemy(GameObject enemy)
     {
-        yield return new WaitForSeconds(_spawnerData.despawnDelay);
         if (enemy != null)
         {
+            yield return new WaitForSeconds(_spawnerData.GetDespawnDelay);
             enemy.SetActive(false);
             Destroy(enemy);
         }
@@ -123,6 +141,6 @@ internal class SpawnerController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.magenta;
-        Gizmos.DrawCube(transform.position, Vector3.one);
+        Gizmos.DrawWireCube(transform.position, Vector3.one * 2f);
     }
 }
