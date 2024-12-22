@@ -5,8 +5,9 @@ using UnityEngine;
 internal class SpawnerController : MonoBehaviour
 {
     [SerializeField] private SO_SpawnerData _spawnerData;
-    [SerializeField] private GameObject objectToSpawn;
+    [SerializeField] private GameObject _objectToSpawn;
     [SerializeField] private bool _usingProximity;
+    [SerializeField] private bool _usingWaves;
     private bool _hasSpawned = false;
     private ProximityChecker _proximityChecker;
     private List<GameObject> _spawnedPrefabs = new List<GameObject>();
@@ -25,13 +26,19 @@ internal class SpawnerController : MonoBehaviour
     {
         if (_spawnerData == null)
         {
+            Debug.LogError("SpawnerData is not assigned!");
             return;
         }
 
+        CheckForProximity();
+    }
+
+    private void CheckForProximity()
+    {
         _proximityChecker = GetComponentInChildren<ProximityChecker>();
         if (_usingProximity && _proximityChecker == null)
         {
-            
+            Debug.LogWarning("ProximityChecker is required but not found!");
             return;
         }
 
@@ -59,37 +66,71 @@ internal class SpawnerController : MonoBehaviour
         );
     }
 
-    
-
-    private GameObject EnemyInstantiate()
-    {
-        if (objectToSpawn == null)
-        {
-            return null;
-        }
-
-        GameObject enemy = Instantiate(objectToSpawn, transform.position + GetRandomSpawnOffset(), Quaternion.identity);
-        enemy.SetActive(true);
-        return enemy;
-    }
-
-
     private IEnumerator SpawnEntitiesWithDelay()
     {
         yield return new WaitForSeconds(_spawnerData.GetFirstSpawnDelay);
 
-        for (int i = 0; i < _spawnerData.GetNumberOfPrefabsToCreate; i++)
+        if (_usingWaves)
         {
-            GameObject enemy = EnemyInstantiate();
-            _spawnedPrefabs.Add(enemy);
+            yield return SpawnWaves();
+        }
+        else
+        {
+            yield return SpawnPrefabs();
+        }
 
-            if (_spawnerData.GetIsSpawnLimitOn && _spawnedPrefabs.Count > _spawnerData.GetSpawnLimit)
+        if (IsSpawnLimitOn())
+        {
+            CheckDespawnEnemies();
+        }
+    }
+
+    private IEnumerator SpawnWaves()
+    {
+        foreach (var wave in _spawnerData.Waves)
+        {
+            foreach (var enemyPrefab in wave.EnemiesInWave)
             {
-                CheckDespawnEnemies();
+                if (enemyPrefab != null)
+                {
+                    GameObject prefab = Instantiate(
+                        enemyPrefab,
+                        transform.position + GetRandomSpawnOffset(),
+                        Quaternion.identity
+                    );
+                    prefab.SetActive(true);
+                    _spawnedPrefabs.Add(prefab);
+                }
+
+                yield return new WaitForSeconds(wave.SpawnDelayBetweenEnemies);
             }
 
             yield return new WaitForSeconds(_spawnerData.GetNewSpawnDelay);
         }
+    }
+
+    private IEnumerator SpawnPrefabs()
+    {
+        for (int i = 0; i < _spawnerData.GetNumberOfPrefabsToCreate; i++)
+        {
+            if (_objectToSpawn != null)
+            {
+                GameObject prefab = Instantiate(
+                    _objectToSpawn,
+                    transform.position + GetRandomSpawnOffset(),
+                    Quaternion.identity
+                );
+                prefab.SetActive(true);
+                _spawnedPrefabs.Add(prefab);
+            }
+
+            yield return new WaitForSeconds(_spawnerData.GetNewSpawnDelay);
+        }
+    }
+
+    private bool IsSpawnLimitOn()
+    {
+        return _spawnerData.GetIsSpawnLimitOn && _spawnedPrefabs.Count > _spawnerData.GetSpawnLimit;
     }
 
     private void CheckDespawnEnemies()
