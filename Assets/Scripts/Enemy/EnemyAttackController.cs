@@ -1,72 +1,85 @@
 using UnityEngine;
-using UnityEngine.AI;
 
 public class EnemyAttackController : MonoBehaviour
 {
     [SerializeField] Animator _animator;
     [SerializeField] private GameObject _weapon;
     [SerializeField] float _attackRange;
+    [SerializeField] private float _cooldownTime;
     [SerializeField] PlayerData _playerData;
     [SerializeField] private bool HasBoomerang = false;
-    private bool hasSwung = false; 
-    private Transform _player;
     
+    private Transform _player;
+    private float _nextAttackTime;
+    private Collider _weaponCollider;
+
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player").transform;
-        
-        if (_weapon != null)
+        _weaponCollider = _weapon?.GetComponent<Collider>();
+        _animator = _weapon?.GetComponent<Animator>();
+
+        if (HasBoomerang && gameObject.CompareTag("Enemy"))
         {
-            _animator = _weapon.GetComponent<Animator>();
+            _animator.SetBool("HasBoomerang", HasBoomerang);
         }
-		if (HasBoomerang && gameObject.CompareTag("Enemy"))
-		{
-			_animator.SetBool("HasBoomerang", HasBoomerang);
-		}
+
+        _nextAttackTime = Time.time;
     }
 
     private void Update()
     {
-        if (!_player || _playerData.currentHealth <= 0)
+        if (_player && _playerData.currentHealth > 0)
         {
-            EnemySwingStop();
-            return;
+            DistanceCheck();
         }
         else
         {
-            DistanceCheck();
+            EnemySwingStop();
         }
     }
 
     private void DistanceCheck()
     {
         float distanceToPlayer = Vector3.Distance(_player.position, transform.position);
-        if (distanceToPlayer < _attackRange)
+
+        if (distanceToPlayer < _attackRange && Time.time >= _nextAttackTime)
         {
-            if (!hasSwung)
-            {
-                EnemySwing();
-            }
+            EnemySwing();
         }
-        else
+        else if (distanceToPlayer >= _attackRange)
         {
-            if (hasSwung)
-            {
-                EnemySwingStop();
-            }
+            EnemySwingStop();
         }
     }
-    [ContextMenu("EnemySwing")]
-    public void EnemySwing()
+
+    private void EnemySwing()
     {
-        _animator.SetBool("IsPlayerClose", true);
-        hasSwung = true;
+        _animator.SetTrigger("Attack");
+        EnableWeaponCollision();
+
+        _nextAttackTime = Time.time + _cooldownTime;
     }
-    
-    [ContextMenu("EnemySwingStop")]
-    public void EnemySwingStop()
+
+    private void EnemySwingStop()
     {
-        _animator.SetBool("IsPlayerClose", false);
-        hasSwung = false;  
+        _animator.ResetTrigger("Attack");
+        DisableWeaponCollision();
+    }
+
+    private void EnableWeaponCollision()
+    {
+        if (_weaponCollider != null)
+        {
+            _weaponCollider.enabled = true;
+        }
+    }
+
+    private void DisableWeaponCollision()
+    {
+        if (_weaponCollider != null)
+        {
+            _weaponCollider.enabled = false;
+        }
     }
 }
