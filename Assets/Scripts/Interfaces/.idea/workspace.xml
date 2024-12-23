@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="07deadcb-23fb-46f1-9e1c-419771ba4078" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Scenes/Production Scenes/level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Production Scenes/level_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Scenes/Production Scenes/level_1/NavMesh-level_1_test_plane 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Production Scenes/level_1/NavMesh-level_1_test_plane 1.asset" afterDir="false" />
-    </list>
+    <list default="true" id="b2ce4ed6-e8b0-4525-8796-7c881e687a3b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,10 +13,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/IInteractable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ITakeDamage.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 7
 }]]></component>
-  <component name="ProjectId" id="2qbhUvYrRrvRXhY9hWsYq82dzie" />
+  <component name="ProjectId" id="2qbhV2isTL9Evc0CsrkhNRmDELA" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -36,23 +40,17 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="07deadcb-23fb-46f1-9e1c-419771ba4078" name="Changes" comment="" />
-      <created>1734937202358</created>
+      <changelist id="b2ce4ed6-e8b0-4525-8796-7c881e687a3b" name="Changes" comment="" />
+      <created>1734937202324</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1734937202358</updated>
-      <workItem from="1734937205518" duration="533000" />
+      <updated>1734937202324</updated>
+      <workItem from="1734937205258" duration="755000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
-  <component name="VcsManagerConfiguration">
-    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-</project>value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
