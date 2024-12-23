@@ -424,11 +424,12 @@ PrefabInstance:
       objectReference: {fileID: 5329892891015621929}
     - target: {fileID: 4015434112663194015, guid: a0505897d6cc79f4a95e7b5db95a365d, type: 3}
       propertyPath: 'dialogue.sentences.Array.data[0]'
-      value: Welcome Traveler, welcome to our town Eldermere.
+      value: Welcome to our town, Eldermere.
       objectReference: {fileID: 0}
     - target: {fileID: 4015434112663194015, guid: a0505897d6cc79f4a95e7b5db95a365d, type: 3}
       propertyPath: 'dialogue.sentences.Array.data[1]'
-      value: Our town specializes in herbs and tools creating.
+      value: We welcome all Travelers with open arms and our town specializes in
+        herbs and tools creating.
       objectReference: {fileID: 0}
     - target: {fileID: 4015434112663194015, guid: a0505897d6cc79f4a95e7b5db95a365d, type: 3}
       propertyPath: 'dialogue.sentences.Array.data[2]'
@@ -436,7 +437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4633591821449376011, guid: a0505897d6cc79f4a95e7b5db95a365d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.36
+      value: 4.36
       objectReference: {fileID: 0}
     - target: {fileID: 4633591821449376011, guid: a0505897d6cc79f4a95e7b5db95a365d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -444,7 +445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4633591821449376011, guid: a0505897d6cc79f4a95e7b5db95a365d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.17
+      value: -13.83
       objectReference: {fileID: 0}
     - target: {fileID: 4633591821449376011, guid: a0505897d6cc79f4a95e7b5db95a365d, type: 3}
       propertyPath: m_LocalRotation.w
