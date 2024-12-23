@@ -32,6 +32,15 @@ internal class SpawnerController : MonoBehaviour
 
         CheckForProximity();
     }
+    
+    private void Update()
+    {
+        if (_usingProximity && _proximityChecker != null && _proximityChecker.TargetIsWithinRange && !_hasSpawned)
+        {
+            _hasSpawned = true;
+            StartCoroutine(SpawnEntitiesWithDelay());
+        }
+    }
 
     private void CheckForProximity()
     {
@@ -47,16 +56,7 @@ internal class SpawnerController : MonoBehaviour
             StartCoroutine(SpawnEntitiesWithDelay());
         }
     }
-
-    private void Update()
-    {
-        if (_usingProximity && _proximityChecker != null && _proximityChecker.TargetIsWithinRange && !_hasSpawned)
-        {
-            _hasSpawned = true;
-            StartCoroutine(SpawnEntitiesWithDelay());
-        }
-    }
-
+    
     private Vector3 GetRandomSpawnOffset()
     {
         return new Vector3(

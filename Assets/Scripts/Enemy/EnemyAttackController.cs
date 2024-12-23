@@ -8,7 +8,8 @@ public class EnemyAttackController : MonoBehaviour
     [SerializeField] private float _cooldownTime;
     [SerializeField] PlayerData _playerData;
     [SerializeField] private bool HasBoomerang = false;
-    
+    [SerializeField] private bool HasBonk = false;
+
     private Transform _player;
     private float _nextAttackTime;
     private Collider _weaponCollider;
@@ -18,15 +19,10 @@ public class EnemyAttackController : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _weaponCollider = _weapon?.GetComponent<Collider>();
         _animator = _weapon?.GetComponent<Animator>();
-
-        if (HasBoomerang && gameObject.CompareTag("Enemy"))
-        {
-            _animator.SetBool("HasBoomerang", HasBoomerang);
-        }
-
+        
         _nextAttackTime = Time.time;
     }
-
+    
     private void Update()
     {
         if (_player && _playerData.currentHealth > 0)
@@ -35,7 +31,7 @@ public class EnemyAttackController : MonoBehaviour
         }
         else
         {
-            EnemySwingStop();
+            StopAllAttacks();
         }
     }
 
@@ -45,25 +41,38 @@ public class EnemyAttackController : MonoBehaviour
 
         if (distanceToPlayer < _attackRange && Time.time >= _nextAttackTime)
         {
-            EnemySwing();
+            PerformAttack();
         }
         else if (distanceToPlayer >= _attackRange)
         {
-            EnemySwingStop();
+            StopAllAttacks();
         }
     }
 
-    private void EnemySwing()
+    private void PerformAttack()
     {
-        _animator.SetTrigger("Attack");
-        EnableWeaponCollision();
+        if (HasBonk)
+        {
+            _animator.SetTrigger("AttackBonk");
+        }
+        else if (HasBoomerang)
+        {
+            _animator.SetTrigger("AttackBoomerang");
+        }
+        else
+        {
+            _animator.SetTrigger("Attack");
+        }
 
+        EnableWeaponCollision();
         _nextAttackTime = Time.time + _cooldownTime;
     }
 
-    private void EnemySwingStop()
+    private void StopAllAttacks()
     {
         _animator.ResetTrigger("Attack");
+        _animator.ResetTrigger("BonkAttack");
+        _animator.ResetTrigger("BoomerangAttack");
         DisableWeaponCollision();
     }
 

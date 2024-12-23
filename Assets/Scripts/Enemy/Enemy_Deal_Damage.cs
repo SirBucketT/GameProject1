@@ -4,6 +4,8 @@ using UnityEngine;
 public class Enemy_Deal_Damage : MonoBehaviour
 {
     [SerializeField] SO_EnemyData EnemyDamage;
+    [SerializeField] private float damageCooldown = 1.0f;
+    private float _lastDamageTime;
 
     private void OnCollisionEnter(Collision other)
     {
@@ -14,9 +16,14 @@ public class Enemy_Deal_Damage : MonoBehaviour
             DamagePlayer(other);
         }
     }
+
     private void DamagePlayer(Collision other)
     {
-        other.gameObject.GetComponent<PlayerHealth>().PlayerTakeDamage(EnemyDamage.GetEnemyDamage);
-        Debug.Log($"Enemy dealt {EnemyDamage.GetEnemyDamage} to Player!");
+        if (Time.time >= _lastDamageTime + damageCooldown)
+        {
+            other.gameObject.GetComponent<PlayerHealth>().PlayerTakeDamage(EnemyDamage.GetEnemyDamage);
+            Debug.Log($"Enemy dealt {EnemyDamage.GetEnemyDamage} to Player!");
+        _lastDamageTime = Time.time; 
+        }
     }
 }
