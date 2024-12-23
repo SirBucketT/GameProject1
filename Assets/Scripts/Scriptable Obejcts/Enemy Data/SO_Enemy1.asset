@@ -12,10 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90cea46da35900b4087b838ef4e4fb7c, type: 3}
   m_Name: SO_Enemy1
   m_EditorClassIdentifier: 
-  _enemyName: Gobbo
+  _enemyName: Redy
   _enemyMaxHealth: 10
   _enemyHealth: 10
-  _enemyDamage: 2
-  _enemyIsAlive: 1
-  _enemyColor: {r: 0.07164473, g: 0.6603774, b: 0.1655471, a: 1}
-  _texture: {fileID: 0}
+  _enemyDamage: 10
