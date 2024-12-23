@@ -422,17 +422,29 @@ PrefabInstance:
       propertyPath: npcDialgue
       value: 
       objectReference: {fileID: 5329892891015621929}
+    - target: {fileID: 4015434112663194015, guid: a0505897d6cc79f4a95e7b5db95a365d, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[0]'
+      value: Welcome Traveler, welcome to our town Eldermere.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015434112663194015, guid: a0505897d6cc79f4a95e7b5db95a365d, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[1]'
+      value: Our town specializes in herbs and tools creating.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015434112663194015, guid: a0505897d6cc79f4a95e7b5db95a365d, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[2]'
+      value: Please have a look at what our merchants have to offer.
+      objectReference: {fileID: 0}
     - target: {fileID: 4633591821449376011, guid: a0505897d6cc79f4a95e7b5db95a365d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.5655136
+      value: 1.36
       objectReference: {fileID: 0}
     - target: {fileID: 4633591821449376011, guid: a0505897d6cc79f4a95e7b5db95a365d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000009536743
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4633591821449376011, guid: a0505897d6cc79f4a95e7b5db95a365d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.6618152
+      value: 9.17
       objectReference: {fileID: 0}
     - target: {fileID: 4633591821449376011, guid: a0505897d6cc79f4a95e7b5db95a365d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -594,6 +606,10 @@ PrefabInstance:
     - target: {fileID: 7819043179568508327, guid: 82ab42f90e0c3b64c94260c184899aad, type: 3}
       propertyPath: m_Name
       value: dialogueCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819043179568508327, guid: 82ab42f90e0c3b64c94260c184899aad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8456094820138951704, guid: 82ab42f90e0c3b64c94260c184899aad, type: 3}
       propertyPath: m_AnchoredPosition.x

@@ -849,7 +849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1839637741053399245, guid: 78075df45ec1e814dad6dae3cceab003, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32
+      value: 0.32000017
       objectReference: {fileID: 0}
     - target: {fileID: 1839637741053399245, guid: 78075df45ec1e814dad6dae3cceab003, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1431,7 +1431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1839637741053399245, guid: 78075df45ec1e814dad6dae3cceab003, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32
+      value: 0.32000017
       objectReference: {fileID: 0}
     - target: {fileID: 1839637741053399245, guid: 78075df45ec1e814dad6dae3cceab003, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5235,6 +5235,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4024401038043829365, guid: 3d697d8a2c83d4c478d4b4b2fcc2ce70, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[0]'
+      value: Welcome Traveler, welcome to our town Eldermere.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024401038043829365, guid: 3d697d8a2c83d4c478d4b4b2fcc2ce70, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[1]'
+      value: Our town specializes in herbs and tools creating.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024401038043829365, guid: 3d697d8a2c83d4c478d4b4b2fcc2ce70, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[2]'
+      value: Please have a look at what our merchants have to offer.
+      objectReference: {fileID: 0}
     - target: {fileID: 4624607853640117473, guid: 3d697d8a2c83d4c478d4b4b2fcc2ce70, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.36
@@ -6715,7 +6727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1839637741053399245, guid: 78075df45ec1e814dad6dae3cceab003, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32
+      value: 0.32000017
       objectReference: {fileID: 0}
     - target: {fileID: 1839637741053399245, guid: 78075df45ec1e814dad6dae3cceab003, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6838,6 +6850,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1930316306874527510, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 134.25
+      objectReference: {fileID: 0}
     - target: {fileID: 2085225737612830691, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6845,6 +6861,10 @@ PrefabInstance:
     - target: {fileID: 2085225737612830691, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2792607210801129066, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 188
       objectReference: {fileID: 0}
     - target: {fileID: 3302380471800573698, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6862,6 +6882,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4359995349880519703, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
+      propertyPath: m_text
+      value: 'Gold:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359995349880519703, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
+      propertyPath: m_margin.z
+      value: 96.90149
+      objectReference: {fileID: 0}
     - target: {fileID: 4652844270605395444, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6869,6 +6897,10 @@ PrefabInstance:
     - target: {fileID: 4652844270605395444, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694189151811027765, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
+      propertyPath: m_margin.x
+      value: 45.68219
       objectReference: {fileID: 0}
     - target: {fileID: 7496661964654627991, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
       propertyPath: m_Name
