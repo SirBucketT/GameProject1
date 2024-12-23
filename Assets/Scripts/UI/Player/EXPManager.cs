@@ -43,4 +43,11 @@ public class EXPManager : MonoBehaviour
             playerExpBarBack.value = Mathf.Lerp(playerExpBarBack.value, playerData.currentExp, _lerpSpeed);
         }
     }
+    
+    public void UpdateEXPDisplay()
+    {
+        playerExpBar.maxValue = playerData.maxExp;
+        playerExpBar.value = playerData.currentExp;
+        playerExpBarBack.value = playerData.currentHealth;
+    }
 }

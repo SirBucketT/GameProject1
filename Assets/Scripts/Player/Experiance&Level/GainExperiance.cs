@@ -7,18 +7,30 @@ public class GainExperiance : MonoBehaviour
     
     public void GainExperiancePoints(float expGain)
     {
-        playerData.currentExp += expGain;
-        Debug.Log($"you gained {expGain} EXP");
-        
-        if (playerData.playerLevel >= playerData.playerMaxLevel)
+        if (playerData == null || experianceManager == null)
         {
-            playerData.playerLevel = playerData.playerMaxLevel;
-            playerData.currentExp = playerData.maxExp;
-            return; 
+            Debug.LogError("PlayerData or EXPManager reference is not assigned.");
+            return;
         }
-        
-        playerData.currentExp = playerData.minExp; 
-        experianceManager.playerExpBar.maxValue = playerData.maxExp; 
+
+        playerData.currentExp += expGain;
+        Debug.Log($"You gained {expGain} EXP");
+
+        if (playerData.currentExp >= playerData.maxExp)
+        {
+            playerData.currentExp -= playerData.maxExp;
+            playerData.playerLevel++;
+
+            if (playerData.playerLevel >= playerData.playerMaxLevel)
+            {
+                playerData.playerLevel = playerData.playerMaxLevel;
+                playerData.currentExp = playerData.maxExp;
+                return;
+            }
+        }
+
+        experianceManager.playerExpBar.maxValue = playerData.maxExp;
         experianceManager.playerExpBarBack.maxValue = playerData.maxExp;
+        //experianceManager.UpdateEXPDisplay();
     }
 }

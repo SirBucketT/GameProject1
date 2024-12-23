@@ -2018,18 +2018,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 2141289050}
-    - target: {fileID: 5379767599921705283, guid: 6d370a93e6284174c8fc90f84e44ca15, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6614702912962024741, guid: 6d370a93e6284174c8fc90f84e44ca15, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6614702912962024741, guid: 6d370a93e6284174c8fc90f84e44ca15, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
+    - target: {fileID: 3462195006065543271, guid: 6d370a93e6284174c8fc90f84e44ca15, type: 3}
+      propertyPath: experianceManager
+      value: 
+      objectReference: {fileID: 795374545130613731}
     - target: {fileID: 7722418124696890731, guid: 6d370a93e6284174c8fc90f84e44ca15, type: 3}
       propertyPath: m_Name
       value: EnemyHealthUI
@@ -2137,30 +2129,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7722418124696890731, guid: 6d370a93e6284174c8fc90f84e44ca15, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6297174118947935299}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d370a93e6284174c8fc90f84e44ca15, type: 3}
---- !u!1 &6297174118947935298 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7722418124696890731, guid: 6d370a93e6284174c8fc90f84e44ca15, type: 3}
-  m_PrefabInstance: {fileID: 6297174118947935297}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6297174118947935299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6297174118947935298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1e90477b6c45374c97fedc6f1e1642c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
-  experianceManager: {fileID: 795374545130613731}
 --- !u!1001 &8554757377010167789
 PrefabInstance:
   m_ObjectHideFlags: 0
