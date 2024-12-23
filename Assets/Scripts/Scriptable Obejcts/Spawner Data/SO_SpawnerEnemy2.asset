@@ -19,3 +19,6 @@ MonoBehaviour:
   despawnOldestOnLimit: 0
   spawnLimit: 0
   despawnDelay: 1
+  waves:
+  - enemiesInWave: []
+    spawnDelayBetweenEnemies: 0

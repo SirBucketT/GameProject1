@@ -7,6 +7,7 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
 {
     [SerializeField] private SO_EnemyData enemyData;
     [SerializeField] int _currentHealth;
+    public event Action OnDeath;
     private bool _isAlive;
     
     private bool _isDestroyed = false;
@@ -46,7 +47,7 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
         if (_currentHealth <= 0 && !_isAlive && !_isDisabled) 
         {
             _isDisabled = true;
-            
+            OnDeath?.Invoke();
             gameObject.SetActive(false);
             
             if (this != null && gameObject.activeSelf)
