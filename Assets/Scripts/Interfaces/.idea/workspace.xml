@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2ce4ed6-e8b0-4525-8796-7c881e687a3b" name="Changes" comment="" />
+    <list default="true" id="07deadcb-23fb-46f1-9e1c-419771ba4078" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Scenes/Test scenes/SebScene/SebEnemyTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Test scenes/SebScene/SebEnemyTestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Scenes/Test scenes/SebScene/SebEnemyTestScene/NavMesh-level_1_test_plane.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Test scenes/SebScene/SebEnemyTestScene/NavMesh-level_1_test_plane.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,13 +17,24 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/IInteractable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ITakeDamage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Scenes/Test scenes/JoshuaScene/Player_camera/MainCameraController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Enemy/EnemyAttackController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Enemy/EnemyHealthManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Enemy/EnemyWaveManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Enemy/Enemy_Deal_Damage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Interactables/Destructible.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Interactables/SpawnerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Player/PlayerHealth.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Player/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Scriptable Obejcts/DropList Data/DropList.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Scriptable Obejcts/DropList Data/SO_DropListData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Scriptable Obejcts/Enemy Data/SOEnemyData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Scriptable Obejcts/Spawner Data/SO_SpawnerData.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 7
 }]]></component>
-  <component name="ProjectId" id="2qbhV2isTL9Evc0CsrkhNRmDELA" />
+  <component name="ProjectId" id="2qbhUvYrRrvRXhY9hWsYq82dzie" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -40,12 +54,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b2ce4ed6-e8b0-4525-8796-7c881e687a3b" name="Changes" comment="" />
-      <created>1734937202324</created>
+      <changelist id="07deadcb-23fb-46f1-9e1c-419771ba4078" name="Changes" comment="" />
+      <created>1734937202358</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1734937202324</updated>
-      <workItem from="1734937205258" duration="755000" />
+      <updated>1734937202358</updated>
+      <workItem from="1734937205518" duration="16777000" />
     </task>
     <servers />
   </component>
@@ -53,6 +67,17 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
