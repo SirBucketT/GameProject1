@@ -11,8 +11,4 @@ public class GoldUI : MonoBehaviour
     {
         goldText.text = playerData.gold.ToString();
     }
-    
-    public void GetGold(int amount) {
-        playerData.gold += amount;
-    }
 }
