@@ -6531,6 +6531,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1681733711238702766, guid: 282015fe0a0e640839df9c339beb122f, type: 3}
+      propertyPath: m_text
+      value: Gold
+      objectReference: {fileID: 0}
     - target: {fileID: 2217773446558985646, guid: 282015fe0a0e640839df9c339beb122f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6659,6 +6663,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8588908597967935884, guid: 282015fe0a0e640839df9c339beb122f, type: 3}
+      propertyPath: m_text
+      value: 'amount:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8588908597967935884, guid: 282015fe0a0e640839df9c339beb122f, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8588908597967935884, guid: 282015fe0a0e640839df9c339beb122f, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.88235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8588908597967935884, guid: 282015fe0a0e640839df9c339beb122f, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278247935
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060795418435043492, guid: 282015fe0a0e640839df9c339beb122f, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7159,6 +7183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin flip 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1354568002083981943, guid: 78075df45ec1e814dad6dae3cceab003, type: 3}
+      propertyPath: m_TagString
+      value: Coins
+      objectReference: {fileID: 0}
     - target: {fileID: 1839637741053399245, guid: 78075df45ec1e814dad6dae3cceab003, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.2216048
@@ -7224,10 +7252,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4875619678502195012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 870661dbe57cf4043ac060408d22f2f9, type: 3}
+  m_Script: {fileID: 11500000, guid: fc829e301047e9f45bcb32f448b559d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 0}
+  rotationSpeed: 180
 --- !u!114 &4875619678502195014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7237,10 +7265,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4875619678502195012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b39c175da32febc41b5885f46a0faa9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 339f6ba15ef5af14191de3e49b1163f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 180
+  playerData: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
