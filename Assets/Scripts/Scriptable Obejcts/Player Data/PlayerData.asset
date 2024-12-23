@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9942aec85a3d792478fbe8c9361945f4, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  gold: 150
+  gold: 0
   currentMp: 100
   maxMp: 100
   maxHealth: 100
-  currentHealth: 1.2412312e+11
+  currentHealth: 100
   playerLevel: 0
   playerMaxLevel: 10
   minExp: 0
