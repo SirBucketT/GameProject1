@@ -7,4 +7,5 @@ public class SO_DropListData : ScriptableObject
 {
     [SerializeField] private List<DropList> _dropList = new List<DropList>();
     
+    public List<DropList> GetDropList => _dropList;
 }

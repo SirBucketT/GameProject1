@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3a53e05-27c6-4e99-9caf-95ca65269cfa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Scenes/Test scenes/SebScene/SebEnemyTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Test scenes/SebScene/SebEnemyTestScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Scenes/Test scenes/SebScene/SebEnemyTestScene/NavMesh-level_1_test_plane.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Test scenes/SebScene/SebEnemyTestScene/NavMesh-level_1_test_plane.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Enemy/EnemyHealthManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Enemy/EnemyHealthManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpawnerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpawnerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Scriptable Obejcts/Spawner Data/SO_SpawnerEnemy2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../Scriptable Obejcts/Spawner Data/SO_SpawnerEnemy2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Scriptable Obejcts/Spawner Data/SO_SpawnerEnemy3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../Scriptable Obejcts/Spawner Data/SO_SpawnerEnemy3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItemDrop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ItemDrop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scriptable Obejcts/DropList Data/DropList1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scriptable Obejcts/DropList Data/DropList1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scriptable Obejcts/DropList Data/SO_DropListData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Scriptable Obejcts/DropList Data/SO_DropListData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +20,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../Coins/CollectableCoins1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Enemy/EnemyHealthManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Enemy/EnemyWaveManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ItemDrop.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SpawnerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Scriptable Obejcts/DropList Data/DropList.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Scriptable Obejcts/DropList Data/SO_DropListData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Scriptable Obejcts/Spawner Data/SO_SpawnerData.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
@@ -54,7 +57,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1734975195189</updated>
-      <workItem from="1734975197107" duration="2896000" />
+      <workItem from="1734975197107" duration="5800000" />
     </task>
     <servers />
   </component>
