@@ -13,11 +13,12 @@ public class GainExperiance : MonoBehaviour
         if (playerData.playerLevel >= playerData.playerMaxLevel)
         {
             playerData.playerLevel = playerData.playerMaxLevel;
-            return;
+            playerData.currentExp = playerData.maxExp;
+            return; 
         }
-
-        playerData.currentExp = playerData.minExp;
-        experianceManager.playerExpBar.maxValue = playerData.maxExp;
+        
+        playerData.currentExp = playerData.minExp; 
+        experianceManager.playerExpBar.maxValue = playerData.maxExp; 
         experianceManager.playerExpBarBack.maxValue = playerData.maxExp;
     }
 }

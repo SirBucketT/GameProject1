@@ -1145,6 +1145,7 @@ GameObject:
   - component: {fileID: 5243099219280207806}
   - component: {fileID: 2461350926502259700}
   - component: {fileID: 2917033643517556474}
+  - component: {fileID: 3462195006065543271}
   m_Layer: 5
   m_Name: EnemyHealthUI
   m_TagString: Untagged
@@ -1217,7 +1218,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &5243099219280207806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1247,6 +1248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b36aef84fac4561a16afc2da16c99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyData: {fileID: 11400000, guid: eb9d0125ab1504a429d3f70c8a23b3bc, type: 2}
   healthbarSlider: {fileID: 3987169692404035917}
   healthbarSliderBack: {fileID: 8262657242245010207}
   currentHealth: {fileID: 1156065873644902111}
@@ -1264,6 +1266,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
+--- !u!114 &3462195006065543271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7722418124696890731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e90477b6c45374c97fedc6f1e1642c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
+  experianceManager: {fileID: 0}
 --- !u!1 &9221678507237672518
 GameObject:
   m_ObjectHideFlags: 0
