@@ -429,7 +429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7154526596106746453, guid: 4daa220c9cbc80a4b9d032fe6804d4a0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7340273356431912242, guid: 4daa220c9cbc80a4b9d032fe6804d4a0, type: 3}
       propertyPath: target
@@ -1266,7 +1266,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dropList: {fileID: 0}
-  spawnDelayBetweenItems: 0.5
 --- !u!1 &1879800998 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7154526596106746453, guid: 97a30883ba5c8584b974913e13b56f08, type: 3}
@@ -1285,7 +1284,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dropList: {fileID: 11400000, guid: 5dd83ee300b5499478a3d0157e582894, type: 2}
-  spawnDelayBetweenItems: 0.5
 --- !u!1 &1925527657 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4017412857500574581, guid: 282015fe0a0e640839df9c339beb122f, type: 3}
@@ -1631,7 +1629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7179961065801060649, guid: eccda820a47e42043a94d335d7b0a192, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23be001c-0855-42a2-ad4e-1d765d04ae9a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Scenes/Test scenes/SebScene/SebEnemyTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Test scenes/SebScene/SebEnemyTestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Animation/Enemy/EnemyWeaponSwing.controller" beforeDir="false" afterPath="$PROJECT_DIR$/../../Animation/Enemy/EnemyWeaponSwing.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EnemyHealthManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EnemyHealthManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Interactables/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Interactables/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Interactables/ItemDrop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Interactables/ItemDrop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Interactables/SpawnerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Interactables/SpawnerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EnemyAttackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EnemyAttackController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,14 +18,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/EnemyAttackController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/EnemyHealthManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Interactables/ItemDrop.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Interactables/SpawnerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/EnemyAttackController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/EnemyHealthManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Interactables/ItemDrop.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Interactables/SpawnerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Interfaces/ITakeDamage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Player/PlayerDealDamage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Player/PlayerHealth.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Scriptable Obejcts/Spawner Data/SO_SpawnerData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Scriptable Obejcts/Spawner Data/SO_SpawnerData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../UI/Enemy/EnemyHealthbar.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../UI/NPC/DialogueTrigger.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../UI/Player/MPManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -72,6 +69,7 @@
       <workItem from="1734865613436" duration="420000" />
       <workItem from="1734866264168" duration="849000" />
       <workItem from="1735081960553" duration="8698000" />
+      <workItem from="1735126387109" duration="1107000" />
     </task>
     <servers />
   </component>

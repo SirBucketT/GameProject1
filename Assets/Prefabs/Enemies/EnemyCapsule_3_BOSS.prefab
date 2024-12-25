@@ -584,10 +584,11 @@ MonoBehaviour:
   _animator: {fileID: 3211027973371609289}
   _weapon: {fileID: 5000648026656056438}
   _attackRange: 5
+  _rotationSpeed: 5
   _cooldownTime: 5
   _playerData: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
-  HasBoomerang: 0
-  HasBonk: 1
+  _hasBoomerang: 0
+  _hasBonk: 1
 --- !u!114 &2041243793169095267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,3 +603,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: dc624a70109751340a1e1ccdd19446c4, type: 2}
   _currentHealth: 50
+  itemDrop: {fileID: 0}

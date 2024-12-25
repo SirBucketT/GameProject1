@@ -1,84 +1,95 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAttackController : MonoBehaviour
 {
     [SerializeField] Animator _animator;
     [SerializeField] private GameObject _weapon;
-    [SerializeField] float _attackRange;
     [SerializeField] private float _cooldownTime;
     [SerializeField] PlayerData _playerData;
-    [SerializeField] private bool HasBoomerang = false;
-    [SerializeField] private bool HasBonk = false;
-
+    [SerializeField] private bool _hasBoomerang = false;
+    [SerializeField] private bool _hasBonk = false;
+    
     private Transform _player;
     private float _nextAttackTime;
     private Collider _weaponCollider;
+    private NavMeshAgent _navMeshAgent;
 
+    private readonly string[] _attackTriggers = { "Attack", "BonkAttack", "BoomerangAttack" };
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _weaponCollider = _weapon?.GetComponent<Collider>();
         _animator = _weapon?.GetComponent<Animator>();
+        _navMeshAgent = GetComponent<NavMeshAgent>();
         
         _nextAttackTime = Time.time;
     }
     
     private void Update()
     {
-        if (_player && _playerData.currentHealth > 0)
+        if (IsPlayerAlive())
         {
             DistanceCheck();
         }
-        else
+        else if (_player)
         {
-            StopAllAttacks();
+            ResetAllAttacks();
         }
     }
-
+    
     private void DistanceCheck()
     {
-        float distanceToPlayer = Vector3.Distance(_player.position, transform.position);
-
-        if (distanceToPlayer < _attackRange && Time.time >= _nextAttackTime)
+        if (HasStoppedMoving())
         {
-            PerformAttack();
-        }
-        else if (distanceToPlayer >= _attackRange)
-        {
-            StopAllAttacks();
-        }
-    }
-
-    private void PerformAttack()
-    {
-        if (HasBonk)
-        {
-            _animator.SetTrigger("AttackBonk");
-        }
-        else if (HasBoomerang)
-        {
-            _animator.SetTrigger("AttackBoomerang");
+            if (Time.time >= _nextAttackTime)
+            {
+                PerformAttack();
+            }
         }
         else
         {
-            _animator.SetTrigger("Attack");
+            ResetAllAttacks();
+        }
+    }
+    
+    private void PerformAttack()
+    {
+        if (_hasBonk)
+        {
+            TriggerAttack("BonkAttack");
+        }
+        else if (_hasBoomerang)
+        {
+            TriggerAttack("BoomerangAttack");
+        }
+        else
+        {
+            TriggerAttack("Attack");
         }
 
         EnableWeaponCollision();
         _nextAttackTime = Time.time + _cooldownTime;
     }
 
-    private void StopAllAttacks()
+    private void TriggerAttack(string attackTrigger)
     {
-        _animator.ResetTrigger("Attack");
-        _animator.ResetTrigger("BonkAttack");
-        _animator.ResetTrigger("BoomerangAttack");
+        _animator.SetTrigger(attackTrigger);
+    }
+
+    private void ResetAllAttacks()
+    {
+        foreach (string trigger in _attackTriggers)
+        {
+            _animator.ResetTrigger(trigger);
+        }
+        
         DisableWeaponCollision();
     }
 
     private void EnableWeaponCollision()
     {
-        if (_weaponCollider != null)
+        if (_weaponCollider)
         {
             _weaponCollider.enabled = true;
         }
@@ -86,9 +97,19 @@ public class EnemyAttackController : MonoBehaviour
 
     private void DisableWeaponCollision()
     {
-        if (_weaponCollider != null)
+        if (_weaponCollider)
         {
             _weaponCollider.enabled = false;
         }
+        
+    }
+    private bool HasStoppedMoving()
+    {
+        return _navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance && !_navMeshAgent.pathPending;
+    }
+    
+    private bool IsPlayerAlive()
+    {
+        return _player && _playerData.currentHealth >= 0;
     }
 }
