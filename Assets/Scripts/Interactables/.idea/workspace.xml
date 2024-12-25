@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3a53e05-27c6-4e99-9caf-95ca65269cfa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ItemDrop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ItemDrop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Scriptable Obejcts/DropList Data/DropList1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Scriptable Obejcts/DropList Data/DropList1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Scriptable Obejcts/DropList Data/SO_DropListData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Scriptable Obejcts/DropList Data/SO_DropListData.cs" afterDir="false" />
-    </list>
+    <list default="true" id="a3a53e05-27c6-4e99-9caf-95ca65269cfa" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +51,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1734975195189</updated>
-      <workItem from="1734975197107" duration="5800000" />
+      <workItem from="1734975197107" duration="6312000" />
     </task>
     <servers />
   </component>

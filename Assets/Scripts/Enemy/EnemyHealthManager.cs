@@ -2,17 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyHealthManager : MonoBehaviour, ITakeDamage
 {
     [SerializeField] private SO_EnemyData enemyData;
-    [SerializeField] int _currentHealth;
-    public event Action OnDeath;
-    private bool _isAlive;
-    
+    [SerializeField] private int _currentHealth;
+    [SerializeField] private ItemDrop itemDrop;
+    public event Action OnEnemyDeath;
     private bool _isDestroyed = false;
-    private bool _isDisabled;
-    bool ITakeDamage.isAlive => _isAlive;
+
+    bool ITakeDamage.isAlive => IsAlive();
 
     public void Start()
     {
@@ -23,40 +23,40 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
     {
         if (enemyData == null)
         {
-            
             return;
         }
         _currentHealth = enemyData.GetEnemyHealth;
-        _isAlive = true;
+    }
+    
+    private bool IsAlive()
+    {
+        return _currentHealth > 0 && IsEnabled();
+    }
+
+    private bool IsEnabled()
+    {
+        return gameObject.activeSelf;
     }
 
     public void TakeDamage(int damageAmount)
     {
-        if (!_isAlive) return;
-        
         _currentHealth -= damageAmount;
-        if (_currentHealth <= 0 && _isAlive)
+        if (!IsAlive())
         {
-            _isAlive = false;
-            DisableEnemy();
+            KillEnemy();
         }
     }
 
-    private void DisableEnemy()
+    private void KillEnemy()
     {
-        if (_currentHealth <= 0 && !_isAlive && !_isDisabled) 
-        {
-            _isDisabled = true;
-            OnDeath?.Invoke();
-            gameObject.SetActive(false);
-            
-            if (this != null && gameObject.activeSelf)
-            {
-                StartCoroutine(DestroyLater());
-            }
+        gameObject.SetActive(false);
+        OnEnemyDeath?.Invoke();
+
+        if (this != null && IsEnabled())
+        { 
+            StartCoroutine(DestroyLater());
         }
     }
-
 
     private IEnumerator DestroyLater()
     {
@@ -65,7 +65,6 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
         if (gameObject != null && !_isDestroyed)
         {
             Destroy(this.gameObject);
-            
             _isDestroyed = true;
         }
     }

@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemDrop : MonoBehaviour
+internal class ItemDrop : MonoBehaviour
 {
-    [SerializeField] private SO_DropListData _dropList; 
-    [SerializeField] private float spawnDelayBetweenItems = 0.5f; 
+    [SerializeField] private SO_DropListData _dropList;  
     
-    private void Start()
-    {
-        SubscribeToEnemyDeath(gameObject);  
-    }
-
-    private IEnumerator DropItems()
+    private void DropItems()
     {
         foreach (var dropList in _dropList.GetDropList)
         {
@@ -27,32 +21,8 @@ public class ItemDrop : MonoBehaviour
                     );
                     item.SetActive(true); 
                 }
-                else
-                {
-                    Debug.LogWarning("Item prefab is null, skipping.");
-                }
-
-                yield return new WaitForSeconds(spawnDelayBetweenItems);
             }
         }
-    }
-
-    private void SubscribeToEnemyDeath(GameObject enemyPrefab)
-    {
-        var healthManager = enemyPrefab.GetComponent<EnemyHealthManager>();
-        if (healthManager != null)
-        {
-            healthManager.OnDeath += OnEnemyDeath;
-        }
-        else
-        {
-            Debug.LogWarning("EnemyHealthManager not found on the provided enemy prefab.");
-        }
-    }
-
-    private void OnEnemyDeath()
-    {
-        StartCoroutine(DropItems());
     }
 
     private Vector3 GetRandomSpawnOffset()

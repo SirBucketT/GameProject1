@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 internal class SpawnerController : MonoBehaviour
 {
     [SerializeField] private SO_SpawnerData _spawnerData;
@@ -30,19 +29,17 @@ internal class SpawnerController : MonoBehaviour
         {
             return;
         }
-
         CheckForProximity();
     }
     
     private void Update()
     {
-        if (_usingProximity && _proximityChecker != null && _proximityChecker.TargetIsWithinRange && !_hasSpawned)
+        if (IsWithinProximity())
         {
             _hasSpawned = true;
             StartCoroutine(SpawnEntitiesWithDelay());
         }
     }
-
     private void CheckForProximity()
     {
         _proximityChecker = GetComponentInChildren<ProximityChecker>();
@@ -56,16 +53,6 @@ internal class SpawnerController : MonoBehaviour
             StartCoroutine(SpawnEntitiesWithDelay());
         }
     }
-    
-    private Vector3 GetRandomSpawnOffset()
-    {
-        return new Vector3(
-            Random.Range(-1f, 1f),
-            0f,
-            Random.Range(-1f, 1f)
-        );
-    }
-
     private IEnumerator SpawnEntitiesWithDelay()
     {
         yield return new WaitForSeconds(_spawnerData.GetFirstSpawnDelay);
@@ -84,57 +71,82 @@ internal class SpawnerController : MonoBehaviour
             CheckDespawnEnemies();
         }
     }
-
     private IEnumerator SpawnWaves()
     {
-        for (int waveCount = 0; waveCount < _spawnerData.Waves.Count; waveCount++)
+        if (_spawnerData == null || _spawnerData.Waves == null)
         {
-            var wave = _spawnerData.Waves[waveCount];
-            _remainingEnemies = wave.EnemiesInWave.Count; 
+            yield break;
+        }
 
-            foreach (var enemyPrefab in wave.EnemiesInWave)
-            {
-                if (enemyPrefab != null)
-                {
-                    GameObject prefab = Instantiate(
-                        enemyPrefab,
-                        transform.position + GetRandomSpawnOffset(),
-                        Quaternion.identity
-                    );
-
-                    prefab.SetActive(true);
-                    _spawnedPrefabs.Add(prefab);
-
-                    SubscribeToEnemyDeath(prefab);
-                }
-
-                yield return new WaitForSeconds(wave.SpawnDelayBetweenEnemies);
-            }
-            
-            yield return StartCoroutine(CheckIfWaveIsDefeated());
-
-            Debug.Log($"Wave {waveCount + 1} cleared!");
+        foreach (var wave in _spawnerData.Waves)
+        {
+            yield return StartCoroutine(CheckWave(wave));
+        
             yield return new WaitForSeconds(_spawnerData.GetNewSpawnDelay);
         }
     }
 
-    private void SubscribeToEnemyDeath(GameObject enemyPrefab)
+    private IEnumerator CheckWave(EnemyWaveManager wave)
     {
-        var healthManager = enemyPrefab.GetComponent<EnemyHealthManager>();
-        if (healthManager != null)
+        _remainingEnemies = wave.EnemiesInWave.Count;
+
+        foreach (var enemyPrefab in wave.EnemiesInWave)
         {
-            healthManager.OnDeath += OnEnemyDeath;
+            InstantiateEnemyPrefab(enemyPrefab);
+            yield return new WaitForSeconds(wave.SpawnDelayBetweenEnemies);
         }
-    }
-    private void OnEnemyDeath()
-    {
-        _remainingEnemies--;
+    
+        yield return new WaitUntil(() => IsWaveDefeated());
     }
 
-    private IEnumerator CheckIfWaveIsDefeated()
+    private void InstantiateEnemyPrefab(GameObject enemyPrefab)
     {
-        yield return new WaitUntil(() => _remainingEnemies <= 0);
-        Debug.Log("Wave defeated!");
+        if (enemyPrefab != null)
+        {
+            GameObject instantiatedPrefab = Instantiate(
+                enemyPrefab,
+                transform.position + GetRandomSpawnOffset(),
+                Quaternion.identity
+            );
+
+            instantiatedPrefab.SetActive(true);
+            _spawnedPrefabs.Add(instantiatedPrefab);
+            
+            EnemySubscribeToDeath(instantiatedPrefab);
+        }
+    }
+
+    private void EnemySubscribeToDeath(GameObject prefab)
+    {
+        EnemyHealthManager enemyHealthManager = prefab.GetComponent<EnemyHealthManager>();
+        if (enemyHealthManager != null)
+        {
+            enemyHealthManager.OnEnemyDeath += CountEnemyDeath;
+        }
+    }
+
+    private bool IsWithinProximity()
+    {
+        return _usingProximity && _proximityChecker != null && _proximityChecker.TargetIsWithinRange && !_hasSpawned;
+    }
+
+    private bool IsWaveDefeated()
+    {
+        return _remainingEnemies <= 0;
+    }
+    
+    private Vector3 GetRandomSpawnOffset()
+    {
+        return new Vector3(
+            Random.Range(-1f, 1f),
+            0f,
+            Random.Range(-1f, 1f)
+        );
+    }
+
+    public void CountEnemyDeath()
+    {
+        _remainingEnemies--;
     }
 
     private IEnumerator SpawnObjects()
