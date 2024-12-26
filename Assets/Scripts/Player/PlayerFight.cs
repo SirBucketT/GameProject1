@@ -14,6 +14,7 @@ public class PlayerFight : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _animator.SetBool("IsAlive", true);
+
     }
     void Update()
     {
