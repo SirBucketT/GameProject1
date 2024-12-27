@@ -17709,22 +17709,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1798044275248666045, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
-      propertyPath: m_text
-      value: Click on screen or hold the left mouse key to move the player character
-      objectReference: {fileID: 0}
-    - target: {fileID: 1798044275248666045, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
-      propertyPath: m_fontSize
-      value: 46
-      objectReference: {fileID: 0}
-    - target: {fileID: 1798044275248666045, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
-      propertyPath: m_margin.w
-      value: -9.095306
-      objectReference: {fileID: 0}
-    - target: {fileID: 1798044275248666045, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 46
-      objectReference: {fileID: 0}
     - target: {fileID: 2154108086704576716, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
       propertyPath: m_Name
       value: HowToPlay
@@ -17732,22 +17716,6 @@ PrefabInstance:
     - target: {fileID: 2154108086704576716, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3958531484273580415, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3958531484273580415, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3958531484273580415, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 133.9629
-      objectReference: {fileID: 0}
-    - target: {fileID: 3958531484273580415, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 135.87
       objectReference: {fileID: 0}
     - target: {fileID: 5644931038493725097, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -17757,6 +17725,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2095922397}
+    - target: {fileID: 6432910948726033663, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
+      propertyPath: m_Name
+      value: buttonPromts
+      objectReference: {fileID: 0}
     - target: {fileID: 6974430478610703510, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -17840,6 +17812,10 @@ PrefabInstance:
     - target: {fileID: 7082989253111364340, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070011425311325750, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
+      propertyPath: m_margin.z
+      value: -8.329468
       objectReference: {fileID: 0}
     - target: {fileID: 8792660993089128736, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

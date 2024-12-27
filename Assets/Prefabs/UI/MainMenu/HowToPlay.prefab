@@ -1241,7 +1241,7 @@ GameObject:
   - component: {fileID: 3685813466234421246}
   - component: {fileID: 8070011425311325750}
   m_Layer: 5
-  m_Name: HowToPlay (2)
+  m_Name: buttonPromts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1359,7 +1359,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -4.2991333, y: 0, z: -0.11230469, w: -9.095306}
+  m_margin: {x: -4.2991333, y: 0, z: -8.329468, w: -9.095306}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
