@@ -24,13 +24,6 @@ public class PlayerMovement : MonoBehaviour
             if (Physics.Raycast(ray.origin, ray.direction, out _hitInfo)) // Single Click
             {
                 Vector3 directionToHit = (_hitInfo.point - transform.position).normalized;
-                float angle = Vector3.Angle(transform.forward, directionToHit);
-                if (angle > 90f)
-                {
-                    _animator.SetTrigger("180");
-                    
-                    transform.Rotate(0f, 180f, 0f, Space.Self);
-                }
                 _agent.SetDestination(_hitInfo.point);
             }
         }
