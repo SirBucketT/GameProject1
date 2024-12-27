@@ -3,8 +3,7 @@ using UnityEngine.AI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    RaycastHit _hitInfo;
-    NavMeshAgent _agent;
+    private NavMeshAgent _agent;
     private Animator _animator;
 
     void Start()
@@ -15,28 +14,21 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        float normalizedSpeed = _agent.velocity.magnitude / _agent.speed;
-        _animator.SetFloat("Velocity", normalizedSpeed);
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Input.GetMouseButtonDown(0))
+        if (Vector3.Distance(transform.position, _agent.transform.position) > 0.01f)
         {
-            if (Physics.Raycast(ray.origin, ray.direction, out _hitInfo)) // Single Click
-            {
-                Vector3 directionToHit = (_hitInfo.point - transform.position).normalized;
-                _agent.SetDestination(_hitInfo.point);
-            }
+            _agent.transform.position = transform.position;
         }
 
+        float normalizedSpeed = _agent.velocity.magnitude / _agent.speed;
+        _animator.SetFloat("Velocity", normalizedSpeed);
 
-        if (Input.GetMouseButton(0)) // Hold
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)) // Single click or hold
         {
-            if (Physics.Raycast(ray.origin, ray.direction, out _hitInfo))
+            if (Physics.Raycast(ray, out RaycastHit hitInfo))
             {
-                _agent.SetDestination(_hitInfo.point);
+                _agent.SetDestination(hitInfo.point);
             }
         }
     }
-    
-
 }
