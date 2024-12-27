@@ -2,12 +2,18 @@ using UnityEngine;
 
 public class ProximityChecker : MonoBehaviour
 {
-    [SerializeField] private bool _proximityIsOn;
     [SerializeField] private GameObject _targetOfRange;
     private bool _targetIsWithinRange = false;
+    private bool _proximityIsOn = true;
     public bool TargetIsWithinRange => _targetIsWithinRange; 
 
     private SphereCollider _sphereCollider;
+    
+    private void Awake()
+    {
+        _sphereCollider = GetComponent<SphereCollider>();
+        _sphereCollider.isTrigger = true;
+    }
     void Start()
     {
         _sphereCollider = GetComponent<SphereCollider>();
@@ -29,20 +35,18 @@ public class ProximityChecker : MonoBehaviour
         }
     }
 
+    private bool HasCollider(Collider collider)
+    {
+        return _proximityIsOn || _sphereCollider == null;
+    }
     private void OnDrawGizmos()
     {  
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, 3f);
-        
-        if (!_proximityIsOn || _sphereCollider == null)
+        if (HasCollider(_sphereCollider))
         {
-            return;
-        }
-        else
-        {
-        var color = !_targetIsWithinRange ? Color.red : Color.green;
-        Gizmos.color = color;
-        Gizmos.DrawWireSphere(transform.position, _sphereCollider.radius);
+            float radius = _sphereCollider != null ? _sphereCollider.radius : 3f;
+            var color = !_targetIsWithinRange ? Color.red : Color.green;
+            Gizmos.color = color;
+            Gizmos.DrawWireSphere(transform.position, radius);
         }
     }
 }
