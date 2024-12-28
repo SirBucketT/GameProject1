@@ -47,9 +47,6 @@ public class PlayerMovement : MonoBehaviour
                 {
                     GameObject effectInstance = Instantiate(clickEffect, hitInfo.point, Quaternion.identity);
                     Destroy(effectInstance, 0.5f);
-                    
-                    //Instantiate(clickEffect, hitInfo.point, Quaternion.identity);
-                    //Destroy(clickEffect);
                 }
             }
         }
