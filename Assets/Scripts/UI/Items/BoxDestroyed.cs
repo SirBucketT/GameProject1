@@ -19,13 +19,16 @@ public class BoxDestroyed : MonoBehaviour
     }
     void Update() {
         if (box != null && uiCloser) {
-            box.SetActive(false);
-            animator.SetBool("IsOpen", false);
+            if (Input.anyKeyDown) {
+                box.SetActive(false);
+                animator.SetBool("IsOpen", false);
+            }
         }
     }
     
     private IEnumerator CloseBox() {
         yield return new WaitForSeconds(initialDelay);
+        
         uiCloser = true;
     }
 }

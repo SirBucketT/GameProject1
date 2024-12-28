@@ -22,11 +22,11 @@ public class Destructible : MonoBehaviour, IInteractable
 
     public void Break()
     {
-        BoxUI.SetActive(true);
         DisableMainModel();
         EnableBrokenPieces();
         AddExplosiveForceToPieces();
         StartCoroutine(DisableRoutine());
+        BoxUI.SetActive(true);
     }
     
     private IEnumerator DisableRoutine()
