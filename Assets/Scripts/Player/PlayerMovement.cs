@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        ResetDestination();
         UpdatePathLine();
 
         if (Vector3.Distance(transform.position, _agent.transform.position) > 0.01f)
@@ -51,7 +52,19 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+    
+    private void ResetDestination()
+    {
+        if (HasReachedDestination())
+        {
+            _agent.ResetPath();
+        }
+    }
 
+    private bool HasReachedDestination()
+    {
+       return _agent.remainingDistance <= _agent.stoppingDistance;
+    }
     private void UpdatePathLine()
     {
         if (_agent.hasPath)

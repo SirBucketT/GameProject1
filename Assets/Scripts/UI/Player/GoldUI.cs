@@ -9,6 +9,9 @@ public class GoldUI : MonoBehaviour
 
     void Update()
     {
-        goldText.text = playerData.gold.ToString();
+        if (goldText.text != null)
+        {
+            goldText.text = playerData.gold.ToString();
+        }
     }
 }
