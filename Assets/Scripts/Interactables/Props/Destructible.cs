@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Destructible : MonoBehaviour, IInteractable
 {
-
     [SerializeField] GameObject destructibleParts;
     [SerializeField] Collider destructibleCollider;
     [SerializeField] private MeshRenderer meshRenderer;
@@ -11,7 +10,6 @@ public class Destructible : MonoBehaviour, IInteractable
     [SerializeField] private float explosionForce;
     [SerializeField] private float explosionRadius;
     [SerializeField] private float pieceDuration;
-    private SpawnInteract _spawnInteract;
     
     public bool IsPlayerWithinRange { get; private set; }
     
@@ -19,7 +17,6 @@ public class Destructible : MonoBehaviour, IInteractable
     {
         if (IsPlayerWithinRange)
             Break();
-        _spawnInteract.ActivateSpawner();
     }
 
     public void Break()

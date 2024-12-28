@@ -10,7 +10,7 @@ public class SpawnerController : MonoBehaviour
     [SerializeField] private bool _usingProximity;
     [SerializeField] private bool _usingSOWaves;
     [SerializeField] private GameObject _proximityObject;
-    private bool _hasSpawned = false;
+    private bool _isSpawning = false;
     private ProximityChecker _proximityChecker;
     private Spawner _spawner;
 
@@ -41,12 +41,17 @@ public class SpawnerController : MonoBehaviour
     {
         if (TargetIsWithinRange())
         {
-            _hasSpawned = true;
+            
             StartSpawning();
         }
     }
     internal void StartSpawning()
     {
+        if (_isSpawning)
+        {
+            return;
+        }
+        _isSpawning = true;
         StartCoroutine(_spawner.SpawnEntitiesWithDelay(_forceObjectToSpawn, _objectForcedToSpawn, _usingSOWaves));
     }
     private bool HasObjectForProx()
@@ -59,7 +64,7 @@ public class SpawnerController : MonoBehaviour
     }
     private bool TargetIsWithinRange()
     {
-        return _proximityChecker != null && _proximityChecker.TargetIsWithinRange && !_hasSpawned;
+        return _proximityChecker != null && _proximityChecker.TargetIsWithinRange && !_isSpawning;
     }
     
     private void OnDrawGizmos()
