@@ -7549,10 +7549,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 786405868}
-    - target: {fileID: 2073544251397315025, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitGameButton
-      objectReference: {fileID: 0}
     - target: {fileID: 2085225737612830691, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7565,10 +7561,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 786405868}
-    - target: {fileID: 2409180234908984781, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenQuitButton
-      objectReference: {fileID: 0}
     - target: {fileID: 3302380471800573698, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7589,10 +7581,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 786405868}
-    - target: {fileID: 3985914860406787292, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResumeGame
-      objectReference: {fileID: 0}
     - target: {fileID: 3985914860406787292, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MenuScript, Assembly-CSharp
@@ -7609,26 +7597,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 786405868}
-    - target: {fileID: 4812920604513052236, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CloseQuitButton
-      objectReference: {fileID: 0}
     - target: {fileID: 5162653970081760407, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 786405868}
-    - target: {fileID: 5162653970081760407, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenQuitButton
-      objectReference: {fileID: 0}
     - target: {fileID: 5923208546938253384, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 786405868}
-    - target: {fileID: 5923208546938253384, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MainMenuButton
-      objectReference: {fileID: 0}
     - target: {fileID: 7496661964654627991, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
       propertyPath: m_Name
       value: UI
@@ -7637,20 +7613,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 786405868}
-    - target: {fileID: 7694831979113324942, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartGameButton
-      objectReference: {fileID: 0}
     - target: {fileID: 8168837112241912737, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 786405868}
-    - target: {fileID: 8168837112241912737, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MainMenuButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 8246577592322115851, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
-      propertyPath: MenuScript
       value: 
       objectReference: {fileID: 786405868}
     m_RemovedComponents: []
