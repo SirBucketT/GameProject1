@@ -28,7 +28,6 @@ public class BoxDestroyed : MonoBehaviour
     
     private IEnumerator CloseBox() {
         yield return new WaitForSeconds(initialDelay);
-        
         uiCloser = true;
     }
 }
