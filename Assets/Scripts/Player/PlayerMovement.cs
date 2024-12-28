@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator _animator;
     private LineRenderer _lineRenderer;
 
-    [FormerlySerializedAs("clickEffectPrefab")] [SerializeField] private GameObject clickEffect; 
+    [SerializeField] private GameObject clickEffect; 
 
     void Start()
     {
@@ -35,15 +35,21 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetFloat("Velocity", normalizedSpeed);
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if ((Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)))
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
         {
             if (Physics.Raycast(ray, out RaycastHit hitInfo))
             {
                 _agent.SetDestination(hitInfo.point);
                 
+                //plays click effect and destroys the instance of the effect after x amount of seconds.
+                //this to save on performance and to avoid having hundreds of instances of the effect created after a while in game
                 if (clickEffect != null)
                 {
-                    Instantiate(clickEffect, hitInfo.point, Quaternion.identity);
+                    GameObject effectInstance = Instantiate(clickEffect, hitInfo.point, Quaternion.identity);
+                    Destroy(effectInstance, 0.5f);
+                    
+                    //Instantiate(clickEffect, hitInfo.point, Quaternion.identity);
+                    //Destroy(clickEffect);
                 }
             }
         }
