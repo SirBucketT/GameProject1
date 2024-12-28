@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Destructible : MonoBehaviour, IInteractable
 {
+    [SerializeField] GameObject BoxUI;
     [SerializeField] GameObject destructibleParts;
     [SerializeField] Collider destructibleCollider;
     [SerializeField] private MeshRenderer meshRenderer;
@@ -21,6 +22,7 @@ public class Destructible : MonoBehaviour, IInteractable
 
     public void Break()
     {
+        BoxUI.SetActive(true);
         DisableMainModel();
         EnableBrokenPieces();
         AddExplosiveForceToPieces();
