@@ -20,7 +20,7 @@ public class StartUILoader : MonoBehaviour
     {
         if (startupUI != null && canCloseUI)
         {
-            if (Input.anyKeyDown || IsPlayerMoving())
+            if (Input.anyKeyDown)
             {
                 Destroy(startupUI);
             }
@@ -31,19 +31,5 @@ public class StartUILoader : MonoBehaviour
     {
         yield return new WaitForSeconds(initialDelay);
         canCloseUI = true;
-    }
-
-    private bool IsPlayerMoving()
-    {
-        GameObject player = GameObject.FindWithTag("Player");
-        if (player != null)
-        {
-            Rigidbody rb = player.GetComponent<Rigidbody>();
-            if (rb != null && rb.linearVelocity.magnitude > 0.1f)
-            {
-                return true;
-            }
-        }
-        return false;
     }
 }
