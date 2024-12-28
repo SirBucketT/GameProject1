@@ -19,24 +19,18 @@ public class InactivityChecker : MonoBehaviour
     }
 
     void Update() {
-
-        //if (hasBeenInactive == false) {
-            if (Input.anyKey || Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0) {
-                inactivityTimer = 0f;
-                if (popupManagerGameObject != null) {
-                    popupManagerGameObject.SetActive(false);
-                }
-            }
-            else {
-                inactivityTimer += Time.deltaTime;
-            }
-            if (inactivityTimer >= secondsToWait && popupManagerGameObject != null && !popupManagerGameObject.activeSelf) {
-                popupManagerGameObject.SetActive(true);
-            }
-            hasBeenInactive = true;
-        //}//else {
-            //return;
-        //}
         
+        if (Input.anyKey || Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0) {
+            inactivityTimer = 0f;
+            if (popupManagerGameObject != null) {
+                popupManagerGameObject.SetActive(false);
+            }
+        }
+        else {
+            inactivityTimer += Time.deltaTime;
+        }
+        if (inactivityTimer >= secondsToWait && popupManagerGameObject != null && !popupManagerGameObject.activeSelf) {
+            popupManagerGameObject.SetActive(true);
+        }
     }
 }
