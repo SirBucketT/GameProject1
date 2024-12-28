@@ -9,7 +9,7 @@ public class GoldUI : MonoBehaviour
 
     void Update()
     {
-        if (goldText.text != null)
+        if (playerData != null)
         {
             goldText.text = playerData.gold.ToString();
         }

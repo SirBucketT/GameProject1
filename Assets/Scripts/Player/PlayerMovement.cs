@@ -27,11 +27,6 @@ public class PlayerMovement : MonoBehaviour
         ResetDestination();
         UpdatePathLine();
 
-        if (Vector3.Distance(transform.position, _agent.transform.position) > 0.01f)
-        {
-            _agent.transform.position = transform.position;
-        }
-
         float normalizedSpeed = _agent.velocity.magnitude / _agent.speed;
         _animator.SetFloat("Velocity", normalizedSpeed);
 
@@ -61,10 +56,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private bool HasReachedDestination()
-    {
-       return _agent.remainingDistance <= _agent.stoppingDistance;
-    }
     private void UpdatePathLine()
     {
         if (_agent.hasPath)
@@ -76,5 +67,9 @@ public class PlayerMovement : MonoBehaviour
         {
             _lineRenderer.positionCount = 0;
         }
+    }
+    private bool HasReachedDestination()
+    {
+       return _agent.remainingDistance <= _agent.stoppingDistance;
     }
 }
