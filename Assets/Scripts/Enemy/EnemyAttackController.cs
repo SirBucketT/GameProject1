@@ -14,6 +14,7 @@ public class EnemyAttackController : MonoBehaviour
     private float _nextAttackTime;
     private Collider _weaponCollider;
     private NavMeshAgent _navMeshAgent;
+    private bool _isAttacking;
 
     private readonly string[] _attackTriggers = { "Attack", "BonkAttack", "BoomerangAttack" };
     private void Start()
@@ -42,7 +43,7 @@ public class EnemyAttackController : MonoBehaviour
     {
         if (HasStoppedMoving())
         {
-            if (Time.time >= _nextAttackTime)
+            if (!IsAttackOnCooldown())
             {
                 PerformAttack();
             }
@@ -68,10 +69,15 @@ public class EnemyAttackController : MonoBehaviour
             TriggerAttack("Attack");
         }
 
+        _isAttacking = true;
         EnableWeaponCollision();
         _nextAttackTime = Time.time + _cooldownTime;
     }
 
+    private bool IsAttackOnCooldown()
+    {
+        return Time.time >= _nextAttackTime;
+    }
     private void TriggerAttack(string attackTrigger)
     {
         _animator.SetTrigger(attackTrigger);
@@ -85,6 +91,7 @@ public class EnemyAttackController : MonoBehaviour
         }
         
         DisableWeaponCollision();
+        _isAttacking = false;
     }
 
     private void EnableWeaponCollision()
