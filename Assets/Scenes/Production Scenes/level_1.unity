@@ -5580,10 +5580,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 109445485636667772, guid: 9b8dea77bd6dd1e49b05d9d10bbe7ab3, type: 3}
-      propertyPath: clickEffect
-      value: 
-      objectReference: {fileID: 8680598818964007281, guid: dcd90c4976197424b9958a7c54b6bb8c, type: 3}
     - target: {fileID: 2812371137697131552, guid: 9b8dea77bd6dd1e49b05d9d10bbe7ab3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.37
@@ -7606,6 +7602,14 @@ PrefabInstance:
     - target: {fileID: 4652844270605395444, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829378247059304477, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829378247059304477, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 144.55835
       objectReference: {fileID: 0}
     - target: {fileID: 7496661964654627991, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
       propertyPath: m_Name
