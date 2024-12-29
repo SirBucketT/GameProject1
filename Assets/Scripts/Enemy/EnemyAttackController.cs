@@ -14,7 +14,7 @@ public class EnemyAttackController : MonoBehaviour
     private float _nextAttackTime;
     private Collider _weaponCollider;
     private NavMeshAgent _navMeshAgent;
-    private bool _isAttacking;
+    internal bool IsAttacking;
 
     private readonly string[] _attackTriggers = { "Attack", "BonkAttack", "BoomerangAttack" };
     private void Start()
@@ -69,7 +69,7 @@ public class EnemyAttackController : MonoBehaviour
             TriggerAttack("Attack");
         }
 
-        _isAttacking = true;
+        IsAttacking = true;
         EnableWeaponCollision();
         _nextAttackTime = Time.time + _cooldownTime;
     }
@@ -91,7 +91,7 @@ public class EnemyAttackController : MonoBehaviour
         }
         
         DisableWeaponCollision();
-        _isAttacking = false;
+        IsAttacking = false;
     }
 
     private void EnableWeaponCollision()
