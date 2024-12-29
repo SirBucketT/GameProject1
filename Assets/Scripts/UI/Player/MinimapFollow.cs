@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MinimapFollow : MonoBehaviour
 {
-    public Transform player;
+    [SerializeField] private Transform player;
 
     void LateUpdate()
     {
