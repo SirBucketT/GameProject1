@@ -20,8 +20,8 @@ public class BoxDestroyed : MonoBehaviour
     void Update() {
         if (box != null && uiCloser) {
             if (Input.anyKeyDown) {
-                box.SetActive(false);
                 animator.SetBool("IsOpen", false);
+                    box.SetActive(false);
             }
         }
     }

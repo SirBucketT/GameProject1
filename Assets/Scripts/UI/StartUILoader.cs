@@ -6,6 +6,7 @@ public class StartUILoader : MonoBehaviour
     [SerializeField] private GameObject startupUI; 
     [SerializeField] private float initialDelay = 2f;
     private bool canCloseUI = false;
+    [SerializeField] private Animator animator;
 
     void Start()
     {
@@ -14,6 +15,8 @@ public class StartUILoader : MonoBehaviour
             startupUI.SetActive(true);
         }
         StartCoroutine(EnableCloseUIAfterDelay());
+        animator.SetBool("IsOpen", false);
+        animator.SetBool("IsOpen", true);
     }
 
     void Update()
@@ -22,6 +25,7 @@ public class StartUILoader : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
+                animator.SetBool("IsOpen", false);
                 Destroy(startupUI);
             }
         }
