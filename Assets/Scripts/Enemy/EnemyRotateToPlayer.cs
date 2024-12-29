@@ -22,8 +22,8 @@ public class EnemyRotateToPlayer : MonoBehaviour
  
     void Update()
     {
-     	
-   
+        RotateToPlayer();
+
     }
 
     private void RotateToPlayer()
@@ -45,6 +45,6 @@ public class EnemyRotateToPlayer : MonoBehaviour
 
     private bool IsEnemyNotAttacking()
     {
-        return !attacker.IsAttacking;
+        return attacker.IsAttacking;
     }
 }
