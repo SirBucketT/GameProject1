@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SpawnerController : MonoBehaviour
 {
     [SerializeField] private SO_SpawnerData _spawnerData;
-    [SerializeField] private GameObject _objectForcedToSpawn;
     [SerializeField] private bool _forceObjectToSpawn;
+    [SerializeField] private GameObject _objectForcedToSpawn;
     [SerializeField] private bool _usingProximity;
     [SerializeField] private bool _usingSOWaves;
-    [SerializeField] private GameObject _proximityObject;
+    [SerializeField] private GameObject _useOtherProximityObject;
     private bool _isSpawning = false;
     private ProximityChecker _proximityChecker;
     private Spawner _spawner;
@@ -29,7 +30,7 @@ public class SpawnerController : MonoBehaviour
 
         if (HasObjectForProx())
         {
-            _proximityChecker = _proximityObject.GetComponent<ProximityChecker>();
+            _proximityChecker = _useOtherProximityObject.GetComponent<ProximityChecker>();
         }
         else
         {
@@ -56,7 +57,7 @@ public class SpawnerController : MonoBehaviour
     }
     private bool HasObjectForProx()
     {
-        return _proximityChecker && _proximityObject  && _usingProximity;
+        return _proximityChecker && _useOtherProximityObject !=null  && _usingProximity;
     }
     private bool UsesProximity()
     {
@@ -69,14 +70,21 @@ public class SpawnerController : MonoBehaviour
     
     private void OnDrawGizmos()
     {
+        
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireCube(transform.position, Vector3.one * 2f);
-        
-        Transform attachedProx = _proximityObject.transform;
-        if (attachedProx != null)
+
+       
+        if (_useOtherProximityObject != null)
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, attachedProx.position);
+            Transform attachedProx = _useOtherProximityObject.transform;
+
+            if (attachedProx != null)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawLine(transform.position, attachedProx.position);
+            }
         }
     }
+
 }
