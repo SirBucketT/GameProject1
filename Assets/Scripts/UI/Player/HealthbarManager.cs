@@ -17,6 +17,7 @@ public class HealthbarManager : MonoBehaviour
     
     [SerializeField] private TMP_Text currentHealth;
     [SerializeField] private TMP_Text maxMpDisplay;
+    [SerializeField] private GameObject player;
     
     void Start()
     {
@@ -42,6 +43,7 @@ public class HealthbarManager : MonoBehaviour
         {
             playerData.currentHealth = 0;
             MenuScript.gameOverMenuUI.SetActive(true);
+            Destroy(player.gameObject);
         }
         
     }
