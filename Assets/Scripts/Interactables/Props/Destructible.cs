@@ -3,32 +3,45 @@ using UnityEngine;
 
 public class Destructible : MonoBehaviour, IInteractable
 {
-    [SerializeField] GameObject BoxUI;
-    [SerializeField] GameObject destructibleParts;
-    [SerializeField] Collider destructibleCollider;
+    [SerializeField] private GameObject BoxUI;
+    [SerializeField] private GameObject destructibleParts;
+    [SerializeField] private Collider destructibleCollider;
     [SerializeField] private MeshRenderer meshRenderer;
     [Header("Explosion Settings")]
     [SerializeField] private float explosionForce;
     [SerializeField] private float explosionRadius;
     [SerializeField] private float pieceDuration;
-    
+
+    private ItemDrop _itemDrop;
     public bool IsPlayerWithinRange { get; private set; }
-    
+
+    private void Awake()
+    {
+        _itemDrop = GetComponent<ItemDrop>();
+    }
+
     public void Interact()
     {
         if (IsPlayerWithinRange)
+        {
             Break();
+        }
     }
 
     public void Break()
     {
+        if (_itemDrop != null)
+        {
+            _itemDrop.DropItems();
+        }
+
         DisableMainModel();
         EnableBrokenPieces();
         AddExplosiveForceToPieces();
         StartCoroutine(DisableRoutine());
         BoxUI.SetActive(true);
     }
-    
+
     private IEnumerator DisableRoutine()
     {
         yield return new WaitForSeconds(pieceDuration);
@@ -55,20 +68,21 @@ public class Destructible : MonoBehaviour, IInteractable
         meshRenderer.enabled = false;
     }
 
-
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player"))
+        {
             return;
+        }
         IsPlayerWithinRange = true;
     }
 
-    public void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("Player"))
+        {
             return;
+        }
         IsPlayerWithinRange = false;
     }
-
 }
-

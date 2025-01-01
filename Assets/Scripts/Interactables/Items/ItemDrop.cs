@@ -28,7 +28,7 @@ internal class ItemDrop : MonoBehaviour
     private Vector3 GetRandomSpawnOffset()
     {
         float randomX = Random.Range(-2f, 2f); 
-        float randomY = Random.Range(0f, 2f); 
+        float randomY = Random.Range(-1f, 1f); 
         float randomZ = Random.Range(-2f, 2f); 
 
         return new Vector3(randomX, randomY, randomZ);

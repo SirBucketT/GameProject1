@@ -16,7 +16,6 @@ public class SpawnerBlockController : MonoBehaviour
         _spawnerManager = GetComponent<SpawnerManager>();
         if (_spawnerManager == null)
         {
-            Debug.LogError("SpawnerManager component is missing from the GameObject!");
             return;
         }
         _spawnerManager.Initialize(_spawnerData, transform);
@@ -26,7 +25,6 @@ public class SpawnerBlockController : MonoBehaviour
     {
         if (_spawnerData == null)
         {
-            Debug.LogError("SpawnerData is not assigned in the Inspector!");
             return;
         }
 
@@ -70,7 +68,10 @@ public class SpawnerBlockController : MonoBehaviour
             yield return SpawnWithDelay();
         } while (_spawnerData.GetIsLooping);
 
-        _isSpawning = false;
+        if (_spawnerData.GetIsLooping)
+        {
+            _isSpawning = false;
+        }
     }
 
     private IEnumerator SpawnWithDelay()

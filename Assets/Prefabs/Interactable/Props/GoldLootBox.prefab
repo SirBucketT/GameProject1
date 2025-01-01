@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93b3a57d286da44999d44eab6eb5f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoxUI: {fileID: 0}
+  BoxUI: {fileID: 5243760781529867094}
   destructibleParts: {fileID: 737521790997683754}
   destructibleCollider: {fileID: 7843667418662285291}
   meshRenderer: {fileID: 607712785015973279}
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a17e92c4d6deda4199af200062fced7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dropList: {fileID: 11400000, guid: 37fced9263a6daf44b45233e0c8e4d9f, type: 2}
+  _dropList: {fileID: 11400000, guid: 5a366d0007a1ff44eb4a6d0b27faa2a8, type: 2}
 --- !u!1001 &5685793195256272200
 PrefabInstance:
   m_ObjectHideFlags: 0
