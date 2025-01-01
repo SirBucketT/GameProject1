@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: 3215650906104329542}
   - component: {fileID: 8208770560454746295}
   - component: {fileID: 2041243793169095267}
+  - component: {fileID: 6934546117473102205}
   m_Layer: 0
   m_Name: EnemyCapsule_3_Boss
   m_TagString: Enemy
@@ -583,8 +584,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 3211027973371609289}
   _weapon: {fileID: 5000648026656056438}
-  _attackRange: 5
-  _rotationSpeed: 5
   _cooldownTime: 5
   _playerData: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
   _hasBoomerang: 0
@@ -604,3 +603,16 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: dc624a70109751340a1e1ccdd19446c4, type: 2}
   _currentHealth: 50
   itemDrop: {fileID: 0}
+--- !u!114 &6934546117473102205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7179961065801060649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a17e92c4d6deda4199af200062fced7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dropList: {fileID: 11400000, guid: 568ee412c86ce5547a58d04ddada1254, type: 2}

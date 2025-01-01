@@ -3,20 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
 public class EnemyHealthManager : MonoBehaviour, ITakeDamage
 {
     [SerializeField] private SO_EnemyData enemyData;
     [SerializeField] private int _currentHealth;
-    [SerializeField] private ItemDrop itemDrop;
-    public event Action OnEnemyDeath;
+    
+    private ItemDrop _itemDrop; 
     private bool _isDestroyed = false;
+
+    public event Action OnEnemyDeath;
 
     bool ITakeDamage.isAlive => IsAlive();
 
     public void Start()
     {
         Initialize();
+        _itemDrop = GetComponent<ItemDrop>();  
     }
 
     private void Initialize()
@@ -51,13 +53,24 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
     {
         gameObject.SetActive(false);
         OnEnemyDeath?.Invoke();
+        DropItems();
+        StartDestroy();
+    }
 
+    private void StartDestroy()
+    {
         if (this != null && IsEnabled())
         { 
             StartCoroutine(DestroyLater());
         }
     }
-
+    private void DropItems()
+    {
+        if (_itemDrop != null)
+        {
+            _itemDrop.DropItems(); 
+        }
+    }
     private IEnumerator DestroyLater()
     {
         yield return new WaitForSeconds(5f);

@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 internal class ItemDrop : MonoBehaviour
 {
-    [SerializeField] private SO_DropListData _dropList;  
-    
-    private void DropItems()
+    [SerializeField] private SO_DropListData _dropList;
+    internal void DropItems()
     {
         foreach (var dropList in _dropList.GetDropList)
         {
@@ -24,7 +24,7 @@ internal class ItemDrop : MonoBehaviour
             }
         }
     }
-
+    
     private Vector3 GetRandomSpawnOffset()
     {
         float randomX = Random.Range(-2f, 2f); 

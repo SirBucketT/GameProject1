@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 9171519380704108746}
   - component: {fileID: 4264985177480869317}
   - component: {fileID: 5605074453186849799}
+  - component: {fileID: 3487049713909344205}
   m_Layer: 0
   m_Name: EnemyCapsule_2_Blue
   m_TagString: Enemy
@@ -477,8 +478,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 733725335558192750}
   _weapon: {fileID: 1830629563215718092}
-  _attackRange: 5
-  _rotationSpeed: 5
   _cooldownTime: 2
   _playerData: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
   _hasBoomerang: 1
@@ -497,7 +496,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 8e76a1f312173f34abd21fa82963693f, type: 2}
   _currentHealth: 50
-  itemDrop: {fileID: 0}
+--- !u!114 &3487049713909344205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154526596106746453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a17e92c4d6deda4199af200062fced7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dropList: {fileID: 11400000, guid: 63063db765f974e43955496ca4ed69b0, type: 2}
 --- !u!1001 &3309910895410888520
 PrefabInstance:
   m_ObjectHideFlags: 0

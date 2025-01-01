@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 9171519380704108746}
   - component: {fileID: 4264985177480869317}
   - component: {fileID: 5605074453186849799}
-  - component: {fileID: -6068337839954814089}
+  - component: {fileID: 1232402424437282350}
   m_Layer: 0
   m_Name: EnemyCapsule1
   m_TagString: Enemy
@@ -368,11 +368,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 7668474874526308454}
   _weapon: {fileID: 1185440061122001698}
-  _attackRange: 4
   _cooldownTime: 0
   _playerData: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
-  HasBoomerang: 0
-  HasBonk: 0
+  _hasBoomerang: 0
+  _hasBonk: 0
 --- !u!114 &5605074453186849799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,22 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: eb9d0125ab1504a429d3f70c8a23b3bc, type: 2}
   _currentHealth: 50
-  OnEnemyDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -6068337839954814089}
-        m_TargetAssemblyTypeName: ItemDrop, Assembly-CSharp
-        m_MethodName: DropItemsOnDeath
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &-6068337839954814089
+--- !u!114 &1232402424437282350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -414,4 +398,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a17e92c4d6deda4199af200062fced7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dropList: {fileID: 11400000, guid: 5dd83ee300b5499478a3d0157e582894, type: 2}
+  _dropList: {fileID: 11400000, guid: 37fced9263a6daf44b45233e0c8e4d9f, type: 2}

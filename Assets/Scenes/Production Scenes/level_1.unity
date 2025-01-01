@@ -4848,6 +4848,10 @@ PrefabInstance:
       value: -6.18
       objectReference: {fileID: 0}
     - target: {fileID: 5625099485058835290, guid: 0c8a4c8cc50957c4facef88da64a1985, type: 3}
+      propertyPath: _isLooping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625099485058835290, guid: 0c8a4c8cc50957c4facef88da64a1985, type: 3}
       propertyPath: _usingWaves
       value: 1
       objectReference: {fileID: 0}
@@ -8203,6 +8207,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2085225737612830691, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2085225737612830691, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3302380471800573698, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
