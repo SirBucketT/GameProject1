@@ -36,7 +36,8 @@ public class PlayerData : ScriptableObject
             {
                 swordCollider.enabled = true;
             }
-        }
+            else {Debug.Log("Sword collider missing!");}
+        } else {Debug.Log("Sword is null!");}
     }
     public void DisableCollision()
     {
@@ -47,7 +48,8 @@ public class PlayerData : ScriptableObject
             {
                 swordCollider.enabled = false;
             }
-        }
+            else{Debug.Log("Sword collider is null!");}
+        } else {Debug.Log("Sword is null!");}
     }
     
 }
