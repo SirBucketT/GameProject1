@@ -1,49 +1,36 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class LongSword : MonoBehaviour
 {
-    private Collider _weaponCollider;
+    EnemyHealthManager _enemyHealth;
 
+    private PlayerHealth _playerHealth;
+
+    private PlayerData _playerData;
+    private SO_EnemyData _enemyData;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        DisableWeaponCollision();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
-    private void EnableWeaponCollision()
+    void OnCollisionEnter(Collision collision)
     {
-        if (_weaponCollider)
+        if (collision.body.CompareTag("Enemy"))
         {
-            _weaponCollider.enabled = true;
+            _enemyHealth.TakeDamage(_playerData.SwordAttack);
+        }
+        if (collision.body.CompareTag("Player"))
+        {
+            _playerHealth.PlayerTakeDamage(_enemyData.GetEnemyDamage);
         }
     }
-
-    private void DisableWeaponCollision()
-    {
-        if (_weaponCollider)
-        {
-            _weaponCollider.enabled = false;
-        }
-
-    }
-
-    public void OnEnable()
-    {
-        EnableWeaponCollision();
-    }
-
-    public void OnDisable()
-    {
-        DisableWeaponCollision();
-    }
-
-
 }

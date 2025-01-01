@@ -9,7 +9,6 @@ public class PlayerFight : MonoBehaviour
     [SerializeField] private PlayerData playerData;
     private Animator _animator;
     private EnemyHealthManager _enemyHealth;
-    private LongSword _longsword;
 
     void Start()
     {
@@ -34,4 +33,6 @@ public class PlayerFight : MonoBehaviour
         }
         
     }
+    
+    
 }
