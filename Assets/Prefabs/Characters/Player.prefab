@@ -1900,8 +1900,6 @@ GameObject:
   - component: {fileID: 9446031691535608}
   - component: {fileID: 324682461518059071}
   - component: {fileID: 6390493419869087521}
-  - component: {fileID: -7325984319047315421}
-  - component: {fileID: -7211144252115784945}
   - component: {fileID: 5635618244087920747}
   m_Layer: 10
   m_Name: Player
@@ -2089,31 +2087,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fieldOfView: 60
   viewDistance: 10
---- !u!114 &-7325984319047315421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6825414550768407218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 304bd619f4dcb3040ada432e9fafe23e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 50
---- !u!114 &-7211144252115784945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6825414550768407218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ece2e91e2f99fe40a8f1d9fc6b02f7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!120 &5635618244087920747
 LineRenderer:
   serializedVersion: 2
