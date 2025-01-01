@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd376d77733631429c4425513218db4, type: 3}
   m_Name: SO_SpawnerBoxes
   m_EditorClassIdentifier: 
-  numberOfPrefabsToCreate: 69
-  firstSpawnDelay: 3
-  newSpawnDelay: 5
-  isSpawnLimitOn: 0
-  despawnOldestOnLimit: 0
-  spawnLimit: 0
-  despawnDelay: 1
-  waves:
-  - enemiesInWave: []
-    spawnDelayBetweenEnemies: 0
+  _firstSpawnDelay: 1
+  _newSpawnDelay: 1
+  _despawnOldestOnLimit: 1
+  _spawnLimit: 10
+  _despawnDelay: 1
+  _isLooping: 1
+  _forceObjectToSpawn: 1
+  _objectForcedToSpawn: {fileID: 5243760781529867094, guid: 0d19359d174cd3040892869a725225bd, type: 3}
+  _waves:
+  - _objectsInWave:
+    - {fileID: 5243760781529867094, guid: 0d19359d174cd3040892869a725225bd, type: 3}
+    _spawnDelayBetweenObjects: 2

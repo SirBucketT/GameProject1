@@ -7,7 +7,7 @@ public class Spawner
     private SO_SpawnerData _spawnerData;
     private Transform _spawnPoint;
     private List<GameObject> _spawnedPrefabs = new List<GameObject>();
-    private int _remainingEnemiesInWave;
+    private int _remainingObjectsInWave;
 
     public Spawner(SO_SpawnerData spawnerData, Transform spawnPoint)
     {
@@ -33,27 +33,53 @@ public class Spawner
     {
         foreach (var wave in _spawnerData.Waves)
         {
-            _remainingEnemiesInWave = wave.EnemiesInWave.Count;  // Set the remaining enemies for the wave
+            _remainingObjectsInWave = wave.ObjectsInWave.Count;
 
-            foreach (var enemyPrefab in wave.EnemiesInWave)
+            foreach (var objectPrefab in wave.ObjectsInWave)
             {
-                InstantiatePrefab(enemyPrefab);
-                yield return new WaitForSeconds(wave.SpawnDelayBetweenEnemies);
+                if (objectPrefab == null)
+                {
+                    continue;
+                }
+               
+                if (_spawnerData.HasSpawnLimit && _spawnedPrefabs.Count >= _spawnerData.GetSpawnLimit)
+                {
+                    DespawnOldestObject();
+                }
+                
+                InstantiatePrefab(objectPrefab);
+                yield return new WaitForSeconds(wave.SpawnDelayBetweenObjects);
             }
 
-            // Wait until all enemies in the wave are defeated
-            yield return new WaitUntil(() => _remainingEnemiesInWave <= 0);
-
-            // Wait before spawning the next wave
+            yield return new WaitUntil(() => _remainingObjectsInWave <= 0);
             yield return new WaitForSeconds(_spawnerData.GetNewSpawnDelay);
+        }
+
+        if (_spawnerData.GetIsLooping)
+        {
+            yield return SpawnEntitiesWithDelay(false, null, true);
         }
     }
 
     private IEnumerator SpawnObjects(GameObject prefab)
     {
-        for (int i = 0; i < _spawnerData.GetNumberOfPrefabsToCreate; i++)
+        int objectsSpawned = 0;
+        int limit = _spawnerData.HasSpawnLimit ? Mathf.FloorToInt(_spawnerData.GetSpawnLimit) : int.MaxValue;
+
+        for (int i = 0; i < limit; i++)
         {
+            if (objectsSpawned >= limit)
+            {
+                break;
+            }
+
+            if (_spawnerData.HasSpawnLimit && _spawnedPrefabs.Count >= _spawnerData.GetSpawnLimit)
+            {
+                DespawnOldestObject();
+            }
+
             InstantiatePrefab(prefab);
+            objectsSpawned++;
             yield return new WaitForSeconds(_spawnerData.GetNewSpawnDelay);
         }
     }
@@ -62,22 +88,36 @@ public class Spawner
     {
         if (prefab == null) return;
 
-        // Instantiate the prefab at the spawn point with a random offset
         var instance = GameObject.Instantiate(prefab, _spawnPoint.position + GetRandomOffset(), Quaternion.identity);
         instance.SetActive(true);
+
         _spawnedPrefabs.Add(instance);
 
-        // Subscribe to the death event of the enemy
+        if (_spawnerData.GetDespawnOldestOnLimit && _spawnedPrefabs.Count > _spawnerData.GetSpawnLimit)
+        {
+            DespawnOldestObject();
+        }
+        
         EnemyHealthManager healthManager = instance.GetComponent<EnemyHealthManager>();
         if (healthManager != null)
         {
-            healthManager.OnEnemyDeath += CountEnemyDeath;
+            healthManager.OnEnemyDeath += CountObjectDeath;
         }
     }
 
-    private void CountEnemyDeath()
+    private void DespawnOldestObject()
     {
-        _remainingEnemiesInWave--;  // Decrease the count of remaining enemies in the current wave
+        if (_spawnedPrefabs.Count == 0) return;
+        
+        GameObject oldestObject = _spawnedPrefabs[0];
+        
+        _spawnedPrefabs.RemoveAt(0);
+        GameObject.Destroy(oldestObject);
+    }
+
+    private void CountObjectDeath()
+    {
+        _remainingObjectsInWave--;
     }
 
     private Vector3 GetRandomOffset()
@@ -85,3 +125,4 @@ public class Spawner
         return new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
     }
 }
+
