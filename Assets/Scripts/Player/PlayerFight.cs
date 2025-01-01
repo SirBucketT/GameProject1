@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class PlayerFight : MonoBehaviour
 {
-    [SerializeField] private PlayerData playerData;
     private Animator _animator;
     private EnemyHealthManager _enemyHealth;
 
@@ -14,11 +13,9 @@ public class PlayerFight : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _animator.SetBool("IsAlive", true);
-
     }
     void Update()
-    {
-        
+    {   
         if (Input.GetKeyDown(KeyCode.Q))
         {
             _animator.SetTrigger("Dab");
@@ -30,9 +27,6 @@ public class PlayerFight : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             _animator.SetTrigger("Slash");
-        }
-        
+        }    
     }
-    
-    
 }
