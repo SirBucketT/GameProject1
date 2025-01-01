@@ -6,14 +6,16 @@ public class PlayerDealDamage : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        var hitObjectRoot = transform.root.gameObject;
+        Debug.Log($"Collided with: {other.gameObject.name}");
+        Debug.Log($"Other object's tag: {other.gameObject.tag}");
+        Debug.Log($"Root object's tag: {transform.root.gameObject.tag}");
 
-        if (other.gameObject.CompareTag("Enemy") && hitObjectRoot.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Enemy") && transform.root.CompareTag("Player"))
         {
+            Debug.Log("Collision conditions met.");
             DamageEnemy(other);
         }
     }
-
     private void DamageEnemy(Collision other)
     {
         other.gameObject.GetComponent<EnemyHealthManager>().TakeDamage(damage);
