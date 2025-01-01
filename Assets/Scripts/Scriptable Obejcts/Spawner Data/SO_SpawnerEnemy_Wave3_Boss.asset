@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd376d77733631429c4425513218db4, type: 3}
+  m_Name: SO_SpawnerEnemy_Wave3_Boss
+  m_EditorClassIdentifier: 
+  _firstSpawnDelay: 3
+  _newSpawnDelay: 3
+  _despawnOldestOnLimit: 0
+  _spawnLimit: 0
+  _despawnDelay: 1
+  _isLooping: 1
+  _forceObjectToSpawn: 0
+  _objectForcedToSpawn: {fileID: 0}
+  _waves:
+  - _objectsInWave:
+    - {fileID: 7154526596106746453, guid: 97a30883ba5c8584b974913e13b56f08, type: 3}
+    _spawnDelayBetweenObjects: 2
+  - _objectsInWave:
+    - {fileID: 7154526596106746453, guid: 4daa220c9cbc80a4b9d032fe6804d4a0, type: 3}
+    - {fileID: 7154526596106746453, guid: 4daa220c9cbc80a4b9d032fe6804d4a0, type: 3}
+    _spawnDelayBetweenObjects: 2
+  - _objectsInWave:
+    - {fileID: 7154526596106746453, guid: 97a30883ba5c8584b974913e13b56f08, type: 3}
+    - {fileID: 7154526596106746453, guid: 97a30883ba5c8584b974913e13b56f08, type: 3}
+    - {fileID: 7154526596106746453, guid: 4daa220c9cbc80a4b9d032fe6804d4a0, type: 3}
+    - {fileID: 7154526596106746453, guid: 4daa220c9cbc80a4b9d032fe6804d4a0, type: 3}
+    _spawnDelayBetweenObjects: 2
+  - _objectsInWave:
+    - {fileID: 7154526596106746453, guid: 4daa220c9cbc80a4b9d032fe6804d4a0, type: 3}
+    - {fileID: 7154526596106746453, guid: 4daa220c9cbc80a4b9d032fe6804d4a0, type: 3}
+    - {fileID: 7179961065801060649, guid: eccda820a47e42043a94d335d7b0a192, type: 3}
+    _spawnDelayBetweenObjects: 2
+  - _objectsInWave:
+    - {fileID: 7179961065801060649, guid: eccda820a47e42043a94d335d7b0a192, type: 3}
+    - {fileID: 7179961065801060649, guid: eccda820a47e42043a94d335d7b0a192, type: 3}
+    _spawnDelayBetweenObjects: 2

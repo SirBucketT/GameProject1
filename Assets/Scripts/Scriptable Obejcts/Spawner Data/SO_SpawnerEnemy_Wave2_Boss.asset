@@ -17,11 +17,16 @@ MonoBehaviour:
   _despawnOldestOnLimit: 0
   _spawnLimit: 0
   _despawnDelay: 1
-  _isLooping: 1
+  _isLooping: 0
+  _forceObjectToSpawn: 0
+  _objectForcedToSpawn: {fileID: 0}
   _waves:
   - _objectsInWave:
     - {fileID: 7154526596106746453, guid: 97a30883ba5c8584b974913e13b56f08, type: 3}
-    _spawnDelayBetweenObjects: 0
+    _spawnDelayBetweenObjects: 2
   - _objectsInWave:
     - {fileID: 7154526596106746453, guid: 4daa220c9cbc80a4b9d032fe6804d4a0, type: 3}
-    _spawnDelayBetweenObjects: 0
+    _spawnDelayBetweenObjects: 2
+  - _objectsInWave:
+    - {fileID: 7179961065801060649, guid: eccda820a47e42043a94d335d7b0a192, type: 3}
+    _spawnDelayBetweenObjects: 2

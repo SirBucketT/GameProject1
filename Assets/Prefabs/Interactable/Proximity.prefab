@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2847466089923350652}
   - component: {fileID: 8802641525389166577}
   - component: {fileID: 3689702315943709535}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Proximity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetOfRange: {fileID: 0}
-  _proximityIsOn: 1
 --- !u!135 &8802641525389166577
 SphereCollider:
   m_ObjectHideFlags: 0

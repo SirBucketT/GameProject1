@@ -16,6 +16,7 @@ public class SpawnerBlockController : MonoBehaviour
         _spawnerManager = GetComponent<SpawnerManager>();
         if (_spawnerManager == null)
         {
+            Debug.LogError("SpawnerManager component is missing from the GameObject!");
             return;
         }
         _spawnerManager.Initialize(_spawnerData, transform);
@@ -23,6 +24,12 @@ public class SpawnerBlockController : MonoBehaviour
 
     private void Start()
     {
+        if (_spawnerData == null)
+        {
+            Debug.LogError("SpawnerData is not assigned in the Inspector!");
+            return;
+        }
+
         if (!_usingProximity)
         {
             StartSpawning();
@@ -47,7 +54,10 @@ public class SpawnerBlockController : MonoBehaviour
 
     internal void StartSpawning()
     {
-        if (_isSpawning) return;
+        if (_isSpawning)
+        {
+            return;
+        }
 
         _isSpawning = true;
         StartCoroutine(SpawnWithLoop());
@@ -65,12 +75,17 @@ public class SpawnerBlockController : MonoBehaviour
 
     private IEnumerator SpawnWithDelay()
     {
+        if (_spawnerManager == null || _spawnerData == null)
+        {
+            yield break;
+        }
+
         yield return StartCoroutine(_spawnerManager.SpawnEntitiesWithDelay(_spawnerData.ForceObjectToSpawn, _spawnerData.ObjectForcedToSpawn, _spawnerData.Waves != null));
     }
 
     private bool HasObjectForProx()
     {
-        return _proximityChecker && _useOtherProximityObject != null && _usingProximity;
+        return _usingProximity && _useOtherProximityObject != null && _useOtherProximityObject.GetComponent<ProximityChecker>() != null;
     }
 
     private bool TargetIsWithinRange()

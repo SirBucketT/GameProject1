@@ -15,4 +15,4 @@ MonoBehaviour:
   _enemyName: Redy
   _enemyMaxHealth: 10
   _enemyHealth: 10
-  _enemyDamage: 10
+  _enemyDamage: 2

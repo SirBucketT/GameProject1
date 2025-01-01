@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnerManager : MonoBehaviour
-{
-    [SerializeField] private SO_SpawnerData _spawnerData;
-    [SerializeField] private Transform _spawnPoint;
+{ 
+    private SO_SpawnerData _spawnerData;
+    private Transform _spawnPoint;
     private List<GameObject> _spawnedPrefabs = new List<GameObject>();
     private int _remainingObjectsInWave;
 

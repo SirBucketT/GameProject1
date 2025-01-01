@@ -17,7 +17,7 @@ MonoBehaviour:
   _despawnOldestOnLimit: 0
   _spawnLimit: 1
   _despawnDelay: 1
-  _isLooping: 1
+  _isLooping: 0
   _forceObjectToSpawn: 0
   _objectForcedToSpawn: {fileID: 0}
   _waves:

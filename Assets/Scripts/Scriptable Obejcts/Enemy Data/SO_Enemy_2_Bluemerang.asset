@@ -15,4 +15,4 @@ MonoBehaviour:
   _enemyName: Bluemerang
   _enemyMaxHealth: 20
   _enemyHealth: 20
-  _enemyDamage: 5
+  _enemyDamage: 1

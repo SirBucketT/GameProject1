@@ -15,4 +15,4 @@ MonoBehaviour:
   _enemyName: BigBoss
   _enemyMaxHealth: 50
   _enemyHealth: 50
-  _enemyDamage: 20
+  _enemyDamage: 10

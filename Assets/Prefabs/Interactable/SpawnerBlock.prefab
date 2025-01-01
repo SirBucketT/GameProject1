@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0156c376fe60b94eb0e19864ca73013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _proximityIsOn: 1
   _targetOfRange: {fileID: 0}
 --- !u!135 &6661428983899507336
 SphereCollider:
@@ -93,6 +92,7 @@ GameObject:
   - component: {fileID: 4314543572842696923}
   - component: {fileID: 8454602263498184972}
   - component: {fileID: 6983087234998620441}
+  - component: {fileID: -418622501368526791}
   - component: {fileID: 5625099485058835290}
   m_Layer: 0
   m_Name: SpawnerBlock
@@ -191,6 +191,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-418622501368526791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9001967036373684976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81cb7f00a8cd949469561a6d437b4d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5625099485058835290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,3 +216,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnerData: {fileID: 0}
+  _usingProximity: 0
+  _useOtherProximityObject: {fileID: 0}

@@ -15,7 +15,7 @@ MonoBehaviour:
   _firstSpawnDelay: 1
   _newSpawnDelay: 1
   _despawnOldestOnLimit: 1
-  _spawnLimit: 10
+  _spawnLimit: 3
   _despawnDelay: 1
   _isLooping: 1
   _forceObjectToSpawn: 1

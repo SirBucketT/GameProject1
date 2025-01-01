@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 339f6ba15ef5af14191de3e49b1163f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
+  getCoin: {fileID: 2056311730141743395, guid: f9bb6a039fce7414db723d6f3912582e, type: 3}
 --- !u!65 &28499254825577691
 BoxCollider:
   m_ObjectHideFlags: 0

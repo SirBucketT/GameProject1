@@ -150,4 +150,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
-  experianceManager: {fileID: 0}
+  experianceManager: {fileID: 2280373866670239391, guid: 282015fe0a0e640839df9c339beb122f, type: 3}
