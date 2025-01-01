@@ -76,6 +76,9 @@ PrefabInstance:
       addedObject: {fileID: -2509945407370410753}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1849063585972143720}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
+      insertIndex: -1
       addedObject: {fileID: -3124111931993156187}
   m_SourcePrefab: {fileID: 100100000, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
 --- !u!1 &1361342587896129786 stripped
@@ -203,7 +206,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 8e76a1f312173f34abd21fa82963693f, type: 2}
   _currentHealth: 0
-  itemDrop: {fileID: 0}
+--- !u!114 &1849063585972143720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361342587896129786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ad4b444cac0d942b09fcb3478f4a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
 --- !u!114 &-3124111931993156187
 MonoBehaviour:
   m_ObjectHideFlags: 0
