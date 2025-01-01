@@ -1,16 +1,17 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class SpawnInteract : MonoBehaviour, IInteractable
 {
     [SerializeField] private ProximityChecker _proximityChecker;
-    [SerializeField] private SpawnerController _spawnerController;
+    [SerializeField] private SpawnerBlockController _spawnerBlockController;
     [SerializeField] private GameObject _interactableObject;
-    [SerializeField] private UnityEvent onInteract;
+    [SerializeField] private UnityEvent _onInteract;
 
     public void Interact()
     {
-        onInteract?.Invoke();
+        _onInteract?.Invoke();
     }
 
     public void InvokeActivateSpawner()
@@ -21,7 +22,7 @@ public class SpawnInteract : MonoBehaviour, IInteractable
     {
         if (HasProxAndController())
         {
-            _spawnerController.StartSpawning();
+            _spawnerBlockController.StartSpawning();
         }
     }
 
@@ -29,6 +30,6 @@ public class SpawnInteract : MonoBehaviour, IInteractable
     {
         return (_proximityChecker != null 
                 && _proximityChecker.TargetIsWithinRange 
-                && _spawnerController != null);
+                && _spawnerBlockController != null);
     }
 }

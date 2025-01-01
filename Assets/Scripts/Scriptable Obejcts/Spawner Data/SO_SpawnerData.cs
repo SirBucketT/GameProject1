@@ -10,7 +10,7 @@ public class SO_SpawnerData : ScriptableObject
     [SerializeField] private float _newSpawnDelay = 1f;
     [SerializeField] private bool _despawnOldestOnLimit;
     [SerializeField] private float _spawnLimit; 
-    [SerializeField] private float _despawnDelay = 1f;
+    [SerializeField] private int _despawnDelay = 1;
     [SerializeField] private bool _isLooping;
 
     [Header("Forced Spawn Settings")]

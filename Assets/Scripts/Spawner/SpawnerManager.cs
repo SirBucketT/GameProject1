@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner
+public class SpawnerManager : MonoBehaviour
 {
-    private SO_SpawnerData _spawnerData;
-    private Transform _spawnPoint;
+    [SerializeField] private SO_SpawnerData _spawnerData;
+    [SerializeField] private Transform _spawnPoint;
     private List<GameObject> _spawnedPrefabs = new List<GameObject>();
     private int _remainingObjectsInWave;
 
-    public Spawner(SO_SpawnerData spawnerData, Transform spawnPoint)
+    public void Initialize(SO_SpawnerData spawnerData, Transform spawnPoint)
     {
         _spawnerData = spawnerData;
         _spawnPoint = spawnPoint;
     }
 
-    internal IEnumerator SpawnEntitiesWithDelay(bool forceObjectToSpawn, GameObject forcedObject, bool usingWaves)
+    public IEnumerator SpawnEntitiesWithDelay(bool forceObjectToSpawn, GameObject forcedObject, bool usingWaves)
     {
         yield return new WaitForSeconds(_spawnerData.GetFirstSpawnDelay);
 
@@ -37,16 +37,13 @@ public class Spawner
 
             foreach (var objectPrefab in wave.ObjectsInWave)
             {
-                if (objectPrefab == null)
-                {
-                    continue;
-                }
-               
+                if (objectPrefab == null) continue;
+
                 if (_spawnerData.HasSpawnLimit && _spawnedPrefabs.Count >= _spawnerData.GetSpawnLimit)
                 {
                     DespawnOldestObject();
                 }
-                
+
                 InstantiatePrefab(objectPrefab);
                 yield return new WaitForSeconds(wave.SpawnDelayBetweenObjects);
             }
@@ -68,10 +65,7 @@ public class Spawner
 
         for (int i = 0; i < limit; i++)
         {
-            if (objectsSpawned >= limit)
-            {
-                break;
-            }
+            if (objectsSpawned >= limit) break;
 
             if (_spawnerData.HasSpawnLimit && _spawnedPrefabs.Count >= _spawnerData.GetSpawnLimit)
             {
@@ -88,7 +82,7 @@ public class Spawner
     {
         if (prefab == null) return;
 
-        var instance = GameObject.Instantiate(prefab, _spawnPoint.position + GetRandomOffset(), Quaternion.identity);
+        var instance = Instantiate(prefab, _spawnPoint.position + GetRandomOffset(), Quaternion.identity);
         instance.SetActive(true);
 
         _spawnedPrefabs.Add(instance);
@@ -97,7 +91,7 @@ public class Spawner
         {
             DespawnOldestObject();
         }
-        
+
         EnemyHealthManager healthManager = instance.GetComponent<EnemyHealthManager>();
         if (healthManager != null)
         {
@@ -108,11 +102,10 @@ public class Spawner
     private void DespawnOldestObject()
     {
         if (_spawnedPrefabs.Count == 0) return;
-        
+
         GameObject oldestObject = _spawnedPrefabs[0];
-        
         _spawnedPrefabs.RemoveAt(0);
-        GameObject.Destroy(oldestObject);
+        Destroy(oldestObject);
     }
 
     private void CountObjectDeath()
@@ -125,4 +118,3 @@ public class Spawner
         return new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
     }
 }
-

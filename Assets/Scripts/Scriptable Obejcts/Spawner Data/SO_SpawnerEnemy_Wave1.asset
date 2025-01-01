@@ -18,6 +18,8 @@ MonoBehaviour:
   _spawnLimit: 1
   _despawnDelay: 1
   _isLooping: 1
+  _forceObjectToSpawn: 0
+  _objectForcedToSpawn: {fileID: 0}
   _waves:
   - _objectsInWave:
     - {fileID: 7154526596106746453, guid: 97a30883ba5c8584b974913e13b56f08, type: 3}

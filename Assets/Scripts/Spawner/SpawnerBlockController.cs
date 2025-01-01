@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class SpawnerController : MonoBehaviour
+public class SpawnerBlockController : MonoBehaviour
 {
     [SerializeField] private SO_SpawnerData _spawnerData;
     [SerializeField] private bool _usingProximity;
@@ -9,11 +9,16 @@ public class SpawnerController : MonoBehaviour
 
     private bool _isSpawning = false;
     private ProximityChecker _proximityChecker;
-    private Spawner _spawner;
+    private SpawnerManager _spawnerManager;
 
     private void Awake()
     {
-        _spawner = new Spawner(_spawnerData, transform);
+        _spawnerManager = GetComponent<SpawnerManager>();
+        if (_spawnerManager == null)
+        {
+            return;
+        }
+        _spawnerManager.Initialize(_spawnerData, transform);
     }
 
     private void Start()
@@ -42,10 +47,7 @@ public class SpawnerController : MonoBehaviour
 
     internal void StartSpawning()
     {
-        if (_isSpawning)
-        {
-            return;
-        }
+        if (_isSpawning) return;
 
         _isSpawning = true;
         StartCoroutine(SpawnWithLoop());
@@ -55,15 +57,15 @@ public class SpawnerController : MonoBehaviour
     {
         do
         {
-            yield return SpawnWithDelay(); 
-        } while (_spawnerData.GetIsLooping); 
+            yield return SpawnWithDelay();
+        } while (_spawnerData.GetIsLooping);
 
         _isSpawning = false;
     }
 
     private IEnumerator SpawnWithDelay()
     {
-        yield return StartCoroutine(_spawner.SpawnEntitiesWithDelay(_spawnerData.ForceObjectToSpawn, _spawnerData.ObjectForcedToSpawn, _spawnerData.Waves != null));
+        yield return StartCoroutine(_spawnerManager.SpawnEntitiesWithDelay(_spawnerData.ForceObjectToSpawn, _spawnerData.ObjectForcedToSpawn, _spawnerData.Waves != null));
     }
 
     private bool HasObjectForProx()
