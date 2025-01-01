@@ -7,7 +7,6 @@ using UnityEngine;
 public class PlayerFight : MonoBehaviour
 {
     private Animator _animator;
-    private EnemyHealthManager _enemyHealth;
 
     void Start()
     {
