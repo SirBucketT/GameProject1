@@ -8,6 +8,8 @@ public class PlayerFight : MonoBehaviour
 {
     [SerializeField] private PlayerData playerData;
     private Animator _animator;
+    private EnemyHealthManager _enemyHealth;
+    private LongSword _longsword;
 
     void Start()
     {
@@ -29,10 +31,6 @@ public class PlayerFight : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             _animator.SetTrigger("Slash");
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            _animator.SetTrigger("JumpSpin");
         }
         
     }

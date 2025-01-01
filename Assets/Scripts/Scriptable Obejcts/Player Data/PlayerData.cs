@@ -26,28 +26,5 @@ public class PlayerData : ScriptableObject
     [Header("Player Damage")] 
     [SerializeField] public GameObject Sword;
     [SerializeField] public int SwordAttack = 10;
-
-    public void EnableCollision()
-    {
-        if (Sword != null)
-        {
-            Collider swordCollider = Sword.GetComponent<Collider>();
-            if (swordCollider != null)
-            {
-                swordCollider.enabled = true;
-            }
-        }
-    }
-    public void DisableCollision()
-    {
-        if (Sword != null)
-        {
-            Collider swordCollider = Sword.GetComponent<Collider>();
-            if (swordCollider != null)
-            {
-                swordCollider.enabled = false;
-            }
-        }
-    }
     
 }

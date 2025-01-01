@@ -1,20 +1,12 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AttackCollision : StateMachineBehaviour
 {
-
-    PlayerData _playerData;
-
-    public void SetPlayerData(PlayerData playerData)
-    {
-        _playerData = playerData;
-    }
-
+    LongSword _longsword;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        _playerData.EnableCollision();
+        _longsword.OnEnable();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -26,7 +18,7 @@ public class AttackCollision : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        _playerData.DisableCollision();
+        _longsword.OnDisable();
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
