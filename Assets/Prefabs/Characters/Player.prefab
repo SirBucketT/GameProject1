@@ -1900,6 +1900,7 @@ GameObject:
   - component: {fileID: 324682461518059071}
   - component: {fileID: 6390493419869087521}
   - component: {fileID: 5635618244087920747}
+  - component: {fileID: 6608518342659619500}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -2057,7 +2058,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd31f851c2b469449dc3f0232b7b5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
 --- !u!114 &6390493419869087521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2179,6 +2179,19 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &6608518342659619500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6825414550768407218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f9e23cfd4fef6a42b2cecf7ed0566dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponCollider: {fileID: 0}
 --- !u!1 &6842429201115801903
 GameObject:
   m_ObjectHideFlags: 0
@@ -3099,7 +3112,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2784217123275490190, guid: 6177869066dbc54458b4e1182031d6a2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

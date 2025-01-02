@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7633962117291513292}
   - component: {fileID: 6661428983899507336}
   - component: {fileID: 1880465666095797832}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Prox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6983087234998620441}
   - component: {fileID: -418622501368526791}
   - component: {fileID: 5625099485058835290}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SpawnerBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
