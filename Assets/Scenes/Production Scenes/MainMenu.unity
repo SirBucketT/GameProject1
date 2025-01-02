@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 17932705a52930f47a18648163dd21eb, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 1fbd3ee72436e9947bae36a288a8a5ef, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 469002c52d3ac37428d5fbef24ce89f1, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -17725,10 +17725,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2095922397}
-    - target: {fileID: 6432910948726033663, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
-      propertyPath: m_Name
-      value: buttonPromts
-      objectReference: {fileID: 0}
     - target: {fileID: 6974430478610703510, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -17813,11 +17809,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8070011425311325750, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
-      propertyPath: m_margin.z
-      value: -8.329468
-      objectReference: {fileID: 0}
-    - target: {fileID: 8792660993089128736, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
+    - target: {fileID: 7714578984567825768, guid: 7582ba4fa274f7d46a7f2a96c16bf3d5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2095922397}
