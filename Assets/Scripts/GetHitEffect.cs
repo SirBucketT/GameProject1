@@ -7,7 +7,7 @@ public class GetHitEffect : MonoBehaviour
     [SerializeField] Material _material; 
     [SerializeField] float _effectDuration = 0.2f;
 
-    private Color _hitColor = Color.grey;
+    [SerializeField] private Color _hitColor = Color.grey;
     private Color _originalColor; 
 
     void Start()
