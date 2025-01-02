@@ -7,18 +7,18 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
 {
     [SerializeField] private SO_EnemyData enemyData;
     [SerializeField] private int _currentHealth;
-    
     private ItemDrop _itemDrop; 
     private bool _isDestroyed = false;
 
     public event Action OnEnemyDeath;
+    public UnityEvent OnTakeDamage;
 
     bool ITakeDamage.isAlive => IsAlive();
 
     public void Start()
     {
         Initialize();
-        _itemDrop = GetComponent<ItemDrop>();  
+        _itemDrop = GetComponent<ItemDrop>();
     }
 
     private void Initialize()
@@ -47,6 +47,7 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
         {
             KillEnemy();
         }
+        OnTakeDamage?.Invoke();
     }
 
     private void KillEnemy()

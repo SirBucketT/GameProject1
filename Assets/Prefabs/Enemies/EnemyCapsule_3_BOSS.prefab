@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 2041243793169095267}
   - component: {fileID: 6934546117473102205}
   - component: {fileID: 4356398538513995794}
+  - component: {fileID: 2918232151357929164}
   m_Layer: 0
   m_Name: EnemyCapsule_3_Boss
   m_TagString: Enemy
@@ -320,6 +321,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: dc624a70109751340a1e1ccdd19446c4, type: 2}
   _currentHealth: 50
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2918232151357929164}
+        m_TargetAssemblyTypeName: GetHitEffect, Assembly-CSharp
+        m_MethodName: TriggerHitEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6934546117473102205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +361,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c29946550fed440a3c274ef6f9133a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2918232151357929164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7179961065801060649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b88db81430da44fa6bd2e85aa37aa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 0}
+  _hitColor: {r: 1, g: 0, b: 0, a: 1}
+  _effectDuration: 0.5
+  _material: {fileID: 0}
 --- !u!1001 &1732100580022218301
 PrefabInstance:
   m_ObjectHideFlags: 0
