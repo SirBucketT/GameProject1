@@ -8,6 +8,7 @@ TagManager:
   - Sword
   - Npc
   - EyeCamera
+  - Left Foot
   layers:
   - Default
   - TransparentFX
