@@ -17588,10 +17588,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConfirmQuitUI
       objectReference: {fileID: 0}
-    - target: {fileID: 811337079497171140, guid: 1487cba35a0d36b4a85bfe40e8395fa4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 996376909765330012, guid: 1487cba35a0d36b4a85bfe40e8395fa4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -17846,10 +17842,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2095922397}
-    - target: {fileID: 3755575386426208317, guid: 80af835a867bee24ca44cac9f10153ba, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenTutorial
-      objectReference: {fileID: 0}
     - target: {fileID: 4329221337141244421, guid: 80af835a867bee24ca44cac9f10153ba, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -17933,6 +17925,10 @@ PrefabInstance:
     - target: {fileID: 6310966616535676448, guid: 80af835a867bee24ca44cac9f10153ba, type: 3}
       propertyPath: m_Name
       value: Settings
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310966616535676448, guid: 80af835a867bee24ca44cac9f10153ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8381641858025327359, guid: 80af835a867bee24ca44cac9f10153ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -18085,10 +18081,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Credits
       objectReference: {fileID: 0}
-    - target: {fileID: 570668979431134261, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1726953299720417572, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -18177,6 +18169,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2095922397}
+    - target: {fileID: 4935582184569630730, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 954.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935582184569630730, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -417.87415
+      objectReference: {fileID: 0}
     - target: {fileID: 5087130595923598111, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -18185,13 +18185,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2095922397}
-    - target: {fileID: 5369280267819467952, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenTutorial
+    - target: {fileID: 5946784963129186192, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
+      propertyPath: m_margin.x
+      value: -2.6280518
       objectReference: {fileID: 0}
-    - target: {fileID: 8105999773226571923, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 5946784963129186192, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
+      propertyPath: m_margin.z
+      value: -2.012329
       objectReference: {fileID: 0}
     - target: {fileID: 8748675300021767688, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
