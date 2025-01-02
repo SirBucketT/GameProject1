@@ -18189,6 +18189,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OpenTutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 8105999773226571923, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8748675300021767688, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
