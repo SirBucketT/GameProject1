@@ -23,8 +23,11 @@ public class GetHitEffect : MonoBehaviour
 
     public void TriggerHitEffect()
     {
+        if (gameObject.activeInHierarchy)
+        {
             StopAllCoroutines();
             StartCoroutine(HitEffectCoroutine());
+        }
     }
 
     private IEnumerator HitEffectCoroutine()

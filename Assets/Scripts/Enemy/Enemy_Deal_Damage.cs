@@ -22,7 +22,6 @@ public class Enemy_Deal_Damage : MonoBehaviour
         if (Time.time >= _lastDamageTime + damageCooldown)
         {
             other.gameObject.GetComponent<PlayerHealth>().PlayerTakeDamage(EnemyDamage.GetEnemyDamage);
-            Debug.Log($"Enemy dealt {EnemyDamage.GetEnemyDamage} to Player!");
         _lastDamageTime = Time.time; 
         }
     }
