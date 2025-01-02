@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class LongSword : MonoBehaviour
 {
-    private Collider _weaponCollider;
+    [SerializeField] private Collider _weaponCollider;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         DisableWeaponCollision();
+        Debug.Log("potato disabled");
     }
 
     // Update is called once per frame
@@ -18,32 +19,33 @@ public class LongSword : MonoBehaviour
 
     }
 
-    private void EnableWeaponCollision()
+    internal void EnableWeaponCollision()
     {
         if (_weaponCollider)
         {
             _weaponCollider.enabled = true;
         }
+        Debug.Log("potato Enabled");
     }
 
-    private void DisableWeaponCollision()
+    internal void DisableWeaponCollision()
     {
         if (_weaponCollider)
         {
             _weaponCollider.enabled = false;
         }
-
+        Debug.Log("potato disabled");
     }
 
-    public void OnEnable()
-    {
-        EnableWeaponCollision();
-    }
-
-    public void OnDisable()
-    {
-        DisableWeaponCollision();
-    }
+    // public void OnEnable()
+    // {
+    //     EnableWeaponCollision();
+    // }
+    //
+    // public void OnDisable()
+    // {
+    //     DisableWeaponCollision();
+    // }
 
 
 }

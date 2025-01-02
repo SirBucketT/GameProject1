@@ -26,6 +26,13 @@ public class PlayerFight : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             _animator.SetTrigger("Slash");
+
         }    
+        
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            _animator.SetTrigger("JumpSpin");
+        }
+        
     }
 }
