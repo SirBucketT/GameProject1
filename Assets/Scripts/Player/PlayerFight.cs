@@ -23,10 +23,6 @@ public class PlayerFight : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             _animator.SetTrigger("Kick");
-            if (_leftFootCollider != null)
-            {
-                Debug.Log("Foten har en collider!");
-            }
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -35,9 +31,12 @@ public class PlayerFight : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && collision.gameObject == _leftFoot)
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Foten träffade en fiende!");
+            if (collision.contacts[0].thisCollider.gameObject == _leftFoot)
+            {
+                Debug.Log("Foten träffade en fiende!");
+            }
         }
     }
 }
