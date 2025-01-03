@@ -542,6 +542,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.8018712
       objectReference: {fileID: 0}
+    - target: {fileID: 415287891258781815, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 415287891258781815, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f621aee19c8932e4cb69b945fcc82a96, type: 2}
+    - target: {fileID: 415287891258781815, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1106563633393636324, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
     - target: {fileID: 608321761475470972, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 69.978745
@@ -557,6 +569,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
       propertyPath: m_Name
       value: Paladin J Nordstrom
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1092408308860062549, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -654,6 +670,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.000055236604
       objectReference: {fileID: 0}
+    - target: {fileID: 3099756089343826349, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099756089343826349, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1106563633393636324, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
+    - target: {fileID: 3099756089343826349, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1106563633393636324, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
     - target: {fileID: 3183749884578473501, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 17.057714
@@ -895,6 +923,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3753397385122186866}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1749401300661276160}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7179362988493667816}
   m_SourcePrefab: {fileID: 100100000, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
 --- !u!1 &1361342587896129786 stripped
 GameObject:
@@ -1025,11 +1059,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ede1f901a3ec94bbd09368d42d479c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: eb9d0125ab1504a429d3f70c8a23b3bc, type: 2}
+  enemyData: {fileID: 11400000, guid: dc624a70109751340a1e1ccdd19446c4, type: 2}
   _currentHealth: 0
   OnTakeDamage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1749401300661276160}
+        m_TargetAssemblyTypeName: GetHitEffect, Assembly-CSharp
+        m_MethodName: TriggerHitEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-3124111931993156187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1068,8 +1114,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c29946550fed440a3c274ef6f9133a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1749401300661276160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361342587896129786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b88db81430da44fa6bd2e85aa37aa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 3828507950856834054}
+  _material: {fileID: 1106563633393636324, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
+  _effectDuration: 2
+  _hitColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+--- !u!114 &7179362988493667816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361342587896129786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a17e92c4d6deda4199af200062fced7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dropList: {fileID: 11400000, guid: 37fced9263a6daf44b45233e0c8e4d9f, type: 2}
 --- !u!4 &1850879882588369472 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
+  m_PrefabInstance: {fileID: 2172173246515238315}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &3828507950856834054 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3099756089343826349, guid: 4d0c0d85e0a0337469b7773c53572e8e, type: 3}
   m_PrefabInstance: {fileID: 2172173246515238315}
   m_PrefabAsset: {fileID: 0}
