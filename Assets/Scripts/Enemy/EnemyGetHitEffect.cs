@@ -1,14 +1,19 @@
 using System.Collections;
 using UnityEngine;
 
-public class GetHitEffect : MonoBehaviour
+public class EnemyGetHitEffect : MonoBehaviour
 {
     [SerializeField] Renderer _renderer; 
     [SerializeField] Material _material; 
-    [SerializeField] float _effectDuration = 0.2f;
-
     [SerializeField] private Color _hitColor = Color.grey;
+    [Header("Default Values")]
+    [SerializeField] private bool _forceDefaultValue;
+    [SerializeField] float _effectDurationDefault = 0.5f;
+
     private Color _originalColor; 
+    private float _effectDuration;
+
+    private EnemyTakeDamageCooldown _enemyTakeDamageCooldown;
 
     void Start()
     {
@@ -19,8 +24,26 @@ public class GetHitEffect : MonoBehaviour
         _material = _renderer.material;
 
         _originalColor = _material.color;
+        
+        _enemyTakeDamageCooldown = FindObjectOfType<EnemyTakeDamageCooldown>();
+        if (!_forceDefaultValue && _enemyTakeDamageCooldown != null )
+        {
+            TakeDamageDuration();
+        }
+        else
+        {
+            _effectDuration = _effectDurationDefault;
+        }
+
     }
 
+    private void TakeDamageDuration()
+    {
+        if (_enemyTakeDamageCooldown != null)
+        {
+            _effectDuration = _enemyTakeDamageCooldown.GetDamageCooldown();
+        }
+    }
     public void TriggerHitEffect()
     {
         if (gameObject.activeInHierarchy)
