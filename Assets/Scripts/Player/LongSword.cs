@@ -10,7 +10,6 @@ public class LongSword : MonoBehaviour
     void Start()
     {
         DisableWeaponCollision();
-        Debug.Log("potato disabled");
     }
 
     // Update is called once per frame
@@ -25,7 +24,6 @@ public class LongSword : MonoBehaviour
         {
             _weaponCollider.enabled = true;
         }
-        Debug.Log("potato Enabled");
     }
 
     internal void DisableWeaponCollision()
@@ -34,7 +32,6 @@ public class LongSword : MonoBehaviour
         {
             _weaponCollider.enabled = false;
         }
-        Debug.Log("potato disabled");
     }
 
     // public void OnEnable()

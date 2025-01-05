@@ -1900,6 +1900,7 @@ GameObject:
   - component: {fileID: 324682461518059071}
   - component: {fileID: 6390493419869087521}
   - component: {fileID: 5635618244087920747}
+  - component: {fileID: 372172614665497359}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -2179,6 +2180,19 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &372172614665497359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6825414550768407218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5daaf119bef95b94385134d2f0bdfd49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponCollider: {fileID: 7541637532584654428}
 --- !u!1 &6842429201115801903
 GameObject:
   m_ObjectHideFlags: 0
@@ -3109,5 +3123,10 @@ PrefabInstance:
 --- !u!4 &1266663447649296443 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2321712131523618728, guid: 6177869066dbc54458b4e1182031d6a2, type: 3}
+  m_PrefabInstance: {fileID: 3579366990293600147}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &7541637532584654428 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 6414586230520132047, guid: 6177869066dbc54458b4e1182031d6a2, type: 3}
   m_PrefabInstance: {fileID: 3579366990293600147}
   m_PrefabAsset: {fileID: 0}

@@ -8,7 +8,6 @@ public class PlayerDealDamage : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") && transform.root.CompareTag("Player"))
         {
-            Debug.Log("Collision conditions met.");
             DamageEnemy(other);
         }
     }
