@@ -200,7 +200,7 @@ MonoBehaviour:
   _animator: {fileID: 7668474874526308454}
   _bodyAnimator: {fileID: 7365321355801180408}
   _weapon: {fileID: 1185440061122001698}
-  _cooldownTime: 1
+  _cooldownTime: 1.5
   _playerData: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
   _hasBoomerang: 0
   _hasBonk: 0

@@ -1,14 +1,16 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 
 public class EnemyAttackController : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
     [SerializeField] private Animator _bodyAnimator;
-    [SerializeField] private GameObject _weapon;
-    [SerializeField] private float _cooldownTime;
     [SerializeField] private PlayerData _playerData;
+    [Header("Attack settings")]
+    [SerializeField] private Animator _weaponAnimator;
+    [SerializeField] private GameObject _weapon;
+    [SerializeField, Range(1.5f, 10f)] private float _cooldownTime;
     [SerializeField] private bool _hasBoomerang = false;
     [SerializeField] private bool _hasBonk = false;
 
@@ -63,9 +65,9 @@ public class EnemyAttackController : MonoBehaviour
 
     private void TriggerAttack(string attackTrigger)
     {
-        if (_animator != null)
+        if (_weaponAnimator != null)
         {
-            _animator.SetTrigger(attackTrigger);
+            _weaponAnimator.SetTrigger(attackTrigger);
         }
 
         if (_bodyAnimator != null)
