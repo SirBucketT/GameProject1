@@ -98,6 +98,7 @@ public class EnemyAttackController : MonoBehaviour
 
     private bool HasStoppedMoving()
     {
+        Debug.Log(_navMeshAgent);
         return _navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance && !_navMeshAgent.pathPending;
     }
 
