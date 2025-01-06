@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5227220652098286139}
   - component: {fileID: 49142887379432827}
   - component: {fileID: 8282917354339689087}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: weapon_boomerang
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SO_Enemy_1_Red
   m_EditorClassIdentifier: 
   _enemyName: Redy
-  _enemyMaxHealth: 10
-  _enemyHealth: 10
+  _enemyMaxHealth: 20
+  _enemyHealth: 20
   _enemyDamage: 2

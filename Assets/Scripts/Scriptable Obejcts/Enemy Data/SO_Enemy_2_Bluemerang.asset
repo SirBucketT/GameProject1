@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SO_Enemy_2_Bluemerang
   m_EditorClassIdentifier: 
   _enemyName: Bluemerang
-  _enemyMaxHealth: 20
-  _enemyHealth: 20
+  _enemyMaxHealth: 15
+  _enemyHealth: 15
   _enemyDamage: 1

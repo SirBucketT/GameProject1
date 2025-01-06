@@ -1,56 +1,39 @@
-using NUnit.Framework;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAttackController : MonoBehaviour
 {
-    [SerializeField] Animator _animator;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private Animator _bodyAnimator;
     [SerializeField] private GameObject _weapon;
     [SerializeField] private float _cooldownTime;
-    [SerializeField] PlayerData _playerData;
+    [SerializeField] private PlayerData _playerData;
     [SerializeField] private bool _hasBoomerang = false;
     [SerializeField] private bool _hasBonk = false;
 
     private Transform _player;
-    private float _nextAttackTime;
     private Collider _weaponCollider;
     private NavMeshAgent _navMeshAgent;
     internal bool IsAttacking;
-
-    private readonly string[] _attackTriggers = { "Attack", "BonkAttack", "BoomerangAttack" };
 
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player")?.transform;
         _weaponCollider = _weapon?.GetComponent<Collider>();
-        _animator = _animator ?? GetComponent<Animator>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
-
-        _nextAttackTime = Time.time;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
-        if (IsPlayerAlive())
-        {
-            DistanceCheck();
-        }
-    }
-
-    private void DistanceCheck()
-    {
-        if (HasStoppedMoving() && !IsAttacking && IsAttackOnCooldown())
-        {
+        if (EnemyCanAttack())
+        {  
             IsAttacking = true;
-            PerformAttack();
-        }
-        else
-        {
-            IsAttacking = false;
+            StartCoroutine(PerformAttack());
         }
     }
 
-    private void PerformAttack()
+    private IEnumerator PerformAttack()
     {
         if (_hasBonk)
         {
@@ -66,12 +49,16 @@ public class EnemyAttackController : MonoBehaviour
         }
 
         EnableWeaponCollision();
-        _nextAttackTime = Time.time + _cooldownTime;
+        StartCoroutine(WaitForAttackCooldown());
+
+        yield break;
     }
 
-    private bool IsAttackOnCooldown()
+    private IEnumerator WaitForAttackCooldown()
     {
-        return Time.time >= _nextAttackTime;
+        yield return new WaitForSeconds(_cooldownTime); 
+        DisableWeaponCollision(); 
+        IsAttacking = false;
     }
 
     private void TriggerAttack(string attackTrigger)
@@ -79,6 +66,11 @@ public class EnemyAttackController : MonoBehaviour
         if (_animator != null)
         {
             _animator.SetTrigger(attackTrigger);
+        }
+
+        if (_bodyAnimator != null)
+        {
+            _bodyAnimator.SetTrigger(attackTrigger);
         }
     }
 
@@ -97,6 +89,10 @@ public class EnemyAttackController : MonoBehaviour
             _weaponCollider.enabled = false;
         }
     }
+    private bool EnemyCanAttack()
+    {
+        return IsPlayerAlive() && HasStoppedMoving() && !IsAttacking;
+    }
 
     private bool HasStoppedMoving()
     {
@@ -105,6 +101,7 @@ public class EnemyAttackController : MonoBehaviour
 
     private bool IsPlayerAlive()
     {
-        return _player && _playerData.currentHealth > 0;
+        return _player != null && _playerData.currentHealth > 0;
     }
+
 }

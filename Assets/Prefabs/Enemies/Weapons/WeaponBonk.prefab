@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3742718398370149010}
   - component: {fileID: 595721723514015401}
   - component: {fileID: 4636383770270114248}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 2711099415664601831}
   - component: {fileID: 6070486221282826808}
   - component: {fileID: 8394506545244503261}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WeaponBonk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
