@@ -317,10 +317,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0beef49fe61d9c4fb744ebe9895cb5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 3211027973371609289}
+  _bodyAnimator: {fileID: 0}
+  _playerData: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
+  _weaponAnimator: {fileID: 3211027973371609289}
   _weapon: {fileID: 5000648026656056438}
   _cooldownTime: 5
-  _playerData: {fileID: 11400000, guid: 3b38686146ed42244a9fdbebec612799, type: 2}
   _hasBoomerang: 0
   _hasBonk: 1
 --- !u!114 &2041243793169095267

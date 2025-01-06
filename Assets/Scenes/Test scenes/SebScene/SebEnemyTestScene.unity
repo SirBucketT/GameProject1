@@ -1500,6 +1500,10 @@ PrefabInstance:
       propertyPath: _cooldownTime
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6627642529498486957, guid: 97a30883ba5c8584b974913e13b56f08, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 2038190168}
     - target: {fileID: 7154526596106746453, guid: 97a30883ba5c8584b974913e13b56f08, type: 3}
       propertyPath: m_Name
       value: EnemyCapsule1
