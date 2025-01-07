@@ -1,10 +1,13 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class LongSword : MonoBehaviour
 {
     [SerializeField] private Collider _weaponCollider;
+    
+    [SerializeField]AudioSource memeMagic;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,6 +26,11 @@ public class LongSword : MonoBehaviour
         if (_weaponCollider)
         {
             _weaponCollider.enabled = true;
+            
+        if (memeMagic != null)
+        {
+            memeMagic.Play();
+        }
         }
     }
 

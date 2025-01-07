@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerDealDamage : MonoBehaviour
 {
     [SerializeField] int damage;
+    [SerializeField]AudioSource memeMagic;
 
     private void OnCollisionEnter(Collision other)
     {
@@ -15,5 +16,9 @@ public class PlayerDealDamage : MonoBehaviour
     {
         other.gameObject.GetComponent<EnemyHealthManager>().TakeDamage(damage);
         Debug.Log($"Player dealt {damage} to Enemy!");
+        if (memeMagic != null)
+        {
+            memeMagic.Play();
+        }
     }
 }
