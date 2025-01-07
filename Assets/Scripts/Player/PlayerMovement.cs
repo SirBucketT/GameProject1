@@ -45,12 +45,9 @@ public class PlayerMovement : MonoBehaviour
             if (clickEffect != null)
             {
                 if (Physics.Raycast(ray, out RaycastHit hitInfo))
-                {
-                    if (Input.GetMouseButtonUp(0))
-                    {
-                        GameObject effectInstance = Instantiate(clickEffect, hitInfo.point, Quaternion.identity);
-                        Destroy(effectInstance, 0.5f);
-                    }
+                { 
+                    GameObject effectInstance = Instantiate(clickEffect, hitInfo.point, Quaternion.identity);
+                    Destroy(effectInstance, 0.5f);
                 }
             }
         }
