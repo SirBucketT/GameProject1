@@ -11,7 +11,11 @@ public class PlayerFight : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _leftFoot = GameObject.FindGameObjectWithTag("Left Foot");
-        _leftFootCollider = _leftFoot.GetComponent<Collider>();
+
+        if (_leftFootCollider != null)
+        {
+            _leftFootCollider = _leftFoot.GetComponent<Collider>();
+        }
         _animator.SetBool("IsAlive", true);
     }
 

@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 454618292613082963}
   - component: {fileID: 8288684061382554387}
   m_Layer: 0
-  m_Name: EnemyCapsule1_Paladin 1
+  m_Name: TestEnemyCapsule1_Paladin 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
