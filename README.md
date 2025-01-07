@@ -13,12 +13,13 @@ Theodor Kvarnström - UI/UX editing, Programming & Post Processing
 
 Jama Fahad - Concept art 3D & Programming
 
-
+----------------------------------------------------------------------------------------------------------
 
 Game development scheduled between the start of december 2024 and January 10th of 2025.
 
-The game we were tasked with creating was a ARPG game with certain restrictions and requirements such as: 
+----------------------------------------------------------------------------------------------------------
 
+Grade requirements:
 Player Can Move On Ground.
 
 Player Can Destroy Object. 
