@@ -22,6 +22,8 @@ namespace Enemy
 
         private void Start()
         {
+            healthbarSlider.wholeNumbers = true;
+            healthbarSliderBack.wholeNumbers = true;
             healthbarSlider.maxValue = _enemyData.GetEnemyMaxHealth;
             healthbarSliderBack.maxValue = healthbarSlider.maxValue;
         }
