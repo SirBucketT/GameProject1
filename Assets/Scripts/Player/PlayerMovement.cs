@@ -36,13 +36,21 @@ public class PlayerMovement : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hitInfo))
             {
                 _agent.SetDestination(hitInfo.point);
-                
-                //plays click effect and destroys the instance of the effect after x amount of seconds.
-                //this to save on performance and to avoid having hundreds of instances of the effect created after a while in game
-                if (clickEffect != null)
+            }
+        }
+        if(Input.GetMouseButtonUp(0))
+        {
+            //plays click effect and destroys the instance of the effect after x amount of seconds.
+            //this to save on performance and to avoid having hundreds of instances of the effect created after a while in game
+            if (clickEffect != null)
+            {
+                if (Physics.Raycast(ray, out RaycastHit hitInfo))
                 {
-                    GameObject effectInstance = Instantiate(clickEffect, hitInfo.point, Quaternion.identity);
-                    Destroy(effectInstance, 0.5f);
+                    if (Input.GetMouseButtonUp(0))
+                    {
+                        GameObject effectInstance = Instantiate(clickEffect, hitInfo.point, Quaternion.identity);
+                        Destroy(effectInstance, 0.5f);
+                    }
                 }
             }
         }
