@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 4264985177480869317}
   - component: {fileID: 5605074453186849799}
   - component: {fileID: -2489883590996852873}
-  - component: {fileID: 515515142714055391}
   - component: {fileID: 7461228294996231751}
   - component: {fileID: 1872663730850539664}
   - component: {fileID: 4526996451239146611}
@@ -261,18 +260,6 @@ MonoBehaviour:
   _hitColor: {r: 1, g: 0, b: 0, a: 1}
   _forceDefaultValue: 0
   _effectDurationDefault: 0.5
---- !u!114 &515515142714055391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7154526596106746453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37c29946550fed440a3c274ef6f9133a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7461228294996231751
 MonoBehaviour:
   m_ObjectHideFlags: 0

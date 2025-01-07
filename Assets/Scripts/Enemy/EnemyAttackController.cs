@@ -13,11 +13,11 @@ public class EnemyAttackController : MonoBehaviour
     [SerializeField, Range(1.5f, 10f)] private float _cooldownTime;
     [SerializeField] private bool _hasBoomerang = false;
     [SerializeField] private bool _hasBonk = false;
-
+    
     private Transform _player;
     private Collider _weaponCollider;
     private NavMeshAgent _navMeshAgent;
-    internal bool IsAttacking;
+    private bool IsAttacking;
 
     private void Start()
     {
@@ -26,11 +26,12 @@ public class EnemyAttackController : MonoBehaviour
         _navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         if (EnemyCanAttack())
-        {  
+        {
             IsAttacking = true;
+            Debug.Log(IsAttacking);
             StartCoroutine(PerformAttack());
         }
     }
@@ -52,15 +53,17 @@ public class EnemyAttackController : MonoBehaviour
 
         EnableWeaponCollision();
         StartCoroutine(WaitForAttackCooldown());
-
+        
         yield break;
     }
 
     private IEnumerator WaitForAttackCooldown()
     {
         yield return new WaitForSeconds(_cooldownTime); 
-        DisableWeaponCollision(); 
+        DisableWeaponCollision();
+        RotateToPlayer();
         IsAttacking = false;
+        Debug.Log(IsAttacking);
     }
 
     private void TriggerAttack(string attackTrigger)
@@ -91,6 +94,14 @@ public class EnemyAttackController : MonoBehaviour
             _weaponCollider.enabled = false;
         }
     }
+    private void RotateToPlayer()
+    {
+        Vector3 direction = _player.transform.position - transform.position;
+         
+        direction.y = 0;
+         
+        transform.rotation = Quaternion.LookRotation(direction);
+    }
     private bool EnemyCanAttack()
     {
         return IsPlayerAlive() && HasStoppedMoving() && !IsAttacking;
@@ -105,5 +116,4 @@ public class EnemyAttackController : MonoBehaviour
     {
         return _player != null && _playerData.currentHealth > 0;
     }
-
 }
