@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyName: Redy
   _enemyMaxHealth: 20
-  _enemyHealth: 20
+  _enemyHealth: 0
   _enemyDamage: 2

@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class EnemyHealthManager : MonoBehaviour, ITakeDamage
 {
    
-    [SerializeField] private SO_EnemyData enemyData;
-    private int _currentHealth;
+    [SerializeField] private SO_EnemyData soEnemyData;
+   
     private bool _isDestroyed = false;
     private ItemDropManager _itemDropManager;
     private EnemyTakeDamageCooldown _enemyTakeDamageCooldown;
@@ -19,23 +20,14 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
 
     public void Start()
     {
-        Initialize();
+        soEnemyData.ResetEnemyHealth();
         _itemDropManager = GetComponent<ItemDropManager>();
         _enemyTakeDamageCooldown = GetComponent<EnemyTakeDamageCooldown>();
     }
 
-    private void Initialize()
-    {
-        if (enemyData == null)
-        {
-            return;
-        }
-        _currentHealth = enemyData.GetEnemyHealth;
-    }
-
     private bool IsAlive()
     {
-        return _currentHealth > 0 && IsEnabled();
+        return soEnemyData.GetEnemyHealth > 0 && IsEnabled();
     }
 
     private bool IsEnabled()
@@ -50,7 +42,7 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
             return;
         }
 
-        _currentHealth -= damageAmount;
+        soEnemyData.ReduceEnemyHealth(damageAmount);
         Debug.Log("damage taken");
         if (!IsAlive())
         {
@@ -86,6 +78,5 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
             _isDestroyed = true;
         }
     }
-    internal int GetEnemyCurrentHealth => _currentHealth;
-    internal int GetEnemyMaxHealth => enemyData.GetEnemyMaxHealth;
+   
 }
