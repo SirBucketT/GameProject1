@@ -5,6 +5,7 @@ public class PlayerFight : MonoBehaviour
     private Animator _animator;
     public GameObject _leftFoot;
     private Collider _leftFootCollider;
+    private EnemyKnockBack enemyKnockBack;
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class PlayerFight : MonoBehaviour
             if (collision.contacts[0].thisCollider.gameObject == _leftFoot)
             {
                 Debug.Log("Foten träffade en fiende!");
+                enemyKnockBack.GetKicked();
             }
         }
     }
