@@ -13,5 +13,15 @@ using UnityEngine.UIElements;
         internal int GetEnemyMaxHealth => _enemyMaxHealth;
         internal int GetEnemyHealth => _enemyHealth;
         internal int GetEnemyDamage => _enemyDamage;
+        
+        internal void ReduceEnemyHealth(int damageAmount)
+        {
+            _enemyHealth -= damageAmount;
+        }
+
+        internal void ResetEnemyHealth()
+        {
+            _enemyHealth = _enemyMaxHealth;
+        }
     } 
     
