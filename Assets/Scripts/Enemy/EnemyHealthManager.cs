@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class EnemyHealthManager : MonoBehaviour, ITakeDamage
 {
+   
     [SerializeField] private SO_EnemyData enemyData;
     private int _currentHealth;
     private bool _isDestroyed = false;
@@ -85,4 +86,6 @@ public class EnemyHealthManager : MonoBehaviour, ITakeDamage
             _isDestroyed = true;
         }
     }
+    internal int GetEnemyCurrentHealth => _currentHealth;
+    internal int GetEnemyMaxHealth => enemyData.GetEnemyMaxHealth;
 }
