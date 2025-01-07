@@ -26,6 +26,8 @@ namespace Enemy
             healthbarSliderBack.wholeNumbers = true;
             healthbarSlider.maxValue = _enemyData.GetEnemyMaxHealth;
             healthbarSliderBack.maxValue = healthbarSlider.maxValue;
+            healthbarSlider.onValueChanged.AddListener(UpdateEnemyHealth);
+            healthbarSliderBack.onValueChanged.AddListener(UpdateEnemyHealth);
         }
 
         void Update()
@@ -43,8 +45,9 @@ namespace Enemy
             }
         }
         
-        public void UpdateEnemyHealth()
+        public void UpdateEnemyHealth(float value)
         {
+            int intValue = Mathf.RoundToInt(value);
             healthbarSlider.maxValue = _enemyData.GetEnemyMaxHealth;
             healthbarSlider.value = _enemyData.GetEnemyHealth;
             healthbarSliderBack.value = _enemyData.GetEnemyHealth;
