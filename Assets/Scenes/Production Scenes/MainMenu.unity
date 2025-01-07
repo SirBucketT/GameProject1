@@ -18085,6 +18085,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2095922397}
+    - target: {fileID: 1949758034153845970, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
+      propertyPath: m_text
+      value: "UI/UX Editing, Programmer \n& Post Processing"
+      objectReference: {fileID: 0}
     - target: {fileID: 2142898860794861375, guid: 7d95ca644a83f0b48ae5c344c97e377a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
