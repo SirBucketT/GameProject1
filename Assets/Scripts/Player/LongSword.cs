@@ -5,22 +5,22 @@ using UnityEngine.Serialization;
 
 public class LongSword : MonoBehaviour
 {
-    [SerializeField] private Collider _weaponCollider;
+    [SerializeField] Collider _weaponCollider;
+    [SerializeField] Collider _footCollider;
     
-    [SerializeField]AudioSource memeMagic;
+    [SerializeField] AudioSource memeMagic;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         DisableWeaponCollision();
+        DisableFootCollision();
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    internal void EnableFootCollision()
     {
-
+        _footCollider.enabled = true;
     }
-
     internal void EnableWeaponCollision()
     {
         if (_weaponCollider)
@@ -34,23 +34,12 @@ public class LongSword : MonoBehaviour
         }
     }
 
+    internal void DisableFootCollision()
+    {
+        _footCollider.enabled = false;
+    }
     internal void DisableWeaponCollision()
     {
-        if (_weaponCollider)
-        {
-            _weaponCollider.enabled = false;
-        }
+        _weaponCollider.enabled = false;
     }
-
-    // public void OnEnable()
-    // {
-    //     EnableWeaponCollision();
-    // }
-    //
-    // public void OnDisable()
-    // {
-    //     DisableWeaponCollision();
-    // }
-
-
 }

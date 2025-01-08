@@ -1,45 +1,34 @@
 using UnityEngine;
-using UnityEngine.AI;
 
 public class AttackCollision : StateMachineBehaviour
 {
-   private LongSword _longsword;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (_longsword == null)
-        {
-            _longsword = animator.GetComponent<LongSword>();
-            if (_longsword == null)
-            {
-                Debug.LogError("LongSword component is not found on the animator's GameObject.");
-                return;
-            }
-        }
-        _longsword.EnableWeaponCollision();
-    }
+        var _longsword = animator.GetComponent<LongSword>();
 
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+        if (stateInfo.IsName("Great Sword Slash"))
+        {
+            _longsword.EnableWeaponCollision();
+        }
+        else if (stateInfo.IsName("Great Sword Kick"))
+        {
+            _longsword.EnableFootCollision();
+        }
+    }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        _longsword.DisableWeaponCollision();
+        var _longsword = animator.GetComponent<LongSword>();
+
+        if (stateInfo.IsName("Great Sword Slash"))
+        {
+            _longsword.DisableWeaponCollision();
+        }
+        else if (stateInfo.IsName("Great Sword Kick"))
+        {
+            _longsword.DisableFootCollision();
+        }
     }
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
 }

@@ -16,11 +16,11 @@ MonoBehaviour:
   currentMp: 100
   maxMp: 100
   maxHealth: 100
-  currentHealth: 100
+  currentHealth: 50
   playerLevel: 0
   playerMaxLevel: 10
   minExp: 0
   maxExp: 100
-  currentExp: 0
+  currentExp: 40
   Sword: {fileID: 3131040012533923090, guid: 6177869066dbc54458b4e1182031d6a2, type: 3}
   SwordAttack: 5
